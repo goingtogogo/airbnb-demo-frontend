@@ -19,7 +19,7 @@ const Link = styled.a`
 `;
 const Title = styled.h3`
   flex-basis: 100%;
-  font-family: CircularBold, Helvetica, sans-serif;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
   color: #383838;

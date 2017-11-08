@@ -17,7 +17,7 @@ const Img = styled.img`
 `;
 const Title = styled.h3`
   margin-left: 24px;
-  font-family: CircularBold, Helvetica, sans-serif;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 17px;
   line-height: 20px;
   color: #383838;

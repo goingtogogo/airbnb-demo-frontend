@@ -6,7 +6,7 @@ const OpenLink = styled.a`
   text-decoration: none;
   font-size: 14px;
   line-height: 24px;
-  font-family: CircularBook, Helvetica, sans-serif;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
 
   &: after {

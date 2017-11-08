@@ -30,7 +30,7 @@ export const Nav = styled.nav`
 `;
 export const Link = styled.a`
   text-decoration: none;
-  font-family: CircularBook, Helvetica, sans-serif;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   color: #383838;
 `;
@@ -44,7 +44,7 @@ export const Search = styled.input`
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   box-shadow: 0px 0px 2px rgba(72, 72, 72, 0.08);
-  font-family: CircularBook, Helvetica, sans-serif;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
   font-size: 16px;
 `;

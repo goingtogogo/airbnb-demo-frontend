@@ -14,7 +14,7 @@ export const Preview = styled.div`
 `;
 export const SectionTitle = styled.h2`
   margin-top: 48px;
-  font-family: CircularBold, Helvetica, sans-serif;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 32px;
   line-height: 34px;
   color: #383838;
@@ -28,7 +28,7 @@ export const List = styled.ul`
 `;
 export const Price = styled.span`
   margin-top: 8px;
-  font-family: CircularBold, Helvetica, sans-serif;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
   color: #383838;

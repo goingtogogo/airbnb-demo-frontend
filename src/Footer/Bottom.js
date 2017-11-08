@@ -22,14 +22,14 @@ const Nav = styled.nav`
 `;
 const Link = styled.a`
   text-decoration: none;
-  font-family: CircularBook, Helvetica, sans-serif;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
   color: #636363;
 `;
 const Copyright = styled.h3`
   margin-top: 34px;
-  font-family: CircularBook, Helvetica, sans-serif;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
   color: #636363;

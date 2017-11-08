@@ -9,7 +9,7 @@ import OpenLink from "../OpenLink";
 
 export const SectionTitle = styled.h2`
   margin-top: 68px;
-  font-family: CircularBold, Helvetica, sans-serif;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 32px;
   line-height: 34px;
   color: #383838;

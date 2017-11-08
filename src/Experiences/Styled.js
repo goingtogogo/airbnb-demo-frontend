@@ -24,7 +24,7 @@ export const PriceInfo = styled.div`
 `;
 export const Title = styled.h3`
   margin: 8px 0px 0px 8px;
-  font-family: CircularLight, Helvetica, sans-serif;
+  font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
 `;
@@ -35,7 +35,7 @@ export const Ratio = styled.div`
 `;
 export const Review = styled.span`
   margin-left: 8px;
-  font-family: CircularBook, Helvetica, sans-serif;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 14px;
 `;

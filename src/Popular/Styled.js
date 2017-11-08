@@ -21,7 +21,7 @@ export const Title = styled.h3`
   margin-top: 2px;
   margin-bottom: 0px;
   flex-basis: 100%;
-  font-family: CircularBold, Helvetica, sans-serif;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 21px;
 `;
@@ -30,7 +30,7 @@ export const Type = styled.span`
   margin-top: 12px;
   margin-bottom: 0;
   flex-basis: 100%;
-  font-family: CircularBold, Helvetica, sans-serif;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 10px;
   line-height: 12px;
   text-transform: uppercase;
@@ -38,7 +38,7 @@ export const Type = styled.span`
 export const Pricing = styled.span`
   margin-top: 4px;
   flex-basis: 100%;
-  font-family: CircularLight, Helvetica, sans-serif;
+  font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 21px;
 `;
