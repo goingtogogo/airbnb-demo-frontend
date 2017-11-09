@@ -14,8 +14,11 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    width: 97.91666%;
+  }
 `;
-export const Settings = styled.div`flex-basis: 23.27235%;`;
+export const Settings = styled.div`flex-basis: 23.40425%;`;
 
 export const Form = styled.form`
   margin-bottom: 16px;
@@ -44,6 +47,12 @@ export const DropDown = styled.select`
   background-position: 93% center;
   background-repeat: no-repeat;
   cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: 15px;
+    line-height: 18px;
+    padding: 14px 8px;
+    background-size: 15px 8px;
+  }
 `;
 
 export const Lists = styled.div`
@@ -51,6 +60,9 @@ export const Lists = styled.div`
   flex-basis: 64.93902%;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-basis: 65.95744%;
+  }
 `;
 
 export const Link = styled.a`
@@ -60,6 +72,11 @@ export const Link = styled.a`
   font-size: 15px;
   line-height: 18px;
   color: #636363;
+  @media (max-width: 768px) {
+    margin-bottom: 11px;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 export const Links = styled.div`
   display: flex;
@@ -73,6 +90,11 @@ export const Title = styled.h3`
   font-size: 15px;
   line-height: 18px;
   color: #383838;
+  @media (max-width: 768px) {
+    margin-bottom: 19px;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 export const Logo = styled.img`

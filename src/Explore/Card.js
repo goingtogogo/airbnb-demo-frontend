@@ -7,6 +7,12 @@ const Card = styled.li`
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   box-shadow: 0px 0px 2px rgba(72, 72, 72, 0.08);
+  @media (max-width: 768px) {
+    flex-basis: 40.42553%;
+    margin-right: 16px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 `;
 
 const Img = styled.img`

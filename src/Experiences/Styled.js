@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const Card = styled.li`
   flex-basis: 23.27235%;
   display: flex;
+  @media (max-width: 768px) {
+    flex-basis: 31.91489%;
+    margin-right: 16px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 `;
 
 export const Img = styled.img`

@@ -8,7 +8,8 @@ import {
   Search,
   SearchIcon,
   Nav,
-  Link
+  Link,
+  Burger
 } from "./Styled";
 import logo from "./logo.svg";
 
@@ -17,7 +18,9 @@ export default function() {
     <Header>
       <Wrapper>
         <Left>
-          <Logo src={logo} alt="logo" />
+          <Burger href="">
+            <Logo src={logo} alt="logo" />
+          </Burger>
           <Form>
             <Search type="search" placeholder="Try Miami" />
             <SearchIcon type="submit" />

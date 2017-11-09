@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const Card = styled.li`
   flex-basis: 32.0504%;
   display: flex;
+  @media (max-width: 768px) {
+    flex-basis: 40.4255319%;
+    margin-right: 16px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 `;
 
 export const Img = styled.img`
@@ -26,6 +32,9 @@ export const Title = styled.h3`
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
+  @media (max-width: 768px) {
+    align-celf: flex-start;
+  }
 `;
 
 export const Description = styled.div`

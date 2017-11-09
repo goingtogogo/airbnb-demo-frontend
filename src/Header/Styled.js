@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import arrowdown from "./arrow-down.png";
 import searchicon from "./search.svg";
 
 export const Header = styled.header`
   width: 100%;
   padding: 16px 0;
-  box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
+  box-shadow: 0px 0px 2px rgba(72, 72, 72, 0.3);
   line-height: 24px;
 `;
 
@@ -14,12 +15,20 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    width: 97.91666%;
+    justify-content: flex-start;
+  }
 `;
 
 export const Left = styled.div`
   display: flex;
   justify-content: space-between;
   flex-basis: 49.12099%;
+  @media (max-width: 768px) {
+    flex-basis: 62.76595%;
+    justify-content: space-between;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -27,6 +36,10 @@ export const Nav = styled.nav`
   flex-basis: 32.16132%;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 export const Link = styled.a`
   text-decoration: none;
@@ -34,9 +47,19 @@ export const Link = styled.a`
   font-size: 14px;
   color: #383838;
 `;
+export const Burger = styled.a`
+  @media (max-width: 768px) {
+    width: 48px;
+    margin-right: 16px;
+    background-image: url(${arrowdown});
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 10px 6px;
+  }
+`;
 export const Form = styled.form`
   position: relative;
-  width: 82.73684%;
+  width: 91.52542%;
 `;
 export const Search = styled.input`
   width: 100%;
@@ -61,5 +84,5 @@ export const SearchIcon = styled.button`
   background-size: cover;
 `;
 
-export const Logo = styled.img``;
+export const Logo = styled.img`margin-top: 6px;`;
 export default function() {}

@@ -4,6 +4,9 @@ import nextscroll from "./assets/next-scroll.png";
 export const Wrapper = styled.div`
   width: 86.032028%;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 97.91666%;
+  }
 `;
 
 export const Preview = styled.div`
@@ -25,6 +28,12 @@ export const List = styled.ul`
   justify-content: space-between;
   list-style: none;
   padding: 0;
+  @media (max-width: 768px) {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
 `;
 export const Price = styled.span`
   margin-top: 8px;
@@ -43,5 +52,8 @@ export const Scroll = styled.a`
   background-image: url(${nextscroll});
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 export default function() {}
