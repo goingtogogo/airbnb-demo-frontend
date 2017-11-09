@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Price } from "../Styled";
 import { Card, Img, Link, PriceInfo, Title, Ratio, Review } from "./Styled";
 import Star from "../Star";

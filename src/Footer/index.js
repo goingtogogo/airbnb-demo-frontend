@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Wrapper, Lists, Logo } from "./Styled";
+import { Footer, Wrapper, Lists } from "./Styled";
 import Settings from "./Settings";
 import List from "./List";
 import Bottom from "./Bottom";
