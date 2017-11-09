@@ -11,21 +11,26 @@ import {
   Type,
   Amount,
   Ratio,
-  Review
+  Reviews,
+  Owner
 } from "./Styled";
 
 export default function(props) {
+  var amount = props.amount + " bed";
+  if (props.amount > 1) {
+    amount += "s";
+  }
   return (
     <Card>
       <Link href="">
         <Img src={props.image} alt="Home" />
         <PriceInfo>
-          <Price>{props.price}</Price>
+          <Price>{props.price}$ </Price>
           <Title>{props.title}</Title>
         </PriceInfo>
         <Description>
           <Type>{props.type}</Type>
-          <Amount>{props.amount}</Amount>
+          <Amount>{amount}</Amount>
         </Description>
         <Ratio>
           <Star />
@@ -33,7 +38,8 @@ export default function(props) {
           <Star />
           <Star />
           <Star />
-          <Review>{props.review}</Review>
+          <Reviews>{props.reviews}</Reviews>
+          <Owner>&#183; {props.owner}</Owner>
         </Ratio>
       </Link>
     </Card>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = styled.li`
+const Card = styled.div`
   flex-basis: 31.50406%;
   display: flex;
   border: 1px solid rgba(72, 72, 72, 0.2);

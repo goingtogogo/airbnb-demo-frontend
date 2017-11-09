@@ -8,7 +8,7 @@ export default function(props) {
         <Img src={props.image} alt="Home" />
         <Type>{props.type}</Type>
         <Title>{props.title}</Title>
-        <Pricing>{props.prising}</Pricing>
+        <Pricing>About {props.pricing}$ per person</Pricing>
       </Link>
     </Card>
   );

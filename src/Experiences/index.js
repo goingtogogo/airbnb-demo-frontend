@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionTitle, Preview, List, Scroll } from "../Styled";
 import Card from "./Card";
-import OpenLink from "../OpenLink";
+import SeeAll from "../SeeAll";
 import experience1 from "./experience-1.png";
 import experience2 from "./experience-2.png";
 import experience3 from "./experience-3.png";
@@ -12,33 +12,28 @@ export default function() {
     <section>
       <Preview>
         <SectionTitle>Experiences</SectionTitle>
-        <OpenLink />
+        <SeeAll />
       </Preview>
       <List>
         <Card
           title="Forest Therapy"
           image={experience1}
-          price="29$"
-          review="44 reviews"
+          price={29}
+          reviews={44}
         />
         <Card
           title="Whale watching"
           image={experience2}
-          price="69$"
-          review="46 reviews"
+          price={69}
+          reviews={46}
         />
         <Card
           title="Table Mountain Summit, Cable Car Downing"
           image={experience3}
-          price="69$"
-          review="44 reviews"
+          price={69}
+          reviews={44}
         />
-        <Card
-          title="Salsa night"
-          image={experience4}
-          price="50$"
-          review="44 reviews"
-        />
+        <Card title="Salsa night" image={experience4} price={50} reviews={44} />
         <Scroll />
       </List>
     </section>

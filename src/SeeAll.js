@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import arrowright from "./assets/arrow-right.png";
 
-const OpenLink = styled.a`
+const SeeAll = styled.a`
   text-decoration: none;
   font-size: 14px;
   line-height: 24px;
@@ -22,6 +22,6 @@ const OpenLink = styled.a`
   }
 `;
 
-export default function(props) {
-  return <OpenLink href="">See all</OpenLink>;
+export default function() {
+  return <SeeAll href="">See all</SeeAll>;
 }

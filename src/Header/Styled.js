@@ -62,4 +62,3 @@ export const SearchIcon = styled.button`
 `;
 
 export const Logo = styled.img``;
-export default function() {}

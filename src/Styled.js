@@ -19,12 +19,10 @@ export const SectionTitle = styled.h2`
   line-height: 34px;
   color: #383838;
 `;
-export const List = styled.ul`
+export const List = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  list-style: none;
-  padding: 0;
 `;
 export const Price = styled.span`
   margin-top: 8px;
@@ -44,4 +42,3 @@ export const Scroll = styled.a`
   background-repeat: no-repeat;
   background-size: cover;
 `;
-export default function() {}
