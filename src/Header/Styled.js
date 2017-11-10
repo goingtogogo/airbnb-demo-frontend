@@ -84,4 +84,4 @@ export const SearchIcon = styled.button`
   background-size: cover;
 `;
 
-export const Logo = styled.img`@media (max-width: 768px) {margin-top: 6px;}`;
+export const Logo = styled.img`margin-top: 6px}`;
