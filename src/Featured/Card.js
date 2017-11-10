@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = styled.li`
+const Card = styled.div`
   flex-basis: 14.93902%;
   display: flex;
   @media (max-width: 768px) {

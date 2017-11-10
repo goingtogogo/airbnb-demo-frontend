@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.li`
+export const Card = styled.div`
   flex-basis: 23.27235%;
   display: flex;
   @media (max-width: 768px) {
@@ -48,5 +48,3 @@ export const Pricing = styled.span`
   font-size: 18px;
   line-height: 21px;
 `;
-
-export default function() {}

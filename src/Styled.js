@@ -22,12 +22,10 @@ export const SectionTitle = styled.h2`
   line-height: 34px;
   color: #383838;
 `;
-export const List = styled.ul`
+export const List = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  list-style: none;
-  padding: 0;
   @media (max-width: 768px) {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -56,4 +54,3 @@ export const Scroll = styled.a`
     display: none;
   }
 `;
-export default function() {}

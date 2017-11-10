@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.li`
+export const Card = styled.div`
   flex-basis: 32.0504%;
   display: flex;
   @media (max-width: 768px) {
@@ -58,12 +58,17 @@ export const Ratio = styled.div`
   display: flex;
   margin-top: 6px;
 `;
-export const Review = styled.span`
+export const Reviews = styled.span`
   margin-top: 2px;
   margin-left: 8px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 14px;
 `;
-
-export default function() {}
+export const Owner = styled.span`
+  margin-top: 2px;
+  margin-left: 4px;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+`;

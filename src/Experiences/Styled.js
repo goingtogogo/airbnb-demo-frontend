@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.li`
+export const Card = styled.div`
   flex-basis: 23.27235%;
   display: flex;
   @media (max-width: 768px) {
@@ -39,11 +39,9 @@ export const Ratio = styled.div`
   display: flex;
   align-items: baseline;
 `;
-export const Review = styled.span`
+export const Reviews = styled.span`
   margin-left: 8px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 14px;
 `;
-
-export default function() {}

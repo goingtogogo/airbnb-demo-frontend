@@ -101,4 +101,3 @@ export const Logo = styled.img`
   display: inline-block;
   vertical-align: middle;
 `;
-export default function() {}
