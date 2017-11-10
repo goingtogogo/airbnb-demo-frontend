@@ -11,7 +11,7 @@ const Left = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-basis: 11.99586%;
+  flex-basis: 12.8%;
   @media (max-width: 768px) {
     flex-basis: 14.19787%;
   }
@@ -19,7 +19,7 @@ const Left = styled.div`
 
 const Nav = styled.nav`
   padding: 34px 0;
-  flex-basis: 32.05791%;
+  flex-basis: 32%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,25 +53,13 @@ const Copyright = styled.h3`
 `;
 
 const Logo = styled.img`
-  margin-top: 34px;
+  margin-top: 20px;
   @media (max-width: 768px) {
     font-size: 12px;
     line-height: 14px;
   }
 `;
-const Twitter = styled.img`
-  @media (max-width: 768px) {
-    width: 16px;
-    height: auto;
-  }
-`;
-const Facebook = styled.img`
-  @media (max-width: 768px) {
-    width: 16px;
-    height: auto;
-  }
-`;
-const Instagram = styled.img`
+const Icon = styled.img`
   @media (max-width: 768px) {
     width: 16px;
     height: auto;
@@ -86,17 +74,17 @@ export default function(props) {
         <Copyright>&#9400; AirBnb inc.</Copyright>
       </Left>
       <Nav>
-        <Link href="#">Terms</Link>
-        <Link href="#">Privacy</Link>
-        <Link href="#">Site map</Link>
-        <Link href="#">
-          <Facebook src={facebook} alt="facebook" />
+        <Link href="/terms">Terms</Link>
+        <Link href="/privacy">Privacy</Link>
+        <Link href="/site-map">Site map</Link>
+        <Link href="/facebook">
+          <Icon src={facebook} alt="facebook" />
         </Link>
-        <Link href="#">
-          <Twitter src={twitter} alt="twitter" />
+        <Link href="/twitter">
+          <Icon src={twitter} alt="twitter" />
         </Link>
-        <Link href="#">
-          <Instagram src={instagram} alt="instagram" />
+        <Link href="/instagram">
+          <Icon src={instagram} alt="instagram" />
         </Link>
       </Nav>
     </Bottom>

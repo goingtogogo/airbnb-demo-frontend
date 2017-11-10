@@ -10,7 +10,7 @@ export const Footer = styled.footer`
 `;
 
 export const Wrapper = styled.div`
-  width: 86.032028%;
+  width: 86%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     width: 97.91666%;
   }
 `;
-export const Settings = styled.div`flex-basis: 23.40425%;`;
+export const Settings = styled.div`flex-basis: 23.3%;`;
 
 export const Form = styled.form`
   margin-bottom: 16px;
@@ -36,17 +36,17 @@ export const DropDown = styled.select`
   font-size: 18px;
   line-height: 21px;
   -webkit-appearance: none;
-  /* for FF */
   -moz-appearance: none;
   text-indent: 0.01px;
   text-overflow: "";
-  /* for IE */
-  -ms-appearance: none;
-  appearance: none !important;
+  appearance: none;
   background-image: url(${arrowdown});
   background-position: 93% center;
   background-repeat: no-repeat;
   cursor: pointer;
+  ::-ms-expand {
+    display: none;
+  }
   @media (max-width: 768px) {
     font-size: 15px;
     line-height: 18px;
@@ -57,7 +57,7 @@ export const DropDown = styled.select`
 
 export const Lists = styled.div`
   margin-bottom: 48px;
-  flex-basis: 64.93902%;
+  flex-basis: 65%;
   display: flex;
   justify-content: space-between;
   @media (max-width: 768px) {
@@ -78,7 +78,7 @@ export const Link = styled.a`
     line-height: 14px;
   }
 `;
-export const Links = styled.div`
+export const List = styled.div`
   display: flex;
   flex-direction: column;
 `;

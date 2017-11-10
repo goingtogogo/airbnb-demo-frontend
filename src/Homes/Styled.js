@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  flex-basis: 32.0504%;
+  flex-basis: 32%;
+  text-decoration: none;
   display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  color: #383838;
   @media (max-width: 768px) {
     flex-basis: 40.4255319%;
     margin-right: 16px;
@@ -14,13 +18,6 @@ export const Card = styled.div`
 export const Img = styled.img`
   width: 100%;
   height: auto;
-`;
-export const Link = styled.a`
-  text-decoration: none;
-  display: flex;
-  flex-wrap: wrap;
-  cursor: pointer;
-  color: #383838;
 `;
 export const PriceInfo = styled.div`
   flex-basis: 100%;

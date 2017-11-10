@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  flex-basis: 23.27235%;
+  flex-basis: 23.3%;
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  cursor: pointer;
+  text-decoration: none;
+  color: #383838;
   @media (max-width: 768px) {
     flex-basis: 31.9148936%;
     margin-right: 16px;
@@ -14,14 +19,6 @@ export const Card = styled.div`
 export const Img = styled.img`
   width: 100%;
   height: auto;
-`;
-export const Link = styled.a`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  cursor: pointer;
-  text-decoration: none;
-  color: #383838;
 `;
 export const Title = styled.h3`
   margin-top: 2px;

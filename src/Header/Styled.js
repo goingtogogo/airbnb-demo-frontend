@@ -10,7 +10,7 @@ export const Header = styled.header`
 `;
 
 export const Wrapper = styled.div`
-  width: 86.032028%;
+  width: 86%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 export const Left = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-basis: 49.12099%;
+  flex-basis: 49%;
   @media (max-width: 768px) {
     flex-basis: 62.76595%;
     justify-content: space-between;
@@ -33,7 +33,7 @@ export const Left = styled.div`
 
 export const Nav = styled.nav`
   padding-top: 11px;
-  flex-basis: 32.16132%;
+  flex-basis: 32%;
   display: flex;
   justify-content: space-between;
 
@@ -59,7 +59,7 @@ export const Burger = styled.a`
 `;
 export const Form = styled.form`
   position: relative;
-  width: 91.52542%;
+  width: 82.7%;
 `;
 export const Search = styled.input`
   width: 100%;
@@ -76,7 +76,7 @@ export const SearchIcon = styled.button`
   border: none;
   width: 20px;
   height: 20px;
-  right: 91.56122%;
+  right: 91.6%;
   top: 12px;
   background-color: transparent;
   background-image: url(${searchicon});

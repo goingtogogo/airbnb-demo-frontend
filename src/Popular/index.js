@@ -3,16 +3,15 @@ import popular1 from "./popular-1.png";
 import popular2 from "./popular-2.png";
 import popular3 from "./popular-3.png";
 import popular4 from "./popular-4.png";
-import { SectionTitle, Preview, List, Scroll } from "../Styled";
+import { SectionTitle, Preview, List, Scroll, SeeAll } from "../Styled";
 import Card from "./Card";
-import SeeAll from "../SeeAll";
 
 export default function() {
   return (
     <section>
       <Preview>
         <SectionTitle>Popular reservations around the world</SectionTitle>
-        <SeeAll />
+        <SeeAll href="/all">See all</SeeAll>
       </Preview>
       <List>
         <Card

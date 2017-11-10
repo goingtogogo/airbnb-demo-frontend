@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
-  flex-basis: 23.27235%;
+export const Card = styled.a`
+  flex-basis: 23.3%;
+  text-decoration: none;
   display: flex;
   @media (max-width: 768px) {
     flex-basis: 31.91489%;
@@ -9,18 +10,14 @@ export const Card = styled.div`
     flex-grow: 0;
     flex-shrink: 0;
   }
+  flex-wrap: wrap;
+  cursor: pointer;
+  color: #383838;
 `;
 
 export const Img = styled.img`
   width: 100%;
   height: auto;
-`;
-export const Link = styled.a`
-  text-decoration: none;
-  display: flex;
-  flex-wrap: wrap;
-  cursor: pointer;
-  color: #383838;
 `;
 export const PriceInfo = styled.div`
   margin-top: 0;

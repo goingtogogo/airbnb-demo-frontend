@@ -3,9 +3,8 @@ import home1 from "./home-1.png";
 import home2 from "./home-2.png";
 import home3 from "./home-3.png";
 import styled from "styled-components";
-import { Preview, List, Scroll } from "../Styled";
+import { Preview, List, Scroll, SeeAll } from "../Styled";
 import Card from "./Card";
-import SeeAll from "../SeeAll";
 
 export const SectionTitle = styled.h2`
   margin-top: 68px;
@@ -20,7 +19,7 @@ export default function() {
     <section>
       <Preview>
         <SectionTitle>Homes</SectionTitle>
-        <SeeAll />
+        <SeeAll href="/all">See all</SeeAll>
       </Preview>
       <List>
         <Card
@@ -37,7 +36,7 @@ export default function() {
           image={home2}
           price={82}
           type="Entire house"
-          amount="5 beds"
+          amount={5}
           reviews={161}
           owner="Superhost"
         />
