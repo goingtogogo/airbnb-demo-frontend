@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 768px) {
-    width: 97.91666%;
+    width: 97.9%;
     justify-content: flex-start;
   }
 `;
@@ -26,7 +26,7 @@ export const Left = styled.div`
   justify-content: space-between;
   flex-basis: 49%;
   @media (max-width: 768px) {
-    flex-basis: 62.76595%;
+    flex-basis: 62%;
     justify-content: space-between;
   }
 `;
@@ -84,4 +84,4 @@ export const SearchIcon = styled.button`
   background-size: cover;
 `;
 
-export const Logo = styled.img`margin-top: 6px}`;
+export const Logo = styled.img`margin-top: 6px;`;

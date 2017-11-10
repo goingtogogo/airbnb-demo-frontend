@@ -9,7 +9,7 @@ export const Card = styled.div`
   text-decoration: none;
   color: #383838;
   @media (max-width: 768px) {
-    flex-basis: 31.9148936%;
+    flex-basis: 31.9%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;

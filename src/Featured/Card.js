@@ -9,7 +9,7 @@ const Card = styled.div`
   align-items: flex-start;
   cursor: pointer;
   @media (max-width: 768px) {
-    flex-basis: 23.40425%;
+    flex-basis: 23.4%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;

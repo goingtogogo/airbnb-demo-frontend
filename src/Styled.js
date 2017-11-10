@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   width: 86%;
   margin: 0 auto;
   @media (max-width: 768px) {
-    width: 97.91666%;
+    width: 97.9%;
   }
 `;
 
@@ -30,11 +30,6 @@ export const List = styled.div`
   @media (max-width: 768px) {
     overflow-x: scroll;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    &::-webkit-scrollbar {
-    display: none;
-  }
 `;
 export const Price = styled.span`
   margin-top: 8px;

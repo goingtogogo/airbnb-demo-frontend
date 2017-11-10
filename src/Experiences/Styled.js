@@ -5,7 +5,7 @@ export const Card = styled.a`
   text-decoration: none;
   display: flex;
   @media (max-width: 768px) {
-    flex-basis: 31.91489%;
+    flex-basis: 31.9%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;

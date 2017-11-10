@@ -5,6 +5,7 @@ export const Footer = styled.footer`
   width: 100%;
   padding: 0;
   padding-top: 48px;
+  margin-top: 64px;
   box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
   line-height: 24px;
 `;
@@ -15,7 +16,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   @media (max-width: 768px) {
-    width: 97.91666%;
+    width: 97.9%;
   }
 `;
 export const Settings = styled.div`flex-basis: 23.3%;`;
@@ -61,7 +62,7 @@ export const Lists = styled.div`
   display: flex;
   justify-content: space-between;
   @media (max-width: 768px) {
-    flex-basis: 65.95744%;
+    flex-basis: 66%;
   }
 `;
 

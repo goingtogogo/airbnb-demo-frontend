@@ -11,7 +11,7 @@ const Card = styled.div`
   align-items: center;
   cursor: pointer;
   @media (max-width: 768px) {
-    flex-basis: 40.42553%;
+    flex-basis: 40.4%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;

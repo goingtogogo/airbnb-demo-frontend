@@ -13,7 +13,7 @@ const Left = styled.div`
   align-items: flex-start;
   flex-basis: 12.8%;
   @media (max-width: 768px) {
-    flex-basis: 14.19787%;
+    flex-basis: 14%;
   }
 `;
 
@@ -25,7 +25,7 @@ const Nav = styled.nav`
   align-items: center;
   @media (max-width: 768px) {
     padding: 36px 0;
-    flex-basis: 36.17021%;
+    flex-basis: 36.2%;
   }
 `;
 const Link = styled.a`
@@ -53,7 +53,7 @@ const Copyright = styled.h3`
 `;
 
 const Logo = styled.img`
-  margin-top: 20px;
+  margin-top: 34px;
   @media (max-width: 768px) {
     font-size: 12px;
     line-height: 14px;
