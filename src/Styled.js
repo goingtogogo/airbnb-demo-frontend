@@ -31,6 +31,8 @@ export const List = styled.div`
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar {
+    display: none;
   }
 `;
 export const Price = styled.span`
