@@ -36,9 +36,7 @@ const Copyright = styled.h3`
 `;
 
 const Logo = styled.img`margin-top: 20px;`;
-const Twitter = styled.img``;
-const Facebook = styled.img``;
-const Instagram = styled.img``;
+const Icon = styled.img``;
 
 export default function(props) {
   return (
@@ -48,17 +46,17 @@ export default function(props) {
         <Copyright>&#9400; AirBnb inc.</Copyright>
       </Left>
       <Nav>
-        <Link href="#">Terms</Link>
-        <Link href="#">Privacy</Link>
-        <Link href="#">Site map</Link>
-        <Link href="#">
-          <Facebook src={facebook} alt="facebook" />
+        <Link href="/terms">Terms</Link>
+        <Link href="/privacy">Privacy</Link>
+        <Link href="/site-map">Site map</Link>
+        <Link href="/facebook">
+          <Icon src={facebook} alt="facebook" />
         </Link>
-        <Link href="#">
-          <Twitter src={twitter} alt="twitter" />
+        <Link href="/twitter">
+          <Icon src={twitter} alt="twitter" />
         </Link>
-        <Link href="#">
-          <Instagram src={instagram} alt="instagram" />
+        <Link href="/instagram">
+          <Icon src={instagram} alt="instagram" />
         </Link>
       </Nav>
     </Bottom>

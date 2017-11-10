@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import nextscroll from "./assets/next-scroll.png";
+import arrowright from "./assets/arrow-right.png";
 
 export const Wrapper = styled.div`
   width: 86.032028%;
@@ -41,4 +42,23 @@ export const Scroll = styled.a`
   background-image: url(${nextscroll});
   background-repeat: no-repeat;
   background-size: cover;
+`;
+export const SeeAll = styled.a`
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  color: #383838;
+
+  &: after {
+    margin-left: 8px;
+    width: 6px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: baseline;
+    content: "";
+    background-image: url(${arrowright});
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;

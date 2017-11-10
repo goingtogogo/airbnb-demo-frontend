@@ -1,7 +1,6 @@
 import React from "react";
-import { SectionTitle, Preview, List, Scroll } from "../Styled";
+import { SectionTitle, Preview, List, Scroll, SeeAll } from "../Styled";
 import Card from "./Card";
-import SeeAll from "../SeeAll";
 import experience1 from "./experience-1.png";
 import experience2 from "./experience-2.png";
 import experience3 from "./experience-3.png";
@@ -12,7 +11,7 @@ export default function() {
     <section>
       <Preview>
         <SectionTitle>Experiences</SectionTitle>
-        <SeeAll />
+        <SeeAll href="/all">See all</SeeAll>
       </Preview>
       <List>
         <Card

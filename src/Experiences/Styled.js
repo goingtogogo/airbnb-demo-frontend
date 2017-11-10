@@ -1,20 +1,17 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled.a`
   flex-basis: 23.27235%;
-  display: flex;
-`;
-
-export const Img = styled.img`
-  width: 100%;
-  height: auto;
-`;
-export const Link = styled.a`
   text-decoration: none;
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;
   color: #383838;
+`;
+
+export const Img = styled.img`
+  width: 100%;
+  height: auto;
 `;
 export const PriceInfo = styled.div`
   margin-top: 0;

@@ -61,7 +61,7 @@ export const Link = styled.a`
   line-height: 18px;
   color: #636363;
 `;
-export const Links = styled.div`
+export const List = styled.div`
   display: flex;
   flex-direction: column;
 `;

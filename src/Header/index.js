@@ -24,10 +24,10 @@ export default function() {
           </Form>
         </Left>
         <Nav>
-          <Link href="#">Become a host</Link>
-          <Link href="#">Help</Link>
-          <Link href="#">Sign Up</Link>
-          <Link href="#">Sign In</Link>
+          <Link href="/host">Become a host</Link>
+          <Link href="/help">Help</Link>
+          <Link href="/signup">Sign Up</Link>
+          <Link href="/signin">Sign In</Link>
         </Nav>
       </Wrapper>
     </Header>

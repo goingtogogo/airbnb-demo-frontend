@@ -1,41 +1,40 @@
 import React from "react";
-import { Footer, Wrapper, Lists } from "./Styled";
+import { Footer, Wrapper, Lists, List, Title, Link } from "./Styled";
 import Settings from "./Settings";
-import List from "./List";
 import Bottom from "./Bottom";
 
 export default function() {
-  const Airbnb = [
-    "About us",
-    "Careers",
-    "Press",
-    "Policies",
-    "Help",
-    "Diversity & Belonging"
-  ];
-  const Discover = [
-    "Trust & Safety",
-    "Travel Credit",
-    "Gift Cards",
-    "Airbnb Citizen",
-    "Business Travel",
-    "Guidebooks",
-    "Airbnbmag"
-  ];
-  const Hosting = [
-    "Why Host",
-    "Hospitality",
-    "Responsible Hosting",
-    "Community Center"
-  ];
   return (
     <Footer>
       <Wrapper>
         <Settings />
         <Lists>
-          <List title="AirBnb" links={Airbnb} href="" />
-          <List title="Discover" links={Discover} href="" />
-          <List title="Hosting" links={Hosting} href="" />
+          <List>
+            <Title>AirBnb</Title>
+            <Link href="/about-us">About us</Link>
+            <Link href="/careers">Careers</Link>
+            <Link href="/press">Press</Link>
+            <Link href="/policies">Policies</Link>
+            <Link href="/help">Help</Link>
+            <Link href="/diversity-and-belonging">Diversity & Belonging</Link>
+          </List>
+          <List>
+            <Title>Discover</Title>
+            <Link href="/about-us">Trust & Safety</Link>
+            <Link href="/travel-credit">Travel Credit</Link>
+            <Link href="/gift-cards">Gift Cards</Link>
+            <Link href="/airbnb-citizen">Airbnb Citizen</Link>
+            <Link href="/business-travel">Business Travel</Link>
+            <Link href="/guidebooks">Guidebooks</Link>
+            <Link href="/aitbnbmag">Airbnbmag</Link>
+          </List>
+          <List>
+            <Title>Hosting</Title>
+            <Link href="/why-host">Why Host</Link>
+            <Link href="/hospitality">Hospitality</Link>
+            <Link href="/responsible-hosting">Responsible Hosting</Link>
+            <Link href="/community-center">Community Center</Link>
+          </List>
         </Lists>
       </Wrapper>
       <Bottom />

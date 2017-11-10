@@ -3,19 +3,16 @@ import styled from "styled-components";
 export const Card = styled.div`
   flex-basis: 23.27235%;
   display: flex;
-`;
-
-export const Img = styled.img`
-  width: 100%;
-  height: auto;
-`;
-export const Link = styled.a`
-  display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   cursor: pointer;
   text-decoration: none;
   color: #383838;
+`;
+
+export const Img = styled.img`
+  width: 100%;
+  height: auto;
 `;
 export const Title = styled.h3`
   margin-top: 2px;
