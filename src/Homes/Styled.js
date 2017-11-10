@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  flex-basis: 32.0504%;
+  flex-basis: 32%;
   text-decoration: none;
   display: flex;
   flex-wrap: wrap;

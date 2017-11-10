@@ -11,12 +11,12 @@ const Left = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-basis: 12.82316%;
+  flex-basis: 12.8%;
 `;
 
 const Nav = styled.nav`
   padding: 34px 0;
-  flex-basis: 32.05791%;
+  flex-basis: 32%;
   display: flex;
   justify-content: space-between;
 `;

@@ -3,7 +3,7 @@ import nextscroll from "./assets/next-scroll.png";
 import arrowright from "./assets/arrow-right.png";
 
 export const Wrapper = styled.div`
-  width: 86.032028%;
+  width: 86%;
   margin: 0 auto;
 `;
 

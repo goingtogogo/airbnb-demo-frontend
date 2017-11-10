@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
-  flex-basis: 14.93902%;
+  flex-basis: 15%;
   text-decoration: none;
   display: flex;
   flex-wrap: wrap;
