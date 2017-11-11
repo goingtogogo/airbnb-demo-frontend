@@ -8,83 +8,76 @@ import facebook from "./facebook.svg";
 
 const Bottom = Wrapper.extend`
   border-top: 1px solid rgba(72, 72, 72, 0.08);
-  @media (max-width: 576px) {
-    flex-direction: column;
-    align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: space-between;
   }
 `;
 const Left = styled.div`
+  width: 34%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-basis: 12.8%;
-  @media (max-width: 991px) {
+
+  @media (min-width: 768px) {
     flex-basis: 14%;
   }
-  @media (max-width: 576px) {
-    width: 34%;
-    justify-content: space-between;
+  @media (min-width: 992px) {
+    flex-basis: 12.8%;
   }
 `;
 
 const Nav = styled.nav`
-  padding: 34px 0;
-  flex-basis: 32%;
+  width: 69%;
+  padding: 16px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 991px) {
-    padding: 36px 0;
+  @media (min-width: 768px) {
+    padding: 34px 0;
     flex-basis: 36.2%;
   }
-  @media (max-width: 576px) {
-    width: 69%;
-    justify-content: space-between;
-    padding-top: 12px;
-    padding-bottom: 16px;
+  @media (min-width: 992px) {
+    flex-basis: 32%;
   }
 `;
 const Link = styled.a`
   text-decoration: none;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 14px;
   color: #636363;
-  @media (max-width: 991px) {
-    font-size: 12px;
-    line-height: 14px;
+  @media (min-width: 992px) {
+    font-size: 15px;
+    line-height: 18px;
   }
 `;
 const Copyright = styled.h3`
   margin-top: 34px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 14px;
   color: #636363;
-  @media (max-width: 991px) {
-    font-size: 12px;
-    line-height: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+    line-height: 18px;
     margin-top: 36px;
   }
-  @media (max-width: 576px) {
-    margin-top: 18px;
+  @media (min-width: 992px) {
+    margin-top: 34px;
   }
 `;
 
-const Logo = styled.img`
-  margin-top: 34px;
-  @media (max-width: 991px) {
-    font-size: 12px;
-    line-height: 14px;
-  }
-  @media (max-width: 576px) {
-    margin-top: 16px;
-  }
-`;
+const Logo = styled.img`margin-top: 32px;`;
 const Icon = styled.img`
-  @media (max-width: 991px) {
-    width: 16px;
-    height: auto;
+  width: 16px;
+  height: auto;
+  @media (min-width: 768px) {
+    width: 20px;
   }
 `;
 

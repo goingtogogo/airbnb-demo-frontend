@@ -9,12 +9,12 @@ import Card from "./Card";
 export const SectionTitle = styled.h2`
   margin-top: 68px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 32px;
-  line-height: 34px;
+  font-size: 24px;
+  line-height: 28px;
   color: #383838;
-  @media (max-width: 576px) {
-    font-size: 24px;
-    line-height: 28px;
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 34px;
   }
 `;
 

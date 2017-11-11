@@ -5,43 +5,44 @@ export const Footer = styled.footer`
   width: 100%;
   padding: 0;
   padding-top: 48px;
-  margin-top: 64px;
   box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
   line-height: 24px;
-  @media (max-width: 576px) {
-    margin-top: 0;
+
+  @media (min-width: 768px) {
+    margin-top: 64px;
   }
 `;
 
 export const Wrapper = styled.div`
-  max-width: 962px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 8px;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 991px) {
-    max-width: 768px;
-  }
-  @media (max-width: 576px) {
-    max-width: 320px;
+
+  @media (min-width: 992px) {
+    max-width: 962px;
   }
 `;
 export const Settings = styled.div`
-  flex-basis: 23.3%;
-  @media (max-width: 576px) {
-    display: flex;
-    justify-content: space-between;
-    flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+
+  @media (min-width: 768px) {
+    flex-basis: 23.3%;
+    display: block;
   }
 `;
 
 export const Form = styled.form`
   margin-bottom: 16px;
   display: inline-block;
-  width: 100%;
+  width: 46.9%;
   position: relative;
-  @media (max-width: 576px) {
-    width: 46.9%;
+
+  @media (min-width: 768px) {
+    width: 100%;
   }
 `;
 export const DropDown = styled.select`
@@ -51,55 +52,58 @@ export const DropDown = styled.select`
   border-radius: 4px;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 12px;
+  line-height: 14px;
   text-indent: 0.01px;
   text-overflow: "";
   appearance: none;
   background-image: url(${arrowdown});
   background-position: 93% center;
   background-repeat: no-repeat;
+  background-size: 12px 6px;
   cursor: pointer;
   ::-ms-expand {
     display: none;
   }
-  @media (max-width: 991px) {
+
+  @media (min-width: 768px) {
     font-size: 15px;
     line-height: 18px;
     padding: 14px 8px;
     background-size: 15px 8px;
   }
-  @media (max-width: 576px) {
-    font-size: 12px;
-    line-height: 14px;
-    background-size: 12px 6px;
+  @media (min-width: 992px) {
+    font-size: 18px;
+    line-height: 21px;
   }
 `;
 
 export const Lists = styled.div`
+  display: none;
   margin-bottom: 48px;
-  flex-basis: 65%;
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: 991px) {
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
     flex-basis: 66%;
   }
-  @media (max-width: 576px) {
-    display: none;
+  @media (min-width: 992px) {
+    flex-basis: 65%;
   }
 `;
 
 export const Link = styled.a`
-  margin-bottom: 8px;
+  margin-bottom: 11px;
   text-decoration: none;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 14px;
   color: #636363;
-  @media (max-width: 991px) {
-    margin-bottom: 11px;
-    font-size: 12px;
-    line-height: 14px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 18px;
   }
 `;
 export const List = styled.div`
@@ -109,15 +113,16 @@ export const List = styled.div`
 
 export const Title = styled.h3`
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 19px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 14px;
   color: #383838;
-  @media (max-width: 576px) {
-    margin-bottom: 19px;
-    font-size: 12px;
-    line-height: 14px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 18px;
   }
 `;
 

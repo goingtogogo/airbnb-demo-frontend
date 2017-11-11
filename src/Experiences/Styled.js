@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
 export const Card = styled.a`
-  flex-basis: 23.3%;
+  flex-basis: 45.2%;
+  flex-grow: 0;
+  flex-shrink: 0;
   text-decoration: none;
   display: flex;
   flex-wrap: wrap;
+  margin-right: 16px;
   cursor: pointer;
   color: #383838;
-  @media (max-width: 991px) {
-    flex-basis: 31.9%;
-    margin-right: 16px;
-    flex-grow: 0;
-    flex-shrink: 0;
+  @media (min-width: 768px) {
+    flex-basis: 31.1%;
   }
-  @media (max-width: 576px) {
-    flex-basis: 46.8%;
+  @media (min-width: 992px) {
+    flex-basis: 23.3%;
+    margin-right: 0;
   }
 `;
 
@@ -31,11 +32,11 @@ export const PriceInfo = styled.div`
 export const Title = styled.h3`
   margin: 8px 0px 0px 8px;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 18px;
-  @media (max-width: 576px) {
-    font-size: 13px;
-    line-height: 15px;
+  font-size: 13px;
+  line-height: 15px;
+  @media (min-width: 768px) {
+    font-size: 15px;
+    line-height: 18px;
   }
 `;
 export const Ratio = styled.div`
@@ -44,11 +45,11 @@ export const Ratio = styled.div`
   align-items: baseline;
 `;
 export const Reviews = styled.span`
-  margin-left: 8px;
+  margin-left: 4px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 14px;
-  @media (max-width: 576px) {
-    margin-left: 4px;
+  @media (min-width: 768px) {
+    margin-left: 8px;
   }
 `;
