@@ -89,6 +89,11 @@ export const SearchIcon = styled.button`
   background-color: transparent;
   background-image: url(${searchicon});
   background-repeat: no-repeat;
+  @media (max-width: 991px) {
+    top: 14px;
+    right: 87%;
+    background-size: 20px;
+  }
   @media (max-width: 576px) {
     top: 14px;
     right: 87%;
