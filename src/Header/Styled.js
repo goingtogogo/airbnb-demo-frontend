@@ -10,13 +10,14 @@ export const Header = styled.header`
 `;
 
 export const Wrapper = styled.div`
-  width: 86%;
+  max-width: 962px;
   margin: 0 auto;
+  padding: 0 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media (max-width: 991px) {
-    width: 97.9%;
+    max-width: 768px;
     justify-content: flex-start;
   }
 `;

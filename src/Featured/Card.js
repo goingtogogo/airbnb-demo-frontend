@@ -14,7 +14,7 @@ const Card = styled.a`
     flex-grow: 0;
     flex-shrink: 0;
   }
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     flex-basis: 29.6%;
   }
 `;

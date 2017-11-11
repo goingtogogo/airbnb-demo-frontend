@@ -14,15 +14,16 @@ export const Footer = styled.footer`
 `;
 
 export const Wrapper = styled.div`
-  width: 86%;
+  max-width: 962px;
   margin: 0 auto;
+  padding: 0 8px;
   display: flex;
   justify-content: space-between;
   @media (max-width: 991px) {
-    width: 97.9%;
+    max-width: 768px;
   }
   @media (max-width: 576px) {
-    width: 96%;
+    max-width: 320px;
   }
 `;
 export const Settings = styled.div`
