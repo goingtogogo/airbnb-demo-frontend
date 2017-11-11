@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import nextscroll from "./assets/next-scroll.png";
+import scroll from "./assets/scroll.png";
 import arrowright from "./assets/arrow-right.png";
 
 export const Wrapper = styled.div`
@@ -35,7 +35,10 @@ export const List = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  overflow: scroll;
+  overflow-x: scroll;
+  @media (min-width: 992px) {
+    overflow: visible;
+  }
 `;
 
 export const Price = styled.span`
@@ -59,7 +62,7 @@ export const Scroll = styled.a`
     position: absolute;
     left: calc(100% - 20px);
     top: calc(50% - 60px);
-    background-image: url(${nextscroll});
+    background-image: url(${scroll});
     background-repeat: no-repeat;
     background-size: cover;
   }
