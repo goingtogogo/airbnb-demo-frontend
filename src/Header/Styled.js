@@ -84,19 +84,18 @@ export const SearchIcon = styled.button`
   border: none;
   width: 20px;
   height: 20px;
-  right: 91.6%;
+  left: 3.4%;
   top: 12px;
   background-color: transparent;
   background-image: url(${searchicon});
   background-repeat: no-repeat;
   @media (max-width: 991px) {
     top: 14px;
-    right: 87%;
+    right: 14%;
     background-size: 20px;
   }
   @media (max-width: 576px) {
     top: 14px;
-    right: 87%;
     background-size: 16px;
   }
 `;

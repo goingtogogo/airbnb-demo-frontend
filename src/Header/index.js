@@ -22,8 +22,8 @@ export default function() {
             <Logo src={logo} alt="logo" />
           </Burger>
           <Form>
-            <Search type="search" placeholder="Try Miami" />
             <SearchIcon type="submit" />
+            <Search type="search" placeholder="Try Miami" />
           </Form>
         </Left>
         <Nav>

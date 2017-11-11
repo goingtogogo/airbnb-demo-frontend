@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled.a`
   flex-basis: 32%;
   text-decoration: none;
   display: flex;

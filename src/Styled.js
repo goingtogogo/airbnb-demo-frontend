@@ -34,8 +34,7 @@ export const List = styled.div`
   display: flex;
   justify-content: space-between;
   @media (max-width: 991px) {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    +: scroll;
   }
 `;
 export const Price = styled.span`
@@ -70,7 +69,7 @@ export const SeeAll = styled.a`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
 
-  &: after {
+  &:after {
     margin-left: 8px;
     width: 6px;
     height: 10px;

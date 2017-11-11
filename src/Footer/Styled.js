@@ -52,8 +52,6 @@ export const DropDown = styled.select`
   color: #383838;
   font-size: 18px;
   line-height: 21px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   text-indent: 0.01px;
   text-overflow: "";
   appearance: none;
