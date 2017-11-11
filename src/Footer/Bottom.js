@@ -6,14 +6,24 @@ import instagram from "./instagram.svg";
 import twitter from "./twitter.svg";
 import facebook from "./facebook.svg";
 
-const Bottom = Wrapper.extend`border-top: 1px solid rgba(72, 72, 72, 0.08);`;
+const Bottom = Wrapper.extend`
+  border-top: 1px solid rgba(72, 72, 72, 0.08);
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
 const Left = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-basis: 12.8%;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-basis: 14%;
+  }
+  @media (max-width: 576px) {
+    width: 34%;
+    justify-content: space-between;
   }
 `;
 
@@ -23,9 +33,15 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     padding: 36px 0;
     flex-basis: 36.2%;
+  }
+  @media (max-width: 576px) {
+    width: 69%;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 16px;
   }
 `;
 const Link = styled.a`
@@ -34,7 +50,7 @@ const Link = styled.a`
   font-size: 15px;
   line-height: 18px;
   color: #636363;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     font-size: 12px;
     line-height: 14px;
   }
@@ -45,22 +61,28 @@ const Copyright = styled.h3`
   font-size: 15px;
   line-height: 18px;
   color: #636363;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     font-size: 12px;
     line-height: 14px;
     margin-top: 36px;
+  }
+  @media (max-width: 576px) {
+    margin-top: 18px;
   }
 `;
 
 const Logo = styled.img`
   margin-top: 34px;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     font-size: 12px;
     line-height: 14px;
   }
+  @media (max-width: 576px) {
+    margin-top: 16px;
+  }
 `;
 const Icon = styled.img`
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: 16px;
     height: auto;
   }

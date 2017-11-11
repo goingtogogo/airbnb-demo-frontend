@@ -8,6 +8,9 @@ export const Footer = styled.footer`
   margin-top: 64px;
   box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
   line-height: 24px;
+  @media (max-width: 576px) {
+    margin-top: 0;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -15,17 +18,30 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: 97.9%;
   }
+  @media (max-width: 576px) {
+    width: 96%;
+  }
 `;
-export const Settings = styled.div`flex-basis: 23.3%;`;
+export const Settings = styled.div`
+  flex-basis: 23.3%;
+  @media (max-width: 576px) {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+`;
 
 export const Form = styled.form`
   margin-bottom: 16px;
   display: inline-block;
   width: 100%;
   position: relative;
+  @media (max-width: 576px) {
+    width: 46.9%;
+  }
 `;
 export const DropDown = styled.select`
   width: 100%;
@@ -48,11 +64,16 @@ export const DropDown = styled.select`
   ::-ms-expand {
     display: none;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     font-size: 15px;
     line-height: 18px;
     padding: 14px 8px;
     background-size: 15px 8px;
+  }
+  @media (max-width: 576px) {
+    font-size: 12px;
+    line-height: 14px;
+    background-size: 12px 6px;
   }
 `;
 
@@ -61,8 +82,11 @@ export const Lists = styled.div`
   flex-basis: 65%;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-basis: 66%;
+  }
+  @media (max-width: 576px) {
+    display: none;
   }
 `;
 
@@ -73,7 +97,7 @@ export const Link = styled.a`
   font-size: 15px;
   line-height: 18px;
   color: #636363;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     margin-bottom: 11px;
     font-size: 12px;
     line-height: 14px;
@@ -91,7 +115,7 @@ export const Title = styled.h3`
   font-size: 15px;
   line-height: 18px;
   color: #383838;
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     margin-bottom: 19px;
     font-size: 12px;
     line-height: 14px;

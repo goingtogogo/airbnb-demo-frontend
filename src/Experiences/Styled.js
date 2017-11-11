@@ -4,15 +4,18 @@ export const Card = styled.a`
   flex-basis: 23.3%;
   text-decoration: none;
   display: flex;
-  @media (max-width: 768px) {
+  flex-wrap: wrap;
+  cursor: pointer;
+  color: #383838;
+  @media (max-width: 991px) {
     flex-basis: 31.9%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;
   }
-  flex-wrap: wrap;
-  cursor: pointer;
-  color: #383838;
+  @media (max-width: 576px) {
+    flex-basis: 46.8%;
+  }
 `;
 
 export const Img = styled.img`
@@ -30,6 +33,10 @@ export const Title = styled.h3`
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
+  @media (max-width: 576px) {
+    font-size: 13px;
+    line-height: 15px;
+  }
 `;
 export const Ratio = styled.div`
   margin-top: 7px;
@@ -41,4 +48,7 @@ export const Reviews = styled.span`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 14px;
+  @media (max-width: 576px) {
+    margin-left: 4px;
+  }
 `;

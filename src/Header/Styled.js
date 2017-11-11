@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: 97.9%;
     justify-content: flex-start;
   }
@@ -25,9 +25,11 @@ export const Left = styled.div`
   display: flex;
   justify-content: space-between;
   flex-basis: 49%;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-basis: 62%;
-    justify-content: space-between;
+  }
+  @media (max-width: 576px) {
+    flex-basis: 98%;
   }
 `;
 
@@ -37,7 +39,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     display: none;
   }
 `;
@@ -48,7 +50,7 @@ export const Link = styled.a`
   color: #383838;
 `;
 export const Burger = styled.a`
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: 48px;
     margin-right: 16px;
     background-image: url(${arrowdown});
@@ -70,6 +72,12 @@ export const Search = styled.input`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
   font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  @media (max-width: 576px) {
+    font-size: 14px;
+    padding: 12px 35px;
+  }
 `;
 export const SearchIcon = styled.button`
   position: absolute;
@@ -80,8 +88,12 @@ export const SearchIcon = styled.button`
   top: 12px;
   background-color: transparent;
   background-image: url(${searchicon});
-  backround-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat;
+  @media (max-width: 576px) {
+    top: 14px;
+    right: 87%;
+    background-size: 16px;
+  }
 `;
 
 export const Logo = styled.img`margin-top: 6px;`;

@@ -12,6 +12,10 @@ export const SectionTitle = styled.h2`
   font-size: 32px;
   line-height: 34px;
   color: #383838;
+  @media (max-width: 576px) {
+    font-size: 24px;
+    line-height: 28px;
+  }
 `;
 
 export default function() {

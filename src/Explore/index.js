@@ -10,7 +10,7 @@ export default function() {
     <section>
       <SectionTitle>Explore Airbnb</SectionTitle>
       <List>
-        <Card title="Home" image={explore1} />
+        <Card title="Homes" image={explore1} />
         <Card title="Experiences" image={explore2} />
         <Card title="Restourants" image={explore3} />
       </List>

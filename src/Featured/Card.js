@@ -8,11 +8,14 @@ const Card = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   cursor: pointer;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-basis: 23.4%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;
+  }
+  @media (max-width: 991px) {
+    flex-basis: 29.6%;
   }
 `;
 
@@ -28,6 +31,10 @@ const Title = styled.h3`
   line-height: 18px;
   color: #383838;
   margin-top: 8px;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 export default function(props) {

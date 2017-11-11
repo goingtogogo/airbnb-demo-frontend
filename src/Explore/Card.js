@@ -10,11 +10,16 @@ const Card = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-basis: 40.4%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;
+  }
+  @media (max-width: 576px) {
+    flex-basis: 46.8%;
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
 
@@ -23,6 +28,12 @@ const Img = styled.img`
   height: 100%;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
+  @media (max-width: 576px) {
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0px;
+  }
 `;
 const Title = styled.h3`
   margin-left: 24px;
@@ -30,6 +41,11 @@ const Title = styled.h3`
   font-size: 17px;
   line-height: 20px;
   color: #383838;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    line-height: 14px;
+    margin-left: 12px;
+  }
 `;
 export default function(props) {
   return (

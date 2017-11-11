@@ -8,11 +8,14 @@ export const Card = styled.div`
   cursor: pointer;
   text-decoration: none;
   color: #383838;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-basis: 31.9%;
     margin-right: 16px;
     flex-grow: 0;
     flex-shrink: 0;
+  }
+  @media (max-width: 576px) {
+    flex-basis: 46.9%;
   }
 `;
 
@@ -27,6 +30,10 @@ export const Title = styled.h3`
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 21px;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 export const Type = styled.span`
@@ -37,6 +44,10 @@ export const Type = styled.span`
   font-size: 10px;
   line-height: 12px;
   text-transform: uppercase;
+  @media (max-width: 576px) {
+    font-size: 8px;
+    line-height: 9px;
+  }
 `;
 export const Pricing = styled.span`
   margin-top: 4px;
@@ -44,4 +55,8 @@ export const Pricing = styled.span`
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 21px;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
