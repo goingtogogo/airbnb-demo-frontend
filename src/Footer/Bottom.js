@@ -93,7 +93,7 @@ export default function(props) {
     <Bottom>
       <Left>
         <Logo src={logo} alt="logo" />
-        <Copyright>&#9400; AirBnb inc.</Copyright>
+        <Copyright>© AirBnb inc.</Copyright>
       </Left>
       <Nav>
         <Link href="/terms">Terms</Link>
