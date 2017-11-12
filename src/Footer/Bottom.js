@@ -23,7 +23,7 @@ const Left = styled.div`
   align-items: flex-start;
 
   @media (min-width: 768px) {
-    flex-basis: 14%;
+    flex-basis: 18%;
   }
   @media (min-width: 992px) {
     flex-basis: 12.8%;

@@ -4,11 +4,14 @@ import arrowright from "./assets/arrow-right.png";
 
 export const Wrapper = styled.div`
   width: 100%;
-  margin: 0 auto;
   padding: 0 8px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    max-width: 752px;
+    padding: 0;
+  }
   @media (min-width: 992px) {
     max-width: 962px;
-    padding: 0;
   }
 `;
 
@@ -54,7 +57,7 @@ export const Price = styled.span`
 `;
 
 export const Scroll = styled.a`
-  visibility: hidden;
+  display: none;
   @media (min-width: 992px) {
     width: 40px;
     height: 40px;

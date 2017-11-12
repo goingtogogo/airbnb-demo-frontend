@@ -3,7 +3,6 @@ import arrowdown from "./arrow-down.png";
 
 export const Footer = styled.footer`
   width: 100%;
-  padding: 0;
   padding-top: 48px;
   box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
   line-height: 24px;
@@ -15,10 +14,14 @@ export const Footer = styled.footer`
 
 export const Wrapper = styled.div`
   width: 100%;
-  margin: 0 auto;
   padding: 0 8px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  @media (min-width: 768px) {
+    max-width: 752px;
+    padding: 0;
+  }
 
   @media (min-width: 992px) {
     max-width: 962px;
