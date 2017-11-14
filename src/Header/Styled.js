@@ -14,7 +14,7 @@ export const Header = styled.header`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
+  max-width: 304px;
   margin: 0 auto;
   padding: 0 8px;
   display: flex;

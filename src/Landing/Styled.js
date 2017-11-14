@@ -3,7 +3,7 @@ import scroll from "./scroll.png";
 import arrowright from "./arrow-right.png";
 
 export const Preview = styled.div`
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -35,6 +35,7 @@ export const List = styled.div`
 
 export const Scroll = styled.a`
   display: none;
+
   @media (min-width: 992px) {
     width: 40px;
     height: 40px;
@@ -69,5 +70,6 @@ export const SeeAll = styled.a`
   @media (min-width: 768px) {
     font-size: 14px;
     line-height: 24px;
+    margin-right: 0;
   }
 `;

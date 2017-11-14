@@ -9,9 +9,6 @@ const Filters = styled.div`
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.117188) 0 1px 1px,
     rgba(255, 255, 255, 0.167969) 0 1px 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 `;
 const Filter = styled.button`
   margin: 12px 12px 12px 0;
@@ -32,7 +29,7 @@ const DesktopFilters = styled.div`
   }
 `;
 export const Wrapper = styled.div`
-  width: 100%;
+  max-width: 304px;
   padding: 0 8px;
   margin: 0 auto;
   @media (min-width: 768px) {

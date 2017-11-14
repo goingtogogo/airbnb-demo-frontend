@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.a`
-  flex-basis: 45.2%;
+  flex-basis: 48%;
   flex-grow: 0;
   flex-shrink: 0;
   text-decoration: none;
@@ -11,7 +11,7 @@ export const Card = styled.a`
   cursor: pointer;
   color: #383838;
   @media (min-width: 768px) {
-    flex-basis: 31.9%;
+    flex-basis: 32%;
   }
   @media (min-width: 992px) {
     flex-basis: 23.3%;

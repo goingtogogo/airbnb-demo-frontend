@@ -4,7 +4,6 @@ import { Price } from "../UI";
 import Star from "../UI/Star";
 
 const Card = styled.a`
-  margin-right: 16px;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 0;

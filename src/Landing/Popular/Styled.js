@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.a`
-  flex-basis: 45.2%;
+  flex-basis: 48%;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -13,7 +13,7 @@ export const Card = styled.a`
   color: #383838;
 
   @media (min-width: 768px) {
-    flex-basis: 31.9%;
+    flex-basis: 32%;
   }
 
   @media (min-width: 992px) {

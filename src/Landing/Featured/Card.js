@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.a`
-  flex-basis: 28.4%;
+  flex-basis: 30%;
   margin-right: 16px;
   flex-grow: 0;
   flex-shrink: 0;

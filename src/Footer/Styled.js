@@ -10,7 +10,7 @@ export const Footer = styled.footer`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
+  max-width: 304px;
   padding: 0 8px;
   margin: 0 auto;
   display: flex;
@@ -38,7 +38,7 @@ export const Settings = styled.div`
 export const Form = styled.form`
   margin-bottom: 16px;
   display: inline-block;
-  width: 46.9%;
+  width: 47%;
   position: relative;
 
   @media (min-width: 768px) {
@@ -47,7 +47,7 @@ export const Form = styled.form`
 `;
 export const DropDown = styled.select`
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 8px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
@@ -73,6 +73,7 @@ export const DropDown = styled.select`
     background-size: 15px 8px;
   }
   @media (min-width: 992px) {
+    padding: 12px 16px;
     font-size: 18px;
     line-height: 21px;
   }

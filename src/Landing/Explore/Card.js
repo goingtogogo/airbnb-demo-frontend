@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.a`
-  flex-basis: 44.5%;
+  flex-basis: 48%;
   flex-grow: 0;
   flex-shrink: 0;
   margin-right: 16px;
@@ -15,7 +15,7 @@ const Card = styled.a`
   align-items: flex-start;
   cursor: pointer;
   @media (min-width: 768px) {
-    flex-basis: 40.4%;
+    flex-basis: 40%;
     flex-direction: row;
     align-items: center;
   }
