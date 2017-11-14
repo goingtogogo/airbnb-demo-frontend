@@ -6,7 +6,7 @@ import Map from "google-map-react";
 const MapWrapper = styled.div`
   display: none;
   position: fixed;
-  width: 34%;
+  width: 36%;
   height: 82vh;
   top: 133px;
   right: 0;
