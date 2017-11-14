@@ -1,7 +1,7 @@
 import React from "react";
-import { Price } from "../Styled";
+import { Price } from "../../UI";
+import Star from "../../UI/Star";
 import { Card, Img, PriceInfo, Title, Ratio, Reviews } from "./Styled";
-import Star from "../Star";
 
 export default function(props) {
   return (

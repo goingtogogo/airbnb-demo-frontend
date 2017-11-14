@@ -1,6 +1,6 @@
 import React from "react";
-import { Price } from "../Styled";
-import Star from "../Star";
+import { Price } from "../UI";
+import Star from "../UI/Star";
 import {
   Card,
   Img,

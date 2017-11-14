@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const List = styled.div`
+  margin-top: 24px;
+  width: 66%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
 export const Card = styled.a`
   flex-basis: 64%;
   margin-right: 16px;

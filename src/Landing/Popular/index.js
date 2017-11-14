@@ -11,7 +11,7 @@ export default function() {
     <section>
       <Preview>
         <SectionTitle>Popular reservations around the world</SectionTitle>
-        <SeeAll href="/all">See all</SeeAll>
+        <SeeAll href="">See all</SeeAll>
       </Preview>
       <List>
         <Card
