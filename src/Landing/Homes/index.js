@@ -17,6 +17,17 @@ export const SectionTitle = styled.h2`
     line-height: 34px;
   }
 `;
+export const CardWrap = styled.div`
+  flex-basis: 64%;
+
+  @media (min-width: 768px) {
+    flex-basis: 48.4%;
+  }
+
+  @media (min-width: 992px) {
+    flex-basis: 32%;
+  }
+`;
 
 export default function() {
   return (
@@ -26,33 +37,39 @@ export default function() {
         <SeeAll href="/homes">See all</SeeAll>
       </Preview>
       <List>
-        <Card
-          title="La Salentina, see, nature, relax"
-          image={home1}
-          price={82}
-          type="Entire house"
-          amount={9}
-          reviews={91}
-          owner="Superhost"
-        />
-        <Card
-          title="Your private 3 bedr. riad exclusiv.."
-          image={home2}
-          price={82}
-          type="Entire house"
-          amount={5}
-          reviews={161}
-          owner="Superhost"
-        />
-        <Card
-          title="Dreamy Tropical Tree House"
-          image={home3}
-          price={200}
-          type="Entire treehouse"
-          amount={1}
-          reviews={364}
-          owner="Superhost"
-        />
+        <CardWrap>
+          <Card
+            title="La Salentina, see, nature, relax"
+            image={home1}
+            price={82}
+            type="Entire house"
+            amount={9}
+            reviews={91}
+            owner="Superhost"
+          />
+        </CardWrap>
+        <CardWrap>
+          <Card
+            title="Your private 3 bedr. riad exclusiv.."
+            image={home2}
+            price={82}
+            type="Entire house"
+            amount={5}
+            reviews={161}
+            owner="Superhost"
+          />
+        </CardWrap>
+        <CardWrap>
+          <Card
+            title="Dreamy Tropical Tree House"
+            image={home3}
+            price={200}
+            type="Entire treehouse"
+            amount={1}
+            reviews={364}
+            owner="Superhost"
+          />
+        </CardWrap>
         <Scroll />
       </List>
     </section>

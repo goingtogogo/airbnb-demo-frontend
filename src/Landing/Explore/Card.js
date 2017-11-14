@@ -51,7 +51,7 @@ const Title = styled.h3`
 `;
 export default function(props) {
   return (
-    <Card href="">
+    <Card href={props.href}>
       <Img src={props.image} alt="Home" />
       <Title>{props.title}</Title>
     </Card>

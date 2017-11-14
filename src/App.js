@@ -9,6 +9,8 @@ import Footer from "./Footer/";
 import Landing from "./Landing";
 import Homes from "./Homes";
 
+const footer = window.location.pathname === "/homes" ? null : <Footer />;
+
 class App extends Component {
   render() {
     return (
@@ -16,9 +18,8 @@ class App extends Component {
         <div>
           <Header />
           <Route path="/" exact component={Landing} />{" "}
-          <Route path="/homes" exact component={Homes} />{" "}
-          {/* отрендерить компонент Landing когда мы находимся на / */}
-          <Footer />
+          <Route path="/homes" exact component={Homes} />
+          {footer}
         </div>
       </BrowserRouter>
     );

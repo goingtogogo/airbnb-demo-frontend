@@ -11,7 +11,7 @@ export const Card = styled.a`
   cursor: pointer;
   color: #383838;
   @media (min-width: 768px) {
-    flex-basis: 31.7%;
+    flex-basis: 31.9%;
   }
   @media (min-width: 992px) {
     flex-basis: 23.3%;

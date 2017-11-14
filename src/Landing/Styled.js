@@ -7,6 +7,7 @@ export const Preview = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  box-sizing: border-box;
 `;
 
 export const SectionTitle = styled.h2`
@@ -26,6 +27,7 @@ export const List = styled.div`
   display: flex;
   justify-content: space-between;
   overflow-x: scroll;
+  overflow-y: hidden;
   @media (min-width: 992px) {
     overflow: visible;
   }

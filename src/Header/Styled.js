@@ -3,6 +3,10 @@ import arrowdown from "./arrow-down.png";
 import searchicon from "./search.svg";
 
 export const Header = styled.header`
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
   width: 100%;
   padding: 16px 0;
   box-shadow: 0px 0px 2px rgba(72, 72, 72, 0.3);

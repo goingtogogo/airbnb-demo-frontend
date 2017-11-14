@@ -18,7 +18,7 @@ export default function() {
     <Header>
       <Wrapper>
         <Left>
-          <Burger href="">
+          <Burger href="/">
             <Logo src={logo} alt="logo" />
           </Burger>
           <Form>
