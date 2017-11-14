@@ -23,8 +23,8 @@ const Content = styled.div`
   }
 `;
 const Hint = styled.p`
-  margin: 0 auto;
-  margin-top: 39px;
+  margin: 39px auto;
+  margin-bottom: 59px;
   width: 90%;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
@@ -51,14 +51,13 @@ const CardWrap = styled.div`
 const Pin = styled.a`
   width: 40px;
   height: 40px;
-  margin: 24px 0 24px 84%;
+  position: fixed;
+  bottom: 5%;
+  right: 8px;
   background-image: url(${pin});
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  @media (min-width: 768px) {
-    margin-left: 0;
-  }
   @media (min-width: 992px) {
     display: none;
   }
@@ -134,11 +133,11 @@ export default function(props) {
         />
       </CardWrap>
       <Pagination />
+      <Pin />
       <Hint>
         Enter dates to see full pricing. Additional fees apply. Taxes may be
         added.
       </Hint>
-      <Pin />
     </Content>
   );
 }
