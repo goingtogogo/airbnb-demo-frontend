@@ -9,7 +9,7 @@ import home3 from "./home-3.png";
 import home4 from "./home-4.png";
 import home5 from "./home-5.png";
 import home6 from "./home-6.png";
-import pin from "./pin.png";
+import pin from "./pin.svg";
 
 const Content = styled.div`
   margin-top: 24px;

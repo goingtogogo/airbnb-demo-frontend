@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import arrowright from "./arrow-right.png";
+import arrowright from "./arrow-right.svg";
 
 const Pagination = styled.div`
   margin: 0 auto;
@@ -44,7 +44,7 @@ const Next = styled.a`
   background-size: cover;
   cursor: pointer;
 `;
-const Current = styled.a`
+const Total = styled.a`
   margin-top: 21px;
   flex-basis: 100%;
   text-align: center;
@@ -63,7 +63,7 @@ export default function() {
       <Page>...</Page>
       <Page>17</Page>
       <Next />
-      <Current>1 – 18 of 300+ Rentals</Current>
+      <Total>1 – 18 of 300+ Rentals</Total>
     </Pagination>
   );
 }

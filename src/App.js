@@ -9,8 +9,6 @@ import Footer from "./Footer/";
 import Landing from "./Landing";
 import Homes from "./Homes";
 
-const footer = window.location.pathname === "/homes" ? null : <Footer />;
-
 class App extends Component {
   render() {
     return (
@@ -19,7 +17,7 @@ class App extends Component {
           <Header />
           <Route path="/" exact component={Landing} />{" "}
           <Route path="/homes" exact component={Homes} />
-          {footer}
+          <Route path="/" exact component={Footer} /> {" "}
         </div>
       </BrowserRouter>
     );

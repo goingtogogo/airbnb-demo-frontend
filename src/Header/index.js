@@ -13,9 +13,9 @@ import {
 } from "./Styled";
 import logo from "./logo.svg";
 
-export default function() {
+export default function(props) {
   return (
-    <Header>
+    <Header className={props.className}>
       <Wrapper>
         <Left>
           <Burger href="/">

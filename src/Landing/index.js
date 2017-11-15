@@ -8,14 +8,12 @@ import Featured from "./Featured/";
 
 export default function() {
   return (
-    <div>
-      <Wrapper>
-        <Explore />
-        <Experiences />
-        <Homes />
-        <Popular />
-        <Featured />
-      </Wrapper>
-    </div>
+    <Wrapper>
+      <Explore />
+      <Experiences />
+      <Homes />
+      <Popular />
+      <Featured />
+    </Wrapper>
   );
 }
