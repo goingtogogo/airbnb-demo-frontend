@@ -6,7 +6,7 @@ import Header from "../Header";
 
 import Filters from "./Filters";
 import Content from "./Content";
-import Map from "./Map";
+import MapReact from "./MapReact";
 
 const HomeWrapper = Wrapper.extend`
   position: relative;
@@ -29,7 +29,7 @@ export default function() {
       <Filters />
       <HomeWrapper>
         <Content />
-        <Map />
+        <MapReact />
       </HomeWrapper>
     </div>
   );
