@@ -14,6 +14,7 @@ export const Preview = styled.div`
 
 export const SectionTitle = styled.h2`
   margin-top: 48px;
+  margin-bottom: 24px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 24px;
   line-height: 28px;

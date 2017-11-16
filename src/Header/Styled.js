@@ -7,7 +7,7 @@ import searchicon from "./search.svg";
 export const Header = styled.header`
   width: 100%;
   padding: 16px 0;
-  box-shadow: 0px 0px 2px rgba(72, 72, 72, 0.3);
+  border-bottom: 1px solid #e4e4e4;
   line-height: 24px;
 `;
 
@@ -45,8 +45,7 @@ export const Nav = styled.nav`
   display: none;
 
   @media (min-width: 992px) {
-    padding-top: 11px;
-    flex-basis: 32%;
+    flex-basis: 30%;
     display: flex;
     justify-content: space-between;
   }
@@ -73,30 +72,30 @@ export const Burger = styled(NavLink)`
 
 export const Form = styled.form`
   position: relative;
-  width: 82.7%;
+  width: 83%;
 `;
 export const Search = styled.input`
   width: 100%;
   padding: 12px 35px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
-  box-shadow: 0px 0px 2px rgba(72, 72, 72, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
   font-size: 14px;
   appearance: none;
   @media (min-width: 768px) {
-    padding: 12px 53px;
+    padding: 14px 53px;
     font-size: 16px;
   }
 `;
 export const SearchIcon = styled.button`
   position: absolute;
   border: none;
-  width: 20px;
-  height: 20px;
-  top: 14px;
-  left: 3.4%;
+  width: 22px;
+  height: 22px;
+  top: 18px;
+  left: 4%;
   background-color: transparent;
   background-image: url(${searchicon});
   background-repeat: no-repeat;
@@ -104,8 +103,8 @@ export const SearchIcon = styled.button`
 
   @media (min-width: 768px) {
     top: 12px;
-    background-size: 20px;
+    background-size: 22px;
   }
 `;
 
-export const Logo = styled.img`margin-top: 6px;`;
+export const Logo = styled.img`margin-top: 8px;`;

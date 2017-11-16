@@ -6,11 +6,11 @@ import ReactMap from "google-map-react";
 const Wrapper = styled.div`
   display: none;
   position: fixed;
-  width: 36%;
+  width: 38%;
   height: 82vh;
   top: 133px;
-  left: calc((100% - 962px + 16px) / 2);
-  margin-left: calc((992px / 3) * 2);
+  left: 24vw;
+  margin-left: 520px;
 
   @media (min-width: 992px) {
     display: block;

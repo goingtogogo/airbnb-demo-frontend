@@ -9,7 +9,7 @@ const Card = styled(Link)`
   margin-right: 16px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
-  box-shadow: 0px 0px 2px rgba(72, 72, 72, 0.08);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ const Card = styled(Link)`
     align-items: center;
   }
   @media (min-width: 992px) {
-    flex-basis: 31.5%;
+    flex-basis: 32%;
     margin-right: 0;
   }
 `;

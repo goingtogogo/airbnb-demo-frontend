@@ -23,7 +23,7 @@ export default function(props) {
           </Burger>
           <Form>
             <SearchIcon type="submit" />
-            <Search type="search" placeholder="Try Miami" />
+            <Search type="search" placeholder="Try &quot;Miami&quot;" />
           </Form>
         </Left>
         <Nav>

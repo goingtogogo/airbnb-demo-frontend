@@ -3,12 +3,13 @@ import arrowdown from "./arrow-down.png";
 
 export const Footer = styled.footer`
   width: 100%;
-  padding-top: 48px;
+  padding-top: 16px;
   margin-top: 40px;
-  box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
+  border-top: 1px solid #dbdbdb;
   line-height: 24px;
   @media (min-width: 768px) {
-    margin-top: 64px;
+    margin-top: 50px;
+    padding-top: 48px;
   }
 `;
 
@@ -33,7 +34,7 @@ export const Settings = styled.div`
   flex-basis: 100%;
 
   @media (min-width: 768px) {
-    flex-basis: 23.3%;
+    flex-basis: 24%;
     display: block;
   }
 `;
@@ -60,6 +61,7 @@ export const DropDown = styled.select`
   text-indent: 0.01px;
   text-overflow: "";
   appearance: none;
+  background-color: #fff;
   background-image: url(${arrowdown});
   background-position: 93% center;
   background-repeat: no-repeat;
@@ -92,12 +94,13 @@ export const Lists = styled.div`
     flex-basis: 66%;
   }
   @media (min-width: 992px) {
-    flex-basis: 65%;
+    flex-basis: 66%;
+    margin-bottom: 34px;
   }
 `;
 
 export const Link = styled.a`
-  margin-bottom: 11px;
+  margin-bottom: 10px;
   text-decoration: none;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
@@ -105,7 +108,6 @@ export const Link = styled.a`
   color: #636363;
 
   @media (min-width: 768px) {
-    margin-bottom: 8px;
     font-size: 15px;
     line-height: 18px;
   }
@@ -113,6 +115,13 @@ export const Link = styled.a`
 export const List = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-basis: 20%;
+  }
+  @media (min-width: 992px) {
+    flex-basis: 23%;
+  }
 `;
 
 export const Title = styled.h3`
