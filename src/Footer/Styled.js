@@ -6,7 +6,6 @@ export const Footer = styled.footer`
   padding-top: 48px;
   box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
   line-height: 24px;
-  margin-top: 104px;
 `;
 
 export const Wrapper = styled.div`

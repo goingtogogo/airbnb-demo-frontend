@@ -19,10 +19,14 @@ export const SectionTitle = styled.h2`
 `;
 export const CardWrap = styled.div`
   flex-basis: 64%;
+  flex-grow: 0;
+  flex-shrink: 0;
   margin-right: 16px;
 
   @media (min-width: 768px) {
-    flex-basis: 48.4%;
+    flex-basis: 40%;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 
   @media (min-width: 992px) {
