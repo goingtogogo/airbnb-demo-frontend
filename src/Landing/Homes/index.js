@@ -40,7 +40,7 @@ export default function() {
     <section>
       <Preview>
         <SectionTitle>Homes</SectionTitle>
-        <SeeAll href="/homes">See all</SeeAll>
+        <SeeAll to="/homes">See all</SeeAll>
       </Preview>
       <List>
         <CardWrap>

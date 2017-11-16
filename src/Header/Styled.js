@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import styled from "styled-components";
 import arrowdown from "./arrow-down.png";
 import searchicon from "./search.svg";
@@ -57,7 +59,7 @@ export const Link = styled.a`
   color: #383838;
 `;
 
-export const Burger = styled.a`
+export const Burger = styled(NavLink)`
   width: 48px;
   margin-right: 16px;
   background-image: url(${arrowdown});

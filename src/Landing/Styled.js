@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import scroll from "./scroll.png";
 import arrowright from "./arrow-right.png";
@@ -49,7 +51,7 @@ export const Scroll = styled.a`
   }
 `;
 
-export const SeeAll = styled.a`
+export const SeeAll = styled(Link)`
   text-decoration: none;
   font-size: 12px;
   line-height: 24px;

@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Card = styled.a`
+const Card = styled(Link)`
   flex-basis: 46.7%;
   flex-grow: 0;
   flex-shrink: 0;
@@ -51,7 +52,7 @@ const Title = styled.h3`
 `;
 export default function(props) {
   return (
-    <Card href={props.href}>
+    <Card to={props.to}>
       <Img src={props.image} alt="Home" />
       <Title>{props.title}</Title>
     </Card>

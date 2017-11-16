@@ -18,7 +18,7 @@ export default function(props) {
     <Header className={props.className}>
       <Wrapper>
         <Left>
-          <Burger href="/">
+          <Burger to="/">
             <Logo src={logo} alt="logo" />
           </Burger>
           <Form>
@@ -27,10 +27,10 @@ export default function(props) {
           </Form>
         </Left>
         <Nav>
-          <Link href="/host">Become a host</Link>
-          <Link href="/help">Help</Link>
-          <Link href="/signup">Sign Up</Link>
-          <Link href="/signin">Sign In</Link>
+          <Link to="/">Become a host</Link>
+          <Link to="/">Help</Link>
+          <Link to="/">Sign Up</Link>
+          <Link to="/">Sign In</Link>
         </Nav>
       </Wrapper>
     </Header>
