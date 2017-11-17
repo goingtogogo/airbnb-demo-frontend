@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import Filter from "./Filter";
+import Dates from "./Dates";
+
 const Filters = styled.div`
   position: fixed;
   top: 76px;
@@ -10,25 +13,14 @@ const Filters = styled.div`
   box-shadow: rgba(0, 0, 0, 0.117188) 0 1px 1px,
     rgba(255, 255, 255, 0.167969) 0 1px 0;
 `;
-const Filter = styled.button`
-  margin: 16px 12px 14px 0;
-  padding: 6px 16px;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  border-radius: 4px;
-  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 16px;
-  color: #383838;
-  background-color: #fff;
-  cursor: pointer;
-`;
+
 const DesktopFilters = styled.div`
   display: none;
   @media (min-width: 992px) {
     display: inline-block;
   }
 `;
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   max-width: 304px;
   padding: 0 8px;
   margin: 0 auto;
@@ -41,18 +33,20 @@ export const Wrapper = styled.div`
   }
 `;
 
-export default function() {
+export default function(props) {
   return (
     <Filters>
       <Wrapper>
-        <Filter>Dates</Filter>
-        <Filter>Guests</Filter>
+        <Filter title="Dates">
+          <Dates />
+        </Filter>
+        <Filter title="Guests">Guests</Filter>
         <DesktopFilters>
-          <Filter>Room Type</Filter>
-          <Filter>Price</Filter>
-          <Filter>Instant book</Filter>
+          <Filter title="Room Type">Room Type</Filter>
+          <Filter title="Price">Price</Filter>
+          <Filter title="Instant book">Instant book</Filter>
         </DesktopFilters>
-        <Filter>More filters</Filter>
+        <Filter title="More filters">More filters</Filter>
       </Wrapper>
     </Filters>
   );
