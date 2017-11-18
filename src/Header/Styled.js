@@ -58,7 +58,7 @@ export const Link = styled.a`
   color: #383838;
 `;
 
-export const Burger = styled(NavLink)`
+export const Logo = styled(NavLink)`
   width: 48px;
   margin-right: 16px;
   background-image: url(${arrowdown});
@@ -107,4 +107,4 @@ export const SearchIcon = styled.button`
   }
 `;
 
-export const Logo = styled.img`margin-top: 8px;`;
+export const Img = styled.img`margin-top: 8px;`;

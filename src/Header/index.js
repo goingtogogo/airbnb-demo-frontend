@@ -9,7 +9,7 @@ import {
   SearchIcon,
   Nav,
   Link,
-  Burger
+  Img
 } from "./Styled";
 import logo from "./logo.svg";
 
@@ -18,9 +18,9 @@ export default function(props) {
     <Header className={props.className}>
       <Wrapper>
         <Left>
-          <Burger to="/">
-            <Logo src={logo} alt="logo" />
-          </Burger>
+          <Logo to="/">
+            <Img src={logo} alt="logo" />
+          </Logo>
           <Form>
             <SearchIcon type="submit" />
             <Search type="search" placeholder="Try &quot;Miami&quot;" />

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import PopUp from "./PopUp";
 
-const Wrapper = styled.span``;
+const Wrapper = styled.div`display: inline-block;`;
 const Button = styled.button`
   margin: 16px 12px 14px 0;
   padding: 6px 16px;

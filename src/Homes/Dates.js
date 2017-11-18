@@ -29,9 +29,11 @@ const Mobile = styled.div`
     display: none;
   }
 `;
-const Close = styled.a`
+const Close = styled.button`
   width: 16px;
   height: 16px;
+  border: none;
+  background-color: #fff;
   background-image: url(${close});
   background-repeat: no-repeat;
   background-size: cover;
