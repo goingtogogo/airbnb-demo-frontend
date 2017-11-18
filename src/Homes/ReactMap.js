@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: none;
   position: fixed;
   width: 38%;
-  height: 82vh;
+  height: 79.5vh;
   top: 133px;
   left: 24vw;
   margin-left: 520px;

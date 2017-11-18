@@ -22,20 +22,24 @@ const Wrapper = styled.div`
   }
 `;
 const Cancel = styled.button`
+  padding: 16px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #636363;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;
 const Apply = styled.button`
+  padding: 16px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #0f7276;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;
 const Footer = styled.footer`
-  padding: 0 26px;
-  padding-bottom: 32px;
+  padding: 0 10px;
+  padding-bottom: 16px;
   display: flex;
   justify-content: space-between;
   font-size: 16px;
