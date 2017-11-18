@@ -3,11 +3,13 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 100%;
-  position: absolute;
-  top: 0;
+  height: 100%;
+  padding: 0 8px;
+  position: fixed;
+  top: 0px;
   left: 0;
   visibility: ${props => (props.isOpen ? "visible" : "hidden")};
-  z-index: 999;
+  z-index: 2;
   flex-direction: column;
   padding: 0;
   background-color: #fff;
@@ -16,10 +18,11 @@ const Wrapper = styled.div`
   @media (min-width: 768px) {
     margin: 0 auto;
     padding-top: 18px;
-    top: 56px;
+    top: 132px;
     left: auto;
     display: block;
     width: auto;
+    height: auto;
     box-shadow: 0 14px 36px 2px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;

@@ -7,8 +7,8 @@ import Dates from "./Dates";
 
 const Wrapper = styled.div`display: inline-block;`;
 const Button = styled.button`
-  margin: 16px 12px 14px 0;
-  padding: 6px 16px;
+  margin: 10px 10px 12px 0;
+  padding: 7px 16px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
@@ -34,7 +34,7 @@ export default class extends React.Component {
       if (this.state.isOpen) {
         this.setState({ title: "Dates" });
       } else {
-        this.setState({ title: "Check in-Check out" });
+        this.setState({ title: "Check in — Check out" });
       }
     }
   };
@@ -43,7 +43,7 @@ export default class extends React.Component {
     this.setState({
       title:
         start.format("MMM DD") +
-        " - " +
+        " — " +
         (end
           ? end
           : moment(start.format("MMM DD"), "MMM DD").add("days", 1)

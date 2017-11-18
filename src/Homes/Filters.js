@@ -5,12 +5,16 @@ import Filter from "./Filter";
 
 const Filters = styled.div`
   position: fixed;
-  top: 76px;
-  z-index: 1;
+  top: 79px;
+  z-index: 2;
   background-color: #fff;
   width: 100%;
+  border-top: 1px solid #e4e4e4;
   box-shadow: rgba(0, 0, 0, 0.117188) 0 1px 1px,
     rgba(255, 255, 255, 0.167969) 0 1px 0;
+  @media (min-width: 992px) {
+    display: inline-block;
+  }
 `;
 
 const DesktopFilters = styled.div`

@@ -10,7 +10,6 @@
 .DayPickerKeyboardShortcuts_show__topRight {
   display: none;
 }
-
 .CalendarMonth_table {
   margin-top: 10px;
 }
@@ -28,4 +27,10 @@
 .CalendarDay__blocked_calendar .CalendarDay_button {
   color: #cbcbcb;
   background-color: #fff;
+}
+.Calendarmonth_caption .Calendarmonth_caption_1 {
+  font-size: 18px;
+  line-height: 21px;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
+  color: #383838;
 }

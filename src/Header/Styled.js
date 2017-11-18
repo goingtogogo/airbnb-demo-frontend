@@ -94,7 +94,7 @@ export const SearchIcon = styled.button`
   border: none;
   width: 22px;
   height: 22px;
-  top: 18px;
+  top: 12px;
   left: 4%;
   background-color: transparent;
   background-image: url(${searchicon});
@@ -102,7 +102,6 @@ export const SearchIcon = styled.button`
   background-size: 16px;
 
   @media (min-width: 768px) {
-    top: 12px;
     background-size: 22px;
   }
 `;
