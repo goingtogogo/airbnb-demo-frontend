@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import Filter from "./Filter";
-import Dates from "./Dates";
 
 const Filters = styled.div`
   position: fixed;
