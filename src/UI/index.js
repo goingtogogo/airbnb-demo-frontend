@@ -20,6 +20,7 @@ export const Price = styled.span`
   line-height: 15px;
   color: #383838;
   @media (min-width: 768px) {
+    display: inline;
     font-size: 15px;
     line-height: 18px;
   }
