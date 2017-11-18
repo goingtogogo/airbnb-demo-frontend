@@ -2,20 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  z-index: 100;
-  position: fixed;
-  top: -50px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   visibility: ${props => (props.isOpen ? "visible" : "hidden")};
+  z-index: 999;
   flex-direction: column;
-  margin: 0 auto;
-  padding-top: 18px;
+  padding: 0;
   background-color: #fff;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
   @media (min-width: 768px) {
-    position: absolute;
+    margin: 0 auto;
+    padding-top: 18px;
     top: 56px;
+    left: auto;
     display: block;
+    width: auto;
     box-shadow: 0 14px 36px 2px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;

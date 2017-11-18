@@ -37,9 +37,7 @@ export default function() {
   return (
     <Filters>
       <Wrapper>
-        <Filter title="Dates">
-          <Dates />
-        </Filter>
+        <Filter title="Dates" isDateComponent />
         <Filter title="Guests" />
         <DesktopFilters>
           <Filter title="Room Type" />

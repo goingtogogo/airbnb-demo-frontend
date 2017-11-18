@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import moment from "moment";
 import PopUp from "./PopUp";
+import Dates from "./Dates";
 
 const Wrapper = styled.div`display: inline-block;`;
 const Button = styled.button`
@@ -20,20 +22,51 @@ const Button = styled.button`
 
 export default class extends React.Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    title: null
   };
+
   handleClick = () => {
     this.setState(prevState => ({ isOpen: !prevState.isOpen }));
+
+    if (this.props.isDateComponent) {
+      //for Dates logic
+      if (this.state.isOpen) {
+        this.setState({ title: "Dates" });
+      } else {
+        this.setState({ title: "Check in-Check out" });
+      }
+    }
+  };
+
+  selectDates = (start, end) => {
+    this.setState({
+      title:
+        start.format("MMM DD") +
+        " - " +
+        (end
+          ? end
+          : moment(start.format("MMM DD"), "MMM DD").add("days", 1)
+        ).format("MMM DD")
+    });
   };
 
   render() {
+    if (this.state.title === null) {
+      this.setState({ title: this.props.title });
+    }
+
     return (
       <Wrapper>
         <Button onClick={this.handleClick} isOpen={this.state.isOpen}>
-          {this.props.title}
+          {this.state.title}
         </Button>
         <PopUp isOpen={this.state.isOpen} toClose={this.handleClick}>
-          {this.props.children}
+          {this.props.isDateComponent ? (
+            <Dates dateChanged={this.selectDates} />
+          ) : (
+            this.props.children
+          )}
         </PopUp>
       </Wrapper>
     );
