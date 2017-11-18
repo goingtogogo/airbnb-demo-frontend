@@ -33,29 +33,21 @@ const Wrapper = styled.div`
   }
 `;
 
-export default class extends React.Component {
-  changeTitle = (startDate, endDate) => {
-    console.log("DATEEEEES", startDate, endDate);
-    console.log(this.props.title);
-    this.title = { startDate };
-  };
-
-  render() {
-    return (
-      <Filters>
-        <Wrapper>
-          <Filter title="Dates">
-            <Dates dateChanged={this.changeTitle} />
-          </Filter>
-          <Filter title="Guests" />
-          <DesktopFilters>
-            <Filter title="Room Type" />
-            <Filter title="Price" />
-            <Filter title="Instant book" />
-          </DesktopFilters>
-          <Filter title="More filters" />
-        </Wrapper>
-      </Filters>
-    );
-  }
+export default function() {
+  return (
+    <Filters>
+      <Wrapper>
+        <Filter title="Dates">
+          <Dates />
+        </Filter>
+        <Filter title="Guests" />
+        <DesktopFilters>
+          <Filter title="Room Type" />
+          <Filter title="Price" />
+          <Filter title="Instant book" />
+        </DesktopFilters>
+        <Filter title="More filters" />
+      </Wrapper>
+    </Filters>
+  );
 }
