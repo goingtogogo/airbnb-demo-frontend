@@ -86,9 +86,6 @@ export default class extends React.Component {
     this.props.dateChanged(startDate, endDate);
   };
 
-  onClick = () => {
-    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
-  };
   render() {
     return (
       <div>
