@@ -2,17 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  z-index: 100;
+  position: fixed;
+  top: -50px;
   visibility: ${props => (props.isOpen ? "visible" : "hidden")};
   flex-direction: column;
-  position: absolute;
-  top: 52px;
   margin: 0 auto;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 14px 36px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  padding-top: 18px;
   background-color: #fff;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 56px;
+    display: block;
+    box-shadow: 0 14px 36px 2px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
 `;
 const Cancel = styled.button`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
@@ -27,6 +34,8 @@ const Apply = styled.button`
   border: none;
 `;
 const Footer = styled.footer`
+  padding: 0 26px;
+  padding-bottom: 32px;
   display: flex;
   justify-content: space-between;
   font-size: 16px;

@@ -40,13 +40,13 @@ export default function(props) {
         <Filter title="Dates">
           <Dates />
         </Filter>
-        <Filter title="Guests">Guests</Filter>
+        <Filter title="Guests" />
         <DesktopFilters>
-          <Filter title="Room Type">Room Type</Filter>
-          <Filter title="Price">Price</Filter>
-          <Filter title="Instant book">Instant book</Filter>
+          <Filter title="Room Type" />
+          <Filter title="Price" />
+          <Filter title="Instant book" />
         </DesktopFilters>
-        <Filter title="More filters">More filters</Filter>
+        <Filter title="More filters" />
       </Wrapper>
     </Filters>
   );
