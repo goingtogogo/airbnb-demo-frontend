@@ -20,14 +20,16 @@ const Button = styled.button`
   cursor: pointer;
 `;
 export const formatDatesLabel = (start, end) => {
-  return (
-    start.format("MMM DD") +
-    " — " +
-    (end
-      ? end
-      : moment(start.format("MMM DD"), "MMM DD").add("days", 1)
-    ).format("MMM DD")
-  );
+  if (start && end)
+    return start.format("MMM DD") + " — " + end.format("MMM DD");
+  if (start && !end)
+    return (
+      start.format("MMM DD") +
+      " — " +
+      moment(start.format("MMM DD"), "MMM DD")
+        .add("days", 1)
+        .format("MMM DD")
+    );
 };
 export default class extends React.Component {
   state = {

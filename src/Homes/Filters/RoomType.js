@@ -34,7 +34,7 @@ const Checkbox = styled.div`
     background-image: url(${check});
     background-repeat: no-repeat;
     backroung-size: 60%;
-    visibility: ${props => (props.isChecked ? "visible" : "hidden")};
+    visibility: ${props => (props.isChecked ? "hidden" : "visible")};
   }
 `;
 const Title = styled.h3`
@@ -59,26 +59,24 @@ const Icon = styled.img`
 
 export default class extends React.Component {
   state = {
-    entire: false,
-    privat: false,
-    shared: false
+    rooms: ["entire", "privat", "shared"]
   };
   handleCheck = check => {
-    if (check === "entire") {
-      this.setState(prevState => ({ entire: !prevState.entire }));
-    } else if (check === "privat") {
-      this.setState(prevState => ({ privat: !prevState.privat }));
-    } else if (check === "shared") {
-      this.setState(prevState => ({ shared: !prevState.shared }));
+    let rooms = this.state.rooms;
+    let index = rooms.indexOf(check);
+    if (index !== -1) {
+      rooms.splice(index, 1);
+    } else {
+      rooms.push(check);
     }
+    this.setState({ rooms: rooms });
   };
   render() {
     return (
       <Room>
         <Type>
           <Checkbox
-            isChecked={this.state.entire && this.props.isOpen}
-            type="entire"
+            isChecked={this.state.rooms.includes("entire")}
             onClick={() => this.handleCheck("entire")}
           />
           <Title>
@@ -88,7 +86,7 @@ export default class extends React.Component {
         </Type>
         <Type>
           <Checkbox
-            isChecked={this.state.privat && this.props.isOpen}
+            isChecked={this.state.rooms.includes("privat")}
             onClick={() => this.handleCheck("privat")}
           />
           <Title>
@@ -100,7 +98,7 @@ export default class extends React.Component {
         </Type>
         <Type>
           <Checkbox
-            isChecked={this.state.shared && this.props.isOpen}
+            isChecked={this.state.rooms.includes("shared")}
             onClick={() => this.handleCheck("shared")}
           />
           <Title>
