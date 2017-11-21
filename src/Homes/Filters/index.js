@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
 import Filter from "./Filter";
+import RoomType from "./RoomType";
 
 const Filters = styled.div`
   position: fixed;
@@ -66,7 +67,13 @@ export default class extends React.Component {
               isOpen={
                 this.state.isOpen && this.state.openedFilter === "Room Type"
               }
-            />
+            >
+              <RoomType
+                isOpen={
+                  this.state.isOpen && this.state.openedFilter === "Room Type"
+                }
+              />
+            </Filter>
             <Filter
               title="Price"
               handleClick={this.handleClick}

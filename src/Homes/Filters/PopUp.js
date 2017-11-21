@@ -7,7 +7,6 @@ import close from "../UI/close.svg";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 0 8px;
   position: fixed;
   top: 0px;
   left: 0;
