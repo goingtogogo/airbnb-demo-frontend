@@ -6,7 +6,9 @@ import privat from "../UI/privat.svg";
 import shared from "../UI/shared.svg";
 import check from "../UI/check.svg";
 
-const Room = styled.div`padding: 4px 16px;`;
+const Room = styled.div`
+  padding: 4px 16px;
+`;
 
 const Type = styled.div`
   margin-bottom: 16px;
@@ -34,7 +36,7 @@ const Checkbox = styled.div`
     background-image: url(${check});
     background-repeat: no-repeat;
     backroung-size: 60%;
-    visibility: ${props => (props.isChecked ? "hidden" : "visible")};
+    visibility: ${props => (props.isChecked ? "visible" : "hidden")};
   }
 `;
 const Title = styled.h3`
@@ -59,17 +61,14 @@ const Icon = styled.img`
 
 export default class extends React.Component {
   state = {
-    rooms: ["entire", "privat", "shared"]
+    rooms: []
   };
   handleCheck = check => {
-    let rooms = this.state.rooms;
-    let index = rooms.indexOf(check);
-    if (index !== -1) {
-      rooms.splice(index, 1);
+    if ([...this.state.rooms].filter(x => x === check).length > 0) {
+      this.setState({ rooms: [...this.state.rooms].filter(x => x !== check) });
     } else {
-      rooms.push(check);
+      this.setState({ rooms: [...this.state.rooms, check] });
     }
-    this.setState({ rooms: rooms });
   };
   render() {
     return (

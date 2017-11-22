@@ -4,7 +4,9 @@ import styled from "styled-components";
 import plus from "../UI/counter-plus.svg";
 import minus from "../UI/counter-minus.svg";
 
-const Guests = styled.div`padding: 10px 14px;`;
+const Guests = styled.div`
+  padding: 10px 14px;
+`;
 
 const Type = styled.div`
   margin-bottom: 10px;
@@ -65,17 +67,19 @@ const Counter = styled.span`
 `;
 
 export default class extends React.Component {
-  state = { count: 0 };
-  onClick() {
-    this.setState({ count: this.state.count + 1 });
-  }
+  state = {
+    guests: [1, 0, 0]
+  };
+  handleCount = count => {
+    this.setState({ guests: [...this.state.rooms, count + 1] });
+  };
   render() {
     return (
       <Guests>
         <Type>
           <Title>Adults</Title>
-          <Minus onClick={this.onClick.bind(this)} />
-          <Counter>{this.state.count}</Counter>
+          <Minus onClick={() => this.handleCount(0)} />
+          <Counter>{this.state.guests[0]}</Counter>
           <Plus />
         </Type>
         <Type>
@@ -83,7 +87,7 @@ export default class extends React.Component {
             Children<Subtitle>Ages 2 — 12</Subtitle>
           </Title>
           <Minus />
-          <Counter>{this.state.count}</Counter>
+          <Counter>{this.state.guests[1]}</Counter>
           <Plus />
         </Type>
         <Type>
@@ -91,7 +95,7 @@ export default class extends React.Component {
             Infants<Subtitle>Under 2</Subtitle>
           </Title>
           <Minus />
-          <Counter>{this.state.count}</Counter>
+          <Counter>{this.state.guests[2]}</Counter>
           <Plus />
         </Type>
       </Guests>
