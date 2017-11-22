@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
-import "./react_dates_overrides.css";
+import "../UI/react_dates_overrides.css";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { DayPickerRangeController } from "react-dates";

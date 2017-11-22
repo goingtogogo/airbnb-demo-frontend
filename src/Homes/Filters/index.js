@@ -4,6 +4,9 @@ import MediaQuery from "react-responsive";
 
 import Filter from "./Filter";
 import RoomType from "./RoomType";
+import Guests from "./Guests";
+import Instant from "./InstantBook";
+import Price from "./Price";
 
 const Filters = styled.div`
   position: fixed;
@@ -59,7 +62,9 @@ export default class extends React.Component {
             title="Guests"
             isOpen={this.state.isOpen && this.state.openedFilter === "Guests"}
             handleClick={this.handleClick}
-          />
+          >
+            <Guests />
+          </Filter>
           <MediaQuery minWidth={992}>
             <Filter
               title="Room Type"
@@ -78,14 +83,27 @@ export default class extends React.Component {
               title="Price"
               handleClick={this.handleClick}
               isOpen={this.state.isOpen && this.state.openedFilter === "Price"}
-            />
+            >
+              <Price
+                isOpen={
+                  this.state.isOpen && this.state.openedFilter === "Price"
+                }
+              />
+            </Filter>
             <Filter
               title="Instant book"
               handleClick={this.handleClick}
               isOpen={
                 this.state.isOpen && this.state.openedFilter === "Instant book"
               }
-            />
+            >
+              <Instant
+                isOpen={
+                  this.state.isOpen &&
+                  this.state.openedFilter === "Instant book"
+                }
+              />
+            </Filter>
           </MediaQuery>
           <Filter
             title="More filters"
