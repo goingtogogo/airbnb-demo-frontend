@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import moment from "moment";
 
 import PopUp from "./PopUp";
 import Dates from "./Dates";
