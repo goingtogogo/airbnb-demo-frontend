@@ -75,7 +75,7 @@ export default class extends React.Component {
       <Room>
         <Type>
           <Checkbox
-            isChecked={this.state.rooms.includes("entire")}
+            isChecked={this.state.rooms.includes("entire") && this.props.isOpen}
             onClick={() => this.handleCheck("entire")}
           />
           <Title>
@@ -85,7 +85,7 @@ export default class extends React.Component {
         </Type>
         <Type>
           <Checkbox
-            isChecked={this.state.rooms.includes("privat")}
+            isChecked={this.state.rooms.includes("privat") && this.props.isOpen}
             onClick={() => this.handleCheck("privat")}
           />
           <Title>
@@ -97,7 +97,7 @@ export default class extends React.Component {
         </Type>
         <Type>
           <Checkbox
-            isChecked={this.state.rooms.includes("shared")}
+            isChecked={this.state.rooms.includes("shared") && this.props.isOpen}
             onClick={() => this.handleCheck("shared")}
           />
           <Title>
