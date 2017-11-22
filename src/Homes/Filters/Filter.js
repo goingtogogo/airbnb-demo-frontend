@@ -5,7 +5,9 @@ import moment from "moment";
 import PopUp from "./PopUp";
 import Dates from "./Dates";
 
-const Wrapper = styled.div`display: inline-block;`;
+const Wrapper = styled.div`
+  display: inline-block;
+`;
 const Button = styled.button`
   margin: 10px 10px 12px 0;
   padding: 7px 16px;
@@ -20,17 +22,12 @@ const Button = styled.button`
   cursor: pointer;
 `;
 export const formatDatesLabel = (start, end) => {
-  if (start && end)
-    return start.format("MMM DD") + " — " + end.format("MMM DD");
-  if (start && !end)
-    return (
-      start.format("MMM DD") +
-      " — " +
-      moment(start.format("MMM DD"), "MMM DD")
-        .add("days", 1)
-        .format("MMM DD")
-    );
+  if (!start) return "Check in — Check out";
+  const formatDateStart = start.format("MMM DD");
+  if (start && end) return `${formatDateStart}  —  ${end.format("MMM DD")}`;
+  if (start && !end) return `${formatDateStart}  —   Check out`;
 };
+
 export default class extends React.Component {
   state = {
     title: null
