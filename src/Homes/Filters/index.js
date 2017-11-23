@@ -3,15 +3,18 @@ import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
 import Filter from "./Filter";
+import More from "./More";
 import Dates from "./Dates";
 import RoomType from "./RoomType";
 import Guests from "./Guests";
 import Instant from "./InstantBook";
 import Price from "./Price";
+import MoreFilters from "./MoreFilters";
 
 const Filters = styled.div`
   position: fixed;
   top: 79px;
+  left: 0;
   z-index: 2;
   background-color: #fff;
   width: 100%;
@@ -53,10 +56,13 @@ export default class extends React.Component {
     dates: {
       startDate: null,
       endDate: null
-    }
+    },
+    beds: [0, 0, 0],
+    superhost: false,
+    amenities: [],
+    facilities: []
   };
   handleClick = title => {
-    console.log(title, this.state.isOpen);
     if (title === this.state.openedFilter || !this.state.isOpen) {
       this.setState(prevState => ({ isOpen: !prevState.isOpen }));
     }
@@ -86,6 +92,19 @@ export default class extends React.Component {
   };
   onDatesChange = (start, end) => {
     this.setState({ dates: { startDate: start, endDate: end } });
+  };
+  onBedsChange = beds => {
+    this.setState({ beds: beds });
+  };
+  onSuperhostChange = superhost => {
+    this.setState({ superhost: superhost });
+  };
+  onAmenitiesChange = amenities => {
+    this.setState({ amenities: amenities });
+  };
+
+  onFacilitiesChange = facilities => {
+    this.setState({ facilities: facilities });
   };
 
   render() {
@@ -172,14 +191,29 @@ export default class extends React.Component {
               />
             </Filter>
           </MediaQuery>
-          <Filter
+          <More
             title="More filters"
+            type="More filters"
             handleClick={this.handleClick}
             handleCancel={this.handleCancel}
             isOpen={
               this.state.isOpen && this.state.openedFilter === "More filters"
             }
-          />
+          >
+            <MoreFilters
+              isOpen={
+                this.state.isOpen && this.state.openedFilter === "More filters"
+              }
+              onBedsChange={this.onBedsChange}
+              onSuperhostChange={this.onSuperhostChange}
+              onAmenitiesChange={this.onAmenitiesChange}
+              onFacilitiesChange={this.onFacilitiesChange}
+              beds={this.state.beds}
+              superhost={this.state.superhost}
+              amenities={this.state.amenities}
+              facilities={this.state.facilities}
+            />
+          </More>
         </Wrapper>
       </Filters>
     );
