@@ -63,7 +63,7 @@ const Pin = styled.a`
   }
 `;
 
-export default function(props) {
+export default function() {
   return (
     <Content>
       <CardWrap>

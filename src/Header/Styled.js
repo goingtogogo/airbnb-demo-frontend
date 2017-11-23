@@ -56,6 +56,7 @@ export const Link = styled.a`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   color: #383838;
+  cursor: pointer;
 `;
 
 export const Logo = styled(NavLink)`
@@ -106,4 +107,6 @@ export const SearchIcon = styled.button`
   }
 `;
 
-export const Img = styled.img`margin-top: 8px;`;
+export const Img = styled.img`
+  margin-top: 8px;
+`;

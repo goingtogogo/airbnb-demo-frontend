@@ -4,10 +4,10 @@ import "./App.css";
 import "normalize.css";
 
 import Header from "./Header/";
-import Footer from "./Footer/";
 
 import Landing from "./Landing";
 import Homes from "./Homes";
+import Room from "./Homes/Room";
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
           <Header />
           <Route path="/" exact component={Landing} />{" "}
           <Route path="/homes" exact component={Homes} />
-          <Route path="/" exact component={Footer} /> {" "}
+          <Route path="/homes/cabana" exact component={Room} />{" "}
         </div>
       </BrowserRouter>
     );
