@@ -7,7 +7,7 @@ import twitter from "./twitter.svg";
 import facebook from "./facebook.svg";
 
 const Bottom = Wrapper.extend`
-  border-top: 1px solid rgba(72, 72, 72, 0.08);
+  border-top: 1px solid #dbdbdb;
   flex-direction: column;
   align-items: flex-start;
 
@@ -37,7 +37,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   @media (min-width: 768px) {
-    padding: 34px 0;
+    padding: 32px 0;
     flex-basis: 36.2%;
   }
   @media (min-width: 992px) {
@@ -57,7 +57,7 @@ const Link = styled.a`
 `;
 const Copyright = styled.h3`
   margin-top: 34px;
-  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 14px;
   color: #636363;
@@ -86,7 +86,7 @@ export default function(props) {
     <Bottom>
       <Left>
         <Logo src={logo} alt="logo" />
-        <Copyright>© AirBnb inc.</Copyright>
+        <Copyright>© Airbnb Inc.</Copyright>
       </Left>
       <Nav>
         <Link href="/terms">Terms</Link>

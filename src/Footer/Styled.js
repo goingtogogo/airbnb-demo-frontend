@@ -3,17 +3,18 @@ import arrowdown from "./arrow-down.png";
 
 export const Footer = styled.footer`
   width: 100%;
-  padding-top: 48px;
-  box-shadow: 0px 0px 1px rgba(72, 72, 72, 0.3);
+  padding-top: 16px;
+  margin-top: 40px;
+  border-top: 1px solid #dbdbdb;
   line-height: 24px;
-
   @media (min-width: 768px) {
-    margin-top: 64px;
+    margin-top: 50px;
+    padding-top: 48px;
   }
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
+  max-width: 304px;
   padding: 0 8px;
   margin: 0 auto;
   display: flex;
@@ -33,7 +34,7 @@ export const Settings = styled.div`
   flex-basis: 100%;
 
   @media (min-width: 768px) {
-    flex-basis: 23.3%;
+    flex-basis: 24%;
     display: block;
   }
 `;
@@ -41,7 +42,7 @@ export const Settings = styled.div`
 export const Form = styled.form`
   margin-bottom: 16px;
   display: inline-block;
-  width: 46.9%;
+  width: 47%;
   position: relative;
 
   @media (min-width: 768px) {
@@ -50,7 +51,7 @@ export const Form = styled.form`
 `;
 export const DropDown = styled.select`
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 8px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
@@ -60,6 +61,7 @@ export const DropDown = styled.select`
   text-indent: 0.01px;
   text-overflow: "";
   appearance: none;
+  background-color: #fff;
   background-image: url(${arrowdown});
   background-position: 93% center;
   background-repeat: no-repeat;
@@ -76,6 +78,7 @@ export const DropDown = styled.select`
     background-size: 15px 8px;
   }
   @media (min-width: 992px) {
+    padding: 12px 16px;
     font-size: 18px;
     line-height: 21px;
   }
@@ -91,12 +94,13 @@ export const Lists = styled.div`
     flex-basis: 66%;
   }
   @media (min-width: 992px) {
-    flex-basis: 65%;
+    flex-basis: 66%;
+    margin-bottom: 34px;
   }
 `;
 
 export const Link = styled.a`
-  margin-bottom: 11px;
+  margin-bottom: 10px;
   text-decoration: none;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
@@ -104,7 +108,6 @@ export const Link = styled.a`
   color: #636363;
 
   @media (min-width: 768px) {
-    margin-bottom: 8px;
     font-size: 15px;
     line-height: 18px;
   }
@@ -112,6 +115,13 @@ export const Link = styled.a`
 export const List = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-basis: 20%;
+  }
+  @media (min-width: 992px) {
+    flex-basis: 23%;
+  }
 `;
 
 export const Title = styled.h3`

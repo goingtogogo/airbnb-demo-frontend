@@ -1,30 +1,25 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 import "normalize.css";
+
 import Header from "./Header/";
-import Explore from "./Explore/";
-import Experiences from "./Experiences/";
-import Homes from "./Homes/";
-import Popular from "./Popular/";
-import Featured from "./Featured/";
 import Footer from "./Footer/";
 
-import { Wrapper } from "./Styled";
+import Landing from "./Landing";
+import Homes from "./Homes";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Wrapper>
-          <Explore />
-          <Experiences />
-          <Homes />
-          <Popular />
-          <Featured />
-        </Wrapper>
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route path="/" exact component={Landing} />{" "}
+          <Route path="/homes" exact component={Homes} />
+          <Route path="/" exact component={Footer} /> {" "}
+        </div>
+      </BrowserRouter>
     );
   }
 }

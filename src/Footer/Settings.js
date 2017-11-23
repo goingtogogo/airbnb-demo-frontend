@@ -11,7 +11,7 @@ export default function(props) {
       </Form>
       <Form>
         <DropDown>
-          <option value="">United State Dollars</option>
+          <option value="">United States dollar</option>
         </DropDown>
       </Form>
     </Settings>

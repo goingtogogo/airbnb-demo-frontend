@@ -9,28 +9,28 @@ import {
   SearchIcon,
   Nav,
   Link,
-  Burger
+  Img
 } from "./Styled";
 import logo from "./logo.svg";
 
-export default function() {
+export default function(props) {
   return (
-    <Header>
+    <Header className={props.className}>
       <Wrapper>
         <Left>
-          <Burger href="">
-            <Logo src={logo} alt="logo" />
-          </Burger>
+          <Logo to="/">
+            <Img src={logo} alt="logo" />
+          </Logo>
           <Form>
             <SearchIcon type="submit" />
-            <Search type="search" placeholder="Try Miami" />
+            <Search type="search" placeholder="Try &quot;Miami&quot;" />
           </Form>
         </Left>
         <Nav>
-          <Link href="/host">Become a host</Link>
-          <Link href="/help">Help</Link>
-          <Link href="/signup">Sign Up</Link>
-          <Link href="/signin">Sign In</Link>
+          <Link to="/">Become a host</Link>
+          <Link to="/">Help</Link>
+          <Link to="/">Sign Up</Link>
+          <Link to="/">Sign In</Link>
         </Nav>
       </Wrapper>
     </Header>
