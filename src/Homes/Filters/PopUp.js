@@ -100,7 +100,7 @@ export default class extends React.Component {
         <Content>{this.props.children}</Content>
         <MediaQuery minWidth={768}>
           <Footer>
-            <Cancel onClick={this.props.toClose}>Cancel</Cancel>
+            <Cancel onClick={this.props.toCancel}>Cancel</Cancel>
             <Apply onClick={this.props.toClose}>Apply</Apply>
           </Footer>
         </MediaQuery>

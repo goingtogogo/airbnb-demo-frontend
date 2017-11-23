@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import PopUp from "./PopUp";
-import Dates from "./Dates";
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -20,43 +19,28 @@ const Button = styled.button`
   color: ${props => (props.isOpen ? "#fff" : "#383838")};
   cursor: pointer;
 `;
-export const formatDatesLabel = (start, end) => {
-  if (!start) return "Check in — Check out";
-  const formatDateStart = start.format("MMM DD");
-  if (start && end) return `${formatDateStart}  —  ${end.format("MMM DD")}`;
-  if (start && !end) return `${formatDateStart}  —   Check out`;
-};
 
 export default class extends React.Component {
-  state = {
-    title: null
+  handleClick = () => {
+    this.props.handleClick(this.props.type);
   };
 
-  selectDates = (start, end) => {
-    this.setState({
-      title: formatDatesLabel(start, end)
-    });
-  };
-  handleClick = () => {
-    this.props.handleClick(this.props.title);
+  handleCancelClick = () => {
+    this.props.handleCancel(this.props.type);
   };
 
   render() {
-    if (this.state.title === null) {
-      this.setState({ title: this.props.title });
-    }
-
     return (
       <Wrapper>
         <Button isOpen={this.props.isOpen} onClick={this.handleClick}>
-          {this.state.title}
+          {this.props.title}
         </Button>
-        <PopUp isOpen={this.props.isOpen} toClose={this.handleClick}>
-          {this.props.isDateComponent ? (
-            <Dates dateChanged={this.selectDates} />
-          ) : (
-            this.props.children
-          )}
+        <PopUp
+          isOpen={this.props.isOpen}
+          toClose={this.handleClick}
+          toCancel={this.handleCancelClick}
+        >
+          {this.props.children}
         </PopUp>
       </Wrapper>
     );

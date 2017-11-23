@@ -45,20 +45,19 @@ const Img = styled.img`
 `;
 
 export default class extends React.Component {
-  state = {
-    values: { min: this.props.min || 10, max: this.props.max || "1000+" }
-  };
-
   onValuesUpdated = sliderState => {
-    this.setState({
-      values: { min: sliderState.values[0], max: sliderState.values[1] }
+    this.props.onPricesChange({
+      min: sliderState.values[0],
+      max: sliderState.values[1]
     });
   };
   render() {
     return (
       <Price>
         <Title>
-          ${this.state.values.min} — ${this.state.values.max}
+          ${this.props.prices.min} — ${this.props.prices.max >= 1000
+            ? `${this.props.prices.max}+`
+            : this.props.prices.max}
         </Title>
         <Subtitle>The average nightly price is $75.</Subtitle>
         <Wrapper>
@@ -66,7 +65,7 @@ export default class extends React.Component {
           <Rheostat
             min={10}
             max={1000}
-            values={[10, 1000]}
+            values={[this.props.prices.min, this.props.prices.max]}
             onValuesUpdated={this.onValuesUpdated}
           />
         </Wrapper>

@@ -60,14 +60,11 @@ const Icon = styled.img`
 `;
 
 export default class extends React.Component {
-  state = {
-    rooms: []
-  };
   handleCheck = check => {
-    if ([...this.state.rooms].filter(x => x === check).length > 0) {
-      this.setState({ rooms: [...this.state.rooms].filter(x => x !== check) });
+    if ([...this.props.rooms].filter(x => x === check).length > 0) {
+      this.props.onRoomsChange([...this.props.rooms].filter(x => x !== check));
     } else {
-      this.setState({ rooms: [...this.state.rooms, check] });
+      this.props.onRoomsChange([...this.props.rooms, check]);
     }
   };
   render() {
@@ -75,7 +72,7 @@ export default class extends React.Component {
       <Room>
         <Type>
           <Checkbox
-            isChecked={this.state.rooms.includes("entire")}
+            isChecked={this.props.rooms.includes("entire") && this.props.isOpen}
             onClick={() => this.handleCheck("entire")}
           />
           <Title>
@@ -85,7 +82,7 @@ export default class extends React.Component {
         </Type>
         <Type>
           <Checkbox
-            isChecked={this.state.rooms.includes("privat")}
+            isChecked={this.props.rooms.includes("privat") && this.props.isOpen}
             onClick={() => this.handleCheck("privat")}
           />
           <Title>
@@ -97,7 +94,7 @@ export default class extends React.Component {
         </Type>
         <Type>
           <Checkbox
-            isChecked={this.state.rooms.includes("shared")}
+            isChecked={this.props.rooms.includes("shared") && this.props.isOpen}
             onClick={() => this.handleCheck("shared")}
           />
           <Title>
