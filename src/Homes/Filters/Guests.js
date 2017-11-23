@@ -67,36 +67,45 @@ const Counter = styled.span`
 `;
 
 export default class extends React.Component {
-  state = {
-    guests: [1, 0, 0]
+  decCount = index => {
+    if (this.props.guests[index] > 0)
+      this.props.onGuestsChange(
+        Object.assign([], this.props.guests, {
+          [index]: this.props.guests[index] - 1
+        })
+      );
   };
-  handleCount = count => {
-    this.setState({ guests: [...this.state.rooms, count + 1] });
+  incCount = index => {
+    this.props.onGuestsChange(
+      Object.assign([], this.props.guests, {
+        [index]: this.props.guests[index] + 1
+      })
+    );
   };
   render() {
     return (
       <Guests>
         <Type>
           <Title>Adults</Title>
-          <Minus onClick={() => this.handleCount(0)} />
-          <Counter>{this.state.guests[0]}</Counter>
-          <Plus />
+          <Minus onClick={() => this.decCount(0)} />
+          <Counter>{this.props.guests[0]}</Counter>
+          <Plus onClick={() => this.incCount(0)} />
         </Type>
         <Type>
           <Title>
             Children<Subtitle>Ages 2 — 12</Subtitle>
           </Title>
-          <Minus />
-          <Counter>{this.state.guests[1]}</Counter>
-          <Plus />
+          <Minus onClick={() => this.decCount(1)} />
+          <Counter>{this.props.guests[1]}</Counter>
+          <Plus onClick={() => this.incCount(1)} />
         </Type>
         <Type>
           <Title>
             Infants<Subtitle>Under 2</Subtitle>
           </Title>
-          <Minus />
-          <Counter>{this.state.guests[2]}</Counter>
-          <Plus />
+          <Minus onClick={() => this.decCount(2)} />
+          <Counter>{this.props.guests[2]}</Counter>
+          <Plus onClick={() => this.incCount(2)} />
         </Type>
       </Guests>
     );

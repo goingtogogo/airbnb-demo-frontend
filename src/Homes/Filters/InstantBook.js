@@ -38,10 +38,10 @@ const Switcher = styled.button`
   background-size: 100%;
 `;
 export default class extends React.Component {
-  state = { switcher: 0 };
   onSwitch = switcher => {
-    this.setState(prevState => ({ switcher: !prevState.switcher }));
+    this.props.onInstantChange(!this.props.instant);
   };
+
   render() {
     return (
       <Instant>
@@ -51,7 +51,7 @@ export default class extends React.Component {
             Listings you can book without waiting for host approval.
           </Subtitle>
         </Title>
-        <Switcher switcher={this.state.switcher} onClick={this.onSwitch} />
+        <Switcher switcher={this.props.instant} onClick={this.onSwitch} />
       </Instant>
     );
   }

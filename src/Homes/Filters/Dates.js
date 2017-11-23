@@ -43,10 +43,7 @@ const Title = styled.div`
 
 export default class extends React.Component {
   state = {
-    startDate: null,
-    endDate: null,
-    focusedInput: "startDate",
-    isOpen: false
+    focusedInput: "startDate"
   };
 
   onFocusChange = focusedInput => {
@@ -56,7 +53,6 @@ export default class extends React.Component {
   };
 
   onDatesChange = ({ startDate, endDate }) => {
-    this.setState({ startDate, endDate });
     this.props.dateChanged(startDate, endDate);
   };
 
@@ -65,8 +61,8 @@ export default class extends React.Component {
       <div>
         <MediaQuery minWidth={992}>
           <DayPickerRangeController
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
+            startDate={this.props.startDate}
+            endDate={this.props.endDate}
             onDatesChange={this.onDatesChange}
             onFocusChange={this.onFocusChange}
             focusedInput={this.state.focusedInput}
@@ -76,8 +72,8 @@ export default class extends React.Component {
         </MediaQuery>
         <MediaQuery minWidth={768} maxWidth={992}>
           <DayPickerRangeController
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
+            startDate={this.props.startDate}
+            endDate={this.props.endDate}
             onDatesChange={this.onDatesChange}
             onFocusChange={this.onFocusChange}
             focusedInput={this.state.focusedInput}
@@ -93,8 +89,8 @@ export default class extends React.Component {
             <Check>Check-out</Check>
           </Dates>
           <DayPickerRangeController
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
+            startDate={this.props.startDate}
+            endDate={this.props.endDate}
             onDatesChange={this.onDatesChange}
             onFocusChange={this.onFocusChange}
             focusedInput={this.state.focusedInput}
