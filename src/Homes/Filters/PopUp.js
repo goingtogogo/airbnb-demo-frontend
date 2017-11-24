@@ -93,15 +93,15 @@ export default class extends React.Component {
       <Wrapper isOpen={this.props.isOpen}>
         <MediaQuery maxWidth={767}>
           <Header>
-            <Close onClick={this.props.toClose} />
-            <Reset onClick={this.props.toClose}>Reset</Reset>
+            <Close onClick={this.props.onClose} />
+            <Reset onClick={this.props.onClose}>Reset</Reset>
           </Header>
         </MediaQuery>
         <Content>{this.props.children}</Content>
         <MediaQuery minWidth={768}>
           <Footer>
-            <Cancel onClick={this.props.toCancel}>Cancel</Cancel>
-            <Apply onClick={this.props.toClose}>Apply</Apply>
+            <Cancel onClick={this.props.onCancel}>Cancel</Cancel>
+            <Apply onClick={this.props.onClose}>Apply</Apply>
           </Footer>
         </MediaQuery>
       </Wrapper>

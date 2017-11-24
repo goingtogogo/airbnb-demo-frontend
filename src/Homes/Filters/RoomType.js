@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import entire from "../UI/entire.svg";
-import privat from "../UI/privat.svg";
+import separate from "../UI/separate.svg";
 import shared from "../UI/shared.svg";
 import check from "../UI/check.svg";
 
@@ -61,12 +61,15 @@ const Icon = styled.img`
 
 export default class extends React.Component {
   handleCheck = check => {
-    if ([...this.props.rooms].filter(x => x === check).length > 0) {
-      this.props.onRoomsChange([...this.props.rooms].filter(x => x !== check));
+    if (this.props.rooms.filter(x => x === check).length > 0) {
+      this.props.onRoomsChange({
+        rooms: this.props.rooms.filter(x => x !== check)
+      });
     } else {
-      this.props.onRoomsChange([...this.props.rooms, check]);
+      this.props.onRoomsChange({ rooms: [...this.props.rooms, check] });
     }
   };
+
   render() {
     return (
       <Room>
@@ -82,15 +85,17 @@ export default class extends React.Component {
         </Type>
         <Type>
           <Checkbox
-            isChecked={this.props.rooms.includes("privat") && this.props.isOpen}
-            onClick={() => this.handleCheck("privat")}
+            isChecked={
+              this.props.rooms.includes("separate") && this.props.isOpen
+            }
+            onClick={() => this.handleCheck("separate")}
           />
           <Title>
             Private room<Subtitle>
               Have your own room and share some common spaces
             </Subtitle>
           </Title>
-          <Icon src={privat} />
+          <Icon src={separate} />
         </Type>
         <Type>
           <Checkbox

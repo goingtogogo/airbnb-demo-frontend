@@ -70,19 +70,23 @@ const Counter = styled.span`
 export default class extends React.Component {
   decCount = index => {
     if (this.props.guests[index] > 0)
-      this.props.onGuestsChange(
-        Object.assign([], this.props.guests, {
+      this.props.onGuestsChange({
+        guests: Object.values({
+          ...this.props.guests,
           [index]: this.props.guests[index] - 1
         })
-      );
+      });
   };
+
   incCount = index => {
-    this.props.onGuestsChange(
-      Object.assign([], this.props.guests, {
+    this.props.onGuestsChange({
+      guests: Object.values({
+        ...this.props.guests,
         [index]: this.props.guests[index] + 1
       })
-    );
+    });
   };
+
   render() {
     return (
       <Guests>

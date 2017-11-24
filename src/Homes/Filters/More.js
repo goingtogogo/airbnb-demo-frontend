@@ -94,6 +94,7 @@ export default class extends React.Component {
   handleCancelClick = () => {
     this.props.handleCancel(this.props.type);
   };
+
   render() {
     return (
       <Wrapper isOpen={this.props.isOpen}>
@@ -102,8 +103,8 @@ export default class extends React.Component {
         </Button>
         <More
           isOpen={this.props.isOpen}
-          toClose={this.handleClick}
-          toCancel={this.handleCancelClick}
+          onClose={this.handleClick}
+          onCancel={this.handleCancelClick}
         >
           <Content>{this.props.children}</Content>
           <Footer>

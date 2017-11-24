@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import RoomType from "./RoomType";
+// import RoomType from "./RoomType";
 import check from "../UI/check.svg";
 import plus from "../UI/counter-plus.svg";
 import minus from "../UI/counter-minus.svg";
@@ -145,41 +145,47 @@ const Checkbox = styled.div`
 
 export default class extends React.Component {
   decCount = index => {
-    if (this.props.beds[index] > 0)
-      this.props.onBedsChange(
-        Object.assign([], this.props.beds, {
-          [index]: this.props.beds[index] - 1
-        })
-      );
+    this.props.onChange({
+      beds: Object.values({
+        ...this.props.beds,
+        [index]: this.props.beds[index] - 1
+      })
+    });
   };
+
   incCount = index => {
-    this.props.onBedsChange(
-      Object.assign([], this.props.beds, {
+    this.props.onChange({
+      beds: Object.values({
+        ...this.props.beds,
         [index]: this.props.beds[index] + 1
       })
-    );
+    });
   };
+
   onSwitch = switcher => {
-    this.props.onSuperhostChange(!this.props.superhost);
+    this.props.onChange({ superhost: !this.props.superhost });
   };
+
   handleAmenities = amenity => {
-    if ([...this.props.amenities].filter(x => x === amenity).length > 0) {
-      this.props.onAmenitiesChange(
-        [...this.props.amenities].filter(x => x !== amenity)
-      );
+    if (this.props.amenities.filter(x => x === amenity).length > 0) {
+      this.props.onChange({
+        amenities: this.props.amenities.filter(x => x !== amenity)
+      });
     } else {
-      this.props.onAmenitiesChange([...this.props.amenities, amenity]);
+      this.props.onChange({ amenities: [...this.props.amenities, amenity] });
     }
   };
+
   handleFacilities = facility => {
-    if ([...this.props.facilities].filter(x => x === facility).length > 0) {
-      this.props.onFacilitiesChange(
-        [...this.props.facilities].filter(x => x !== facility)
-      );
+    if (this.props.facilities.filter(x => x === facility).length > 0) {
+      this.props.onChange({
+        facility: this.props.facilities.filter(x => x !== facility)
+      });
     } else {
-      this.props.onFacilitiesChange([...this.props.facilities, facility]);
+      this.props.onChange({ facility: [...this.props.facilities, facility] });
     }
   };
+
   render() {
     return (
       <MoreFilters>
@@ -261,11 +267,11 @@ export default class extends React.Component {
           <Impovements>
             <Checkbox
               isChecked={
-                this.props.facilities.includes("elebator") && this.props.isOpen
+                this.props.facilities.includes("elevator") && this.props.isOpen
               }
-              onClick={() => this.handleFacilities("elebator")}
+              onClick={() => this.handleFacilities("elevator")}
             />
-            <Option>Elebator</Option>
+            <Option>Elevator</Option>
           </Impovements>
           <Impovements>
             <Checkbox

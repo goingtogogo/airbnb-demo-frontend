@@ -37,8 +37,8 @@ export default class extends React.Component {
         </Button>
         <PopUp
           isOpen={this.props.isOpen}
-          toClose={this.handleClick}
-          toCancel={this.handleCancelClick}
+          onClose={this.handleClick}
+          onCancel={this.handleCancelClick}
         >
           {this.props.children}
         </PopUp>

@@ -47,10 +47,13 @@ const Img = styled.img`
 export default class extends React.Component {
   onValuesUpdated = sliderState => {
     this.props.onPricesChange({
-      min: sliderState.values[0],
-      max: sliderState.values[1]
+      prices: {
+        min: sliderState.values[0],
+        max: sliderState.values[1]
+      }
     });
   };
+
   render() {
     return (
       <Price>

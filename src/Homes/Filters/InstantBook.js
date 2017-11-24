@@ -39,7 +39,7 @@ const Switcher = styled.button`
 `;
 export default class extends React.Component {
   onSwitch = switcher => {
-    this.props.onInstantChange(!this.props.instant);
+    this.props.onInstantChange({ instant: !this.props.instant });
   };
 
   render() {
