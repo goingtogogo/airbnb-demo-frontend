@@ -22,6 +22,18 @@ const More = styled.div`
     border-top: 1px solid rgba(0, 0, 0, 0.15);
     margin: 0 auto;
     padding-top: 18px;
+    padding-left: 8px;
+    height: 500px;
+    max-height: 900px;
+    width: 100%;
+    left: 0px;
+    top: 54px;
+    overflow-y: scroll;
+  }
+  @media (min-width: 992px) {
+    margin: 0 auto;
+    padding-top: 18px;
+    padding-left: 0;
     height: 500px;
     max-height: 900px;
     width: 658px;

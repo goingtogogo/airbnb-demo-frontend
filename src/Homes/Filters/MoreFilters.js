@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import RoomType from "./RoomType";
 import check from "../UI/check.svg";
 import plus from "../UI/counter-plus.svg";
 import minus from "../UI/counter-minus.svg";
@@ -182,6 +183,9 @@ export default class extends React.Component {
   render() {
     return (
       <MoreFilters>
+        {/* <MediaQuery minWidth={768} maxWidth={992}>
+          <RoomType />
+        </MediaQuery> */}
         <Beds>
           <Title>Rooms and beds</Title>
           <Type>
