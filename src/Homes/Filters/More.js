@@ -34,10 +34,10 @@ const More = styled.div`
     margin: 0 auto;
     padding-top: 18px;
     padding-left: 0;
-    height: 500px;
+    height: 590px;
     max-height: 900px;
     width: 658px;
-    left: 192px;
+    left: 12%;
     top: 54px;
     overflow-y: scroll;
   }
