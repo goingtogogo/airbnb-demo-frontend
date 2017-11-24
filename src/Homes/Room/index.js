@@ -1,6 +1,7 @@
 import React from "react";
 import { Wrapper } from "../../UI";
 
+import Nav from "./Nav";
 import Gallery from "./Gallery";
 import Overview from "./Overview";
 import Reviews from "./Reviews";
@@ -15,6 +16,7 @@ export default function() {
     <div>
       <Gallery />
       <Wrapper>
+        <Nav />
         <Overview />
         <Reviews />
         <Host />

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import styled from "styled-components";
 import arrowdown from "./arrow-down.png";
-import searchicon from "./search.svg";
+import searchicon from "../UI/search.svg";
 
 export const Header = styled.header`
   width: 100%;
@@ -32,7 +32,6 @@ export const Left = styled.div`
   flex-basis: 94.5%;
   display: flex;
   justify-content: space-between;
-
   @media (min-width: 768px) {
     flex-basis: 62%;
   }
@@ -43,7 +42,6 @@ export const Left = styled.div`
 
 export const Nav = styled.nav`
   display: none;
-
   @media (min-width: 992px) {
     flex-basis: 30%;
     display: flex;
@@ -101,7 +99,6 @@ export const SearchIcon = styled.button`
   background-image: url(${searchicon});
   background-repeat: no-repeat;
   background-size: 16px;
-
   @media (min-width: 768px) {
     background-size: 22px;
   }

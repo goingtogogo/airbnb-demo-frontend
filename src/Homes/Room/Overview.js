@@ -6,23 +6,34 @@ import bed from "../UI/bed.svg";
 import bathtub from "../UI/bathtub.svg";
 import door from "../UI/door.svg";
 import guest from "../UI/guest.svg";
+import wifi from "../UI/wifi.svg";
+import parking from "../UI/parking.svg";
+import family from "../UI/family.svg";
+import internet from "../UI/internet.svg";
 import arrowdown from "../UI/arrow-down.svg";
+import shield from "../UI/shield.svg";
 
 const Overview = styled.div`
+  width: 66%;
   color: #383838;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
-  line-height: 21px;
-  font-size: 18px;
+  line-height: 19px;
+  font-size: 16px;
 `;
 const Preview = styled.div`
-  width: 83%;
-  padding: 24px 0;
+  padding-bottom: 24px;
 `;
 const Title = styled.h3`
   margin: 4px 0;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 42px;
   font-size: 36px;
+`;
+const Caption = styled.h4`
+  margin: 0;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 19px;
+  font-size: 16px;
 `;
 const Subtitle = styled.span`
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
@@ -43,7 +54,11 @@ const Main = styled.div`
   display: flex;
 `;
 const Left = styled.div`
-  flex-basis: 65%;
+  flex-basis: 83%;
+`;
+const Side = styled.div`
+  width: 90%;
+  display: inline-block;
 `;
 
 const Photo = styled.img`
@@ -53,12 +68,11 @@ const Photo = styled.img`
 `;
 const Options = styled.div`
   margin-top: 50px;
-  width: 65%;
+  width: 76%;
   display: flex;
   justify-content: space-between;
 `;
 const Option = styled.span`
-margin-right:30px
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 16px;
   font-size: 14px;
@@ -68,8 +82,9 @@ margin-right:30px
 
 const Description = styled.p`
   margin-top: 32px;
-  margin-bottom: 24px;
-  width: 78%;
+  margin-bottom: 28px;
+  line-height: 21px;
+  font-size: 18px;
 `;
 const Contact = styled.a`
   display: block;
@@ -81,7 +96,7 @@ const Contact = styled.a`
 `;
 const ReadMore = Contact.extend`
   display: block;
-  margin-bottom: 23px;
+  margin-bottom: 32px;
   &:after {
     margin-left: 8px;
     width: 11px;
@@ -99,21 +114,50 @@ const Icon = styled.img`
   height: auto;
   margin-right: 13px;
 `;
+const Shield = Icon.extend`
+  width: 40px;
+`;
 const Amenities = styled.div`
-  padding: 24px 0;
+  padding-top: 20px;
   border-top: 1px solid #dbdbdb;
+`;
+const Properties = styled.div`
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+const Property = styled.div`
+  font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 19px;
+  font-size: 16px;
+  flex-basis: 50%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 `;
 const Hint = styled.div`
   padding: 24px 0;
   border-top: 1px solid #dbdbdb;
 `;
 const Rules = styled.div`
-  padding: 24px 0;
+  padding-top: 20px;
   border-top: 1px solid #dbdbdb;
 `;
 const Cancellations = styled.div`
-  padding: 24px 0;
+  padding: 20px 0;
   border-top: 1px solid #dbdbdb;
+`;
+const Hr = styled.hr`
+  max-width: 87px;
+  height: 1px;
+  margin: 4px 0 20px;
+  border: none;
+  color: #dbdbdb;
+  background-color: #dbdbdb;
+`;
+const Free = styled.p`
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  margin-bottom: 0;
 `;
 
 export default function() {
@@ -153,10 +197,54 @@ export default function() {
         <ReadMore>Read more about the space</ReadMore>
         <Contact>Contact host</Contact>
       </Preview>
-      <Amenities />
-      <Hint />
-      <Rules />
-      <Cancellations />
+      <Amenities>
+        <Caption>Amenities</Caption>
+        <Properties>
+          <Property>
+            <Icon src={internet} /> Internet
+          </Property>
+          <Property>
+            <Icon src={family} /> Family/kid friendly
+          </Property>
+          <Property>
+            <Icon src={wifi} /> Wireless Internet
+          </Property>
+          <Property>
+            <Icon src={parking} /> Free parking on premises
+          </Property>
+        </Properties>
+        <ReadMore>Show all amenities</ReadMore>
+      </Amenities>
+      <Hint>
+        <Caption>Always communicate through Airbnb</Caption>
+        <p>
+          To protect your payment, never transfer money or communicate outside
+          of the Airbnb website or app.
+        </p>
+        <Contact>Learn more</Contact>
+      </Hint>
+      <Rules>
+        <Caption>House rules</Caption>
+        <p>
+          Check-in is anytime after 1PM<br />
+          Check out by 11AM
+        </p>
+        <ReadMore>Read all rules</ReadMore>
+      </Rules>
+      <Cancellations>
+        <Caption>Cancellations</Caption>
+        <Side>
+          <Free>Free cancellation</Free>
+          <p>Cancel within 48 hours of booking to get a full refund.</p>
+        </Side>
+        <Shield src={shield} />
+        <Hr />
+        <p>Flexible</p>
+        <p>
+          Cancel up to 24 hours before check in and get a full refund (minus
+          service fees). Cancel within 24 hours of your trip and the firs…
+        </p>
+      </Cancellations>
     </Overview>
   );
 }
