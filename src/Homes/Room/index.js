@@ -4,8 +4,8 @@ import { Wrapper } from "../../UI";
 import Gallery from "./Gallery";
 import Overview from "./Overview";
 import Reviews from "./Reviews";
-import Owner from "./Owner";
-import ReactMap from "../ReactMap";
+import Host from "./Host";
+import Location from "./Location";
 import Offers from "./Offers";
 import Explore from "./Explore";
 import Footer from "../../Footer/";
@@ -17,8 +17,8 @@ export default function() {
       <Wrapper>
         <Overview />
         <Reviews />
-        <Owner />
-        <ReactMap />
+        <Host />
+        <Location />
         <Offers />
         <Explore />
       </Wrapper>

@@ -30,30 +30,32 @@ const More = styled.div`
     overflow-y: scroll;
   }
 `;
-// const Cancel = styled.button`
-//   padding: 16px;КНОПКИ ДЕЛАЕМ ТЕПЕРЬ ОПППА
-//   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-//   color: #636363;
-//   background-color: transparent;
-//   border: none;
-//   cursor: pointer;
-// `;
-// const Apply = styled.button`
-//   padding: 16px;
-//   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-//   color: #0f7276;
-//   background-color: transparent;
-//   border: none;
-//   cursor: pointer;
-// `;
-// const Footer = styled.footer`
-//   padding: 0 10px;
-//   padding-bottom: 16px;
-//   display: flex;
-//   justify-content: space-between;
-//   font-size: 16px;
-//   line-height: 19px;
-// `;
+const Cancel = styled.button`
+  padding: 16px;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  color: #383838;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`;
+const Apply = styled.button`
+  padding: 10px 28px;
+  font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  background-color: #008489;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+const Footer = styled.footer`
+  margin-top: 28px;
+  border-top: 1px solid rgba(72, 72, 72, 0.3);
+  padding: 36px 4px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 18px;
+  line-height: 21px;
+`;
 const Content = styled.div`
   font-size: 14px;
   line-height: 16px;
@@ -82,7 +84,7 @@ export default class extends React.Component {
   };
   render() {
     return (
-      <Wrapper>
+      <Wrapper isOpen={this.props.isOpen}>
         <Button isOpen={this.props.isOpen} onClick={this.handleClick}>
           {this.props.title}
         </Button>
@@ -92,10 +94,10 @@ export default class extends React.Component {
           toCancel={this.handleCancelClick}
         >
           <Content>{this.props.children}</Content>
-          {/* <Footer>
-          <Cancel onClick={this.props.toCancel}>Cancel</Cancel>
-          <Apply onClick={this.props.toClose}>Apply</Apply>
-        </Footer> */}
+          <Footer>
+            <Cancel onClick={this.handleCancelClick}>Cancel</Cancel>
+            <Apply onClick={this.handleClick}>See homes</Apply>
+          </Footer>
         </More>
       </Wrapper>
     );

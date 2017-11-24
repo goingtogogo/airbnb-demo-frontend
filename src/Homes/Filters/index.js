@@ -75,6 +75,12 @@ export default class extends React.Component {
     if (title === "Room Type") this.onRoomsChange([]);
     if (title === "Price") this.onPricesChange({ min: 10, max: 1000 });
     if (title === "Instant book") this.onInstantChange(false);
+    if (title === "More filters") {
+      this.onBedsChange([0, 0, 0]);
+      this.onSuperhostChange(false);
+      this.onAmenitiesChange([]);
+      this.onFacilitiesChange([]);
+    }
     this.handleClick(title);
   };
 

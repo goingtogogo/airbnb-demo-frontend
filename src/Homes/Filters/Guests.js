@@ -35,6 +35,7 @@ const Subtitle = styled.span`
   margin-top: 8px;
 `;
 const Plus = styled.button`
+  padding: 5px;
   align-self: center;
   width: 48px;
   height: 32px;
@@ -45,7 +46,7 @@ const Plus = styled.button`
   background-size: 100%;
 `;
 const Minus = styled.button`
-  padding-top: 5px;
+  padding: 5px;
   align-self: center;
   width: 48px;
   height: 32px;
