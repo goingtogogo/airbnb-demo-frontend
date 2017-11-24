@@ -145,12 +145,13 @@ const Checkbox = styled.div`
 
 export default class extends React.Component {
   decCount = index => {
-    this.props.onChange({
-      beds: Object.values({
-        ...this.props.beds,
-        [index]: this.props.beds[index] - 1
-      })
-    });
+    if (this.props.beds[index] > 0)
+      this.props.onChange({
+        beds: Object.values({
+          ...this.props.beds,
+          [index]: this.props.beds[index] - 1
+        })
+      });
   };
 
   incCount = index => {
@@ -179,10 +180,10 @@ export default class extends React.Component {
   handleFacilities = facility => {
     if (this.props.facilities.filter(x => x === facility).length > 0) {
       this.props.onChange({
-        facility: this.props.facilities.filter(x => x !== facility)
+        facilities: this.props.facilities.filter(x => x !== facility)
       });
     } else {
-      this.props.onChange({ facility: [...this.props.facilities, facility] });
+      this.props.onChange({ facilities: [...this.props.facilities, facility] });
     }
   };
 

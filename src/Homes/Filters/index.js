@@ -51,9 +51,7 @@ export const formatGuestsLabel = guests => {
   return "Guests ";
 };
 export default class extends React.Component {
-  state = {
-    isOpen: true,
-    openedFilter: null,
+  initialState = {
     rooms: [],
     guests: [1, 0, 0], // {aud: 0, pizduki: 0}
     prices: { min: 10, max: 1000 },
@@ -68,6 +66,20 @@ export default class extends React.Component {
     facilities: []
   };
 
+  state = {
+    isOpen: true,
+    openedFilter: null,
+    rooms: this.initialState.rooms,
+    guests: this.initialState.guests, // {aud: 0, pizduki: 0}
+    prices: this.initialState.prices,
+    instant: this.initialState.instant,
+    dates: this.initialState.dates,
+    beds: this.initialState.beds,
+    superhost: this.initialState.superhost,
+    amenities: this.initialState.amenities,
+    facilities: this.initialState.facilities
+  };
+
   handleClick = title => {
     if (title === this.state.openedFilter || !this.state.isOpen) {
       this.setState(prevState => ({ isOpen: !prevState.isOpen }));
@@ -78,21 +90,20 @@ export default class extends React.Component {
   handleCancel = title => {
     if (title === "Dates")
       this.onChange({
-        dates: {
-          startDate: null,
-          endDate: null
-        }
+        dates: this.initialState.dates
       });
-    if (title === "Guests") this.onChange({ guests: [1, 0, 0] });
-    if (title === "Room Type") this.onChange({ rooms: [] });
-    if (title === "Price") this.onChange({ prices: { min: 10, max: 1000 } });
-    if (title === "Instant book") this.onChange({ instant: false });
+    if (title === "Guests") this.onChange({ guests: this.initialState.guests });
+    if (title === "Room Type")
+      this.onChange({ rooms: this.initialState.rooms });
+    if (title === "Price") this.onChange({ prices: this.initialState.prices });
+    if (title === "Instant book")
+      this.onChange({ instant: this.initialState.instant });
     if (title === "More filters") {
       this.onChange({
-        beds: [0, 0, 0],
-        superhost: false,
-        amenities: [],
-        facilities: []
+        beds: this.initialState.beds,
+        superhost: this.initialState.superhost,
+        amenities: this.initialState.amenities,
+        facilities: this.initialState.facilities
       });
     }
     this.handleClick(title);
