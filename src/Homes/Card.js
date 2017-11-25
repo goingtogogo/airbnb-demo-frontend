@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Price } from "../UI";
 import Star from "../UI/Star";
 
-const Card = styled.a`
+const Card = styled(Link)`
   display: flex;
   flex-wrap: wrap;
   flex-grow: 0;
@@ -87,7 +87,7 @@ const Owner = styled.span`
 
 export default function(props) {
   return (
-    <Card href="/homes/cabana">
+    <Card to="/homes/cabana">
       <Img src={props.image} alt="Home" />
       <PriceInfo>
         <Price>${props.price}</Price>
