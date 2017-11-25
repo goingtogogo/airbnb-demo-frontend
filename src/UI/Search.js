@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import searchicon from "./search.svg";
+import searchicon from "./assets/search.svg";
 
 const Search = styled.input`
   width: 100%;

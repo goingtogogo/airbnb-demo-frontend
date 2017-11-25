@@ -46,6 +46,7 @@ const Option = styled.span`
 `;
 const Impovements = Type.extend`
   margin-top: 16px;
+  cursor: pointer;
 `;
 const Subtitle = styled.p`
   margin-top: 4px;
@@ -68,6 +69,7 @@ const Plus = styled.button`
   background-image: url(${plus});
   background-repeat: no-repeat;
   background-size: 100%;
+  cursor: pointer;
 `;
 const Minus = styled.button`
   width: 32px;
@@ -77,6 +79,7 @@ const Minus = styled.button`
   background-image: url(${minus});
   background-repeat: no-repeat;
   background-size: 100%;
+  cursor: pointer;
 `;
 
 const Counter = styled.span`
@@ -190,9 +193,6 @@ export default class extends React.Component {
   render() {
     return (
       <MoreFilters>
-        {/* <MediaQuery minWidth={768} maxWidth={992}>
-          <RoomType />
-        </MediaQuery> */}
         <Beds>
           <Title>Rooms and beds</Title>
           <Type>
@@ -225,39 +225,35 @@ export default class extends React.Component {
         </Section>
         <Section>
           <Title>Amenities</Title>
-          <Impovements>
+          <Impovements onClick={() => this.handleAmenities("heating")}>
             <Checkbox
               isChecked={
                 this.props.amenities.includes("heating") && this.props.isOpen
               }
-              onClick={() => this.handleAmenities("heating")}
             />
             <Option>Heating</Option>
           </Impovements>
-          <Impovements>
+          <Impovements onClick={() => this.handleAmenities("kitchen")}>
             <Checkbox
               isChecked={
                 this.props.amenities.includes("kitchen") && this.props.isOpen
               }
-              onClick={() => this.handleAmenities("kitchen")}
             />
             <Option>Kitchen</Option>
           </Impovements>
-          <Impovements>
+          <Impovements onClick={() => this.handleAmenities("tv")}>
             <Checkbox
               isChecked={
                 this.props.amenities.includes("tv") && this.props.isOpen
               }
-              onClick={() => this.handleAmenities("tv")}
             />
             <Option>TV</Option>
           </Impovements>
-          <Impovements>
+          <Impovements onClick={() => this.handleAmenities("wifi")}>
             <Checkbox
               isChecked={
                 this.props.amenities.includes("wifi") && this.props.isOpen
               }
-              onClick={() => this.handleAmenities("wifi")}
             />
             <Option>Wireless Internet</Option>
           </Impovements>
@@ -265,41 +261,37 @@ export default class extends React.Component {
         </Section>
         <Section>
           <Title>Facilities</Title>
-          <Impovements>
+          <Impovements onClick={() => this.handleFacilities("elevator")}>
             <Checkbox
               isChecked={
                 this.props.facilities.includes("elevator") && this.props.isOpen
               }
-              onClick={() => this.handleFacilities("elevator")}
             />
             <Option>Elevator</Option>
           </Impovements>
-          <Impovements>
+          <Impovements onClick={() => this.handleFacilities("freeparking")}>
             <Checkbox
               isChecked={
                 this.props.facilities.includes("freeparking") &&
                 this.props.isOpen
               }
-              onClick={() => this.handleFacilities("freeparking")}
             />
             <Option>Free parking on premises</Option>
           </Impovements>
-          <Impovements>
+          <Impovements onClick={() => this.handleFacilities("pool")}>
             <Checkbox
               isChecked={
                 this.props.facilities.includes("pool") && this.props.isOpen
               }
-              onClick={() => this.handleFacilities("pool")}
             />
             <Option>Pool</Option>
           </Impovements>
-          <Impovements>
+          <Impovements onClick={() => this.handleFacilities("wheelchair")}>
             <Checkbox
               isChecked={
                 this.props.facilities.includes("wheelchair") &&
                 this.props.isOpen
               }
-              onClick={() => this.handleFacilities("wheelchair")}
             />
             <Option>Wheelchair accessible</Option>
           </Impovements>

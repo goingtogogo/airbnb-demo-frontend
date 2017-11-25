@@ -32,9 +32,9 @@ const Place = styled.a`
 
 const MorePlaces = styled.div`
   flex-basis: 33%;
-  margin-left: 28px;
+  margin-right: 28px;
   &:last-shild {
-    margin-left: 0;
+    margin-right: 0;
   }
 `;
 

@@ -15,6 +15,7 @@ const Type = styled.div`
   width: 294px;
   display: flex;
   justify-content: flex-start;
+  cursor: pointer;
 
   &:last-child {
     margin-bottom: 0;
@@ -73,22 +74,20 @@ export default class extends React.Component {
   render() {
     return (
       <Room>
-        <Type>
+        <Type onClick={() => this.handleCheck("entire")}>
           <Checkbox
             isChecked={this.props.rooms.includes("entire") && this.props.isOpen}
-            onClick={() => this.handleCheck("entire")}
           />
           <Title>
             Entire home<Subtitle>Have a place to yourself</Subtitle>
           </Title>
           <Icon src={entire} />
         </Type>
-        <Type>
+        <Type onClick={() => this.handleCheck("separate")}>
           <Checkbox
             isChecked={
               this.props.rooms.includes("separate") && this.props.isOpen
             }
-            onClick={() => this.handleCheck("separate")}
           />
           <Title>
             Private room<Subtitle>
@@ -97,10 +96,9 @@ export default class extends React.Component {
           </Title>
           <Icon src={separate} />
         </Type>
-        <Type>
+        <Type onClick={() => this.handleCheck("shared")}>
           <Checkbox
             isChecked={this.props.rooms.includes("shared") && this.props.isOpen}
-            onClick={() => this.handleCheck("shared")}
           />
           <Title>
             Shared room<Subtitle>

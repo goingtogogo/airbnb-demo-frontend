@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 import styled from "styled-components";
-import arrowdown from "./arrow-down.png";
-import searchicon from "../UI/search.svg";
+import arrowdown from "../UI/assets/arrow-down.svg";
+import searchicon from "../UI/assets/search.svg";
 
 export const Header = styled.header`
   width: 100%;

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Nav = styled.nav`
+  z-index: 777;
+  background-color: #fff;
   width: 66%;
   padding: 14px 0;
   margin-bottom: 24px;

@@ -15,7 +15,7 @@ const MapWrapper = styled.div`
 `;
 
 const Description = styled.p`
-  margin-top: 0;
+  margin-top: 4px;
   margin-bottom: 16px;
   color: #383838;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;

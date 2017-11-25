@@ -44,6 +44,7 @@ const Plus = styled.button`
   background-image: url(${plus});
   background-repeat: no-repeat;
   background-size: 100%;
+  cursor: pointer;
 `;
 const Minus = styled.button`
   padding: 5px;
@@ -55,6 +56,7 @@ const Minus = styled.button`
   background-image: url(${minus});
   background-repeat: no-repeat;
   background-size: 100%;
+  cursor: pointer;
 `;
 
 const Counter = styled.span`
