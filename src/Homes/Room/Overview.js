@@ -57,7 +57,7 @@ const Left = styled.div`
   flex-basis: 83%;
 `;
 const Side = styled.div`
-  width: 90%;
+  width: 93%;
   display: inline-block;
 `;
 
@@ -94,7 +94,7 @@ const Contact = styled.a`
   color: #0f7276;
   cursor: pointer;
 `;
-const ReadMore = Contact.extend`
+export const ReadMore = Contact.extend`
   display: block;
   margin-bottom: 32px;
   &:after {
@@ -114,8 +114,10 @@ const Icon = styled.img`
   height: auto;
   margin-right: 13px;
 `;
-const Shield = Icon.extend`
+const Shield = styled.img`
   width: 40px;
+  height: auto;
+  margin-right: 0;
 `;
 const Amenities = styled.div`
   padding-top: 20px;
@@ -148,9 +150,9 @@ const Cancellations = styled.div`
   border-top: 1px solid #dbdbdb;
 `;
 const Hr = styled.hr`
-  max-width: 87px;
+  max-width: 67px;
   height: 1px;
-  margin: 4px 0 20px;
+  margin: 4px 0px;
   border: none;
   color: #dbdbdb;
   background-color: #dbdbdb;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import star from "./assets/star.png";
+import star from "./assets/star.svg";
 
 const Star = styled.div.attrs({
   width: props => props.width || "12px",
@@ -15,5 +15,5 @@ const Star = styled.div.attrs({
 `;
 
 export default function(props) {
-  return <Star width={props.width} heigh={props.height} />;
+  return <Star width={props.width} height={props.height} />;
 }
