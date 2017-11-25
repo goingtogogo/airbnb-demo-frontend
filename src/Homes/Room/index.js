@@ -19,7 +19,7 @@ const StickyWrapper = styled.div`
   top: 24px;
   right: 0;
   position: absolute;
-  width: 32%;
+  width: 31%;
 `;
 
 function stickBookRequest({ isSticky, style }) {
