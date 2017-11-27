@@ -29,6 +29,8 @@ const Subtitle = styled.span`
 `;
 const Switcher = styled.button`
   align-self: center;
+  display: flex;
+  justify-content: strecth;
   width: 64px;
   height: 40px;
   border: none;
@@ -36,6 +38,11 @@ const Switcher = styled.button`
   background-image: url(${props => (props.switcher ? switched : switcher)});
   background-repeat: no-repeat;
   background-size: 100%;
+`;
+const On = styled.img`
+  width: 64px;
+  height: 40px;
+  display: ${props => (props.switcher ? "none" : "visible")};
 `;
 export default class extends React.Component {
   onSwitch = switcher => {
@@ -51,7 +58,9 @@ export default class extends React.Component {
             Listings you can book without waiting for host approval.
           </Subtitle>
         </Title>
-        <Switcher switcher={this.props.instant} onClick={this.onSwitch} />
+        <Switcher onClick={this.onSwitch} switcher={this.props.instant}>
+          {/* <On src={switched} switcher={this.props.instant} /> */}
+        </Switcher>
       </Instant>
     );
   }

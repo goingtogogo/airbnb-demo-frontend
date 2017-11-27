@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Preview, List, Scroll, SeeAll } from "../Styled";
 import Card from "../../Homes/All/Card";
-import home1 from "../../Homes/UI/home-1.png";
-import home2 from "../../Homes/UI/home-2.png";
-import home3 from "../../Homes/UI/home-3.png";
+import home1 from "../../Homes/All/home-1.png";
+import home2 from "../../Homes/All/home-2.png";
+import home3 from "../../Homes/All/home-3.png";
 
 export const SectionTitle = styled.h2`
   margin-top: 68px;

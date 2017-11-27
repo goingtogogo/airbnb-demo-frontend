@@ -54,7 +54,7 @@ export default class extends React.Component {
 
   onDatesChange = ({ startDate, endDate }) => {
     this.props.dateChanged({
-      dates: { startDate: startDate, endDate: endDate }
+      dates: { startDate, endDate }
     });
   };
 
