@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import arrowdown from "./arrow-down.svg";
 
 export const Title = styled.h2`
   margin-top: 0;
@@ -9,4 +10,28 @@ export const Title = styled.h2`
   font-size: 28px;
   line-height: 33px;
   color: #383838;
+`;
+
+export const Contact = styled.a`
+  display: block;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 19px;
+  font-size: 16px;
+  color: #0f7276;
+  cursor: pointer;
+`;
+export const ReadMore = Contact.extend`
+  display: block;
+  margin-bottom: 32px;
+  &:after {
+    margin-left: 8px;
+    width: 11px;
+    height: 6px;
+    display: inline-block;
+    vertical-align: baseline;
+    content: "";
+    background-image: url(${arrowdown});
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 `;

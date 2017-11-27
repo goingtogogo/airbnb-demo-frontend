@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 // import RoomType from "./RoomType";
-import check from "../UI/check.svg";
-import plus from "../UI/counter-plus.svg";
-import minus from "../UI/counter-minus.svg";
-import switcher from "../UI/switcher.svg";
-import switched from "../UI/switched.svg";
+import check from "../../UI/check.svg";
+import plus from "../../UI/counter-plus.svg";
+import minus from "../../UI/counter-minus.svg";
+import switcher from "../../UI/switcher.svg";
+import switched from "../../UI/switched.svg";
 
-import arrowdown from "../UI/arrow-down.svg";
+import arrowdown from "../../UI/arrow-down.svg";
 
 const MoreFilters = styled.div`
   padding: 4px;

@@ -1,10 +1,10 @@
 import React from "react";
 import { Wrapper } from "./Styled";
 import styled from "styled-components";
-import logo from "./footer-logo.svg";
-import instagram from "./instagram.svg";
-import twitter from "./twitter.svg";
-import facebook from "./facebook.svg";
+import logo from "../UI/assets/footer-logo.svg";
+import instagram from "../UI/assets/instagram.svg";
+import twitter from "../UI/assets/twitter.svg";
+import facebook from "../UI/assets/facebook.svg";
 
 const Bottom = Wrapper.extend`
   border-top: 1px solid #dbdbdb;
@@ -72,7 +72,9 @@ const Copyright = styled.h3`
   }
 `;
 
-const Logo = styled.img`margin-top: 32px;`;
+const Logo = styled.img`
+  margin-top: 32px;
+`;
 const Icon = styled.img`
   width: 16px;
   height: auto;

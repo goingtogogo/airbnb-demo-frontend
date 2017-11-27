@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import arrowright from "./UI/arrow-right.svg";
+import arrowright from "../UI/arrow-right.svg";
 
 const Pagination = styled.div`
   margin: 0 auto;

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Title } from "../UI/";
+import { Title } from "../../UI";
 
-import yudy from "../UI/yudy.png";
-import verified from "../UI/verified.svg";
+import yudy from "../../UI/yudy.png";
+import verified from "./verified.svg";
 
 const Main = styled.div`
   width: 100%;

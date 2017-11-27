@@ -5,10 +5,10 @@ import { Title } from "../../UI/";
 import Search from "../../../UI/Search";
 import Ratio from "./Ratio";
 import Review from "./Review";
-import Pagination from "../../Pagination";
+import Pagination from "../../All/Pagination";
 
-import marlee from "../../UI/marlee.png";
-import michelle from "../../UI/michelle.png";
+import marlee from "./marlee.png";
+import michelle from "./michelle.png";
 
 const Reviews = styled.div`
   padding-top: 32px;

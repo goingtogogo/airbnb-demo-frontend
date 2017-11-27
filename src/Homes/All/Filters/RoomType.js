@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import entire from "../UI/entire.svg";
-import separate from "../UI/separate.svg";
-import shared from "../UI/shared.svg";
-import check from "../UI/check.svg";
+import entire from "../../UI/entire.svg";
+import separate from "../../UI/separate.svg";
+import shared from "../../UI/shared.svg";
+import check from "../../UI/check.svg";
 
 const Room = styled.div`
   padding: 4px 16px;

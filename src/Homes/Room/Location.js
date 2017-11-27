@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ReactMap from "google-map-react";
 
-import { Title } from "../UI/";
-import { ReadMore } from "./Overview";
+import { Title, ReadMore } from "../UI/";
 
 const Wrapper = styled.div`
   margin-bottom: 16px;

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Price } from "../UI";
-import Star from "../UI/Star";
+import { Price } from "../../UI";
+import Star from "../../UI/Star";
 
 const Card = styled(Link)`
   display: flex;

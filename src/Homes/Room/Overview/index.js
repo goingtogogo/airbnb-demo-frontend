@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-import yudy from "../UI/yudy.png";
-import bed from "../UI/bed.svg";
-import bathtub from "../UI/bathtub.svg";
-import door from "../UI/door.svg";
-import guest from "../UI/guest.svg";
-import wifi from "../UI/wifi.svg";
-import parking from "../UI/parking.svg";
-import family from "../UI/family.svg";
-import internet from "../UI/internet.svg";
-import arrowdown from "../UI/arrow-down.svg";
-import shield from "../UI/shield.svg";
+import { Contact, ReadMore } from "../../UI/index.js";
+import yudy from "../../UI/yudy.png";
+import bed from "./bed.svg";
+import bathtub from "./bathtub.svg";
+import door from "./door.svg";
+import guest from "./guest.svg";
+import wifi from "./wifi.svg";
+import parking from "./parking.svg";
+import family from "./family.svg";
+import internet from "./internet.svg";
+import shield from "./shield.svg";
 
 const Overview = styled.div`
   width: 66%;
@@ -86,29 +86,7 @@ const Description = styled.p`
   line-height: 21px;
   font-size: 18px;
 `;
-const Contact = styled.a`
-  display: block;
-  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-  line-height: 19px;
-  font-size: 16px;
-  color: #0f7276;
-  cursor: pointer;
-`;
-export const ReadMore = Contact.extend`
-  display: block;
-  margin-bottom: 32px;
-  &:after {
-    margin-left: 8px;
-    width: 11px;
-    height: 6px;
-    display: inline-block;
-    vertical-align: baseline;
-    content: "";
-    background-image: url(${arrowdown});
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-`;
+
 const Icon = styled.img`
   width: 20px;
   height: auto;

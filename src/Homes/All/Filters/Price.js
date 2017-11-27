@@ -4,8 +4,8 @@ import Rheostat from "rheostat";
 import "rheostat/css/slider.css";
 import "rheostat/css/slider-horizontal.css";
 
-import "../UI/rheostat.css";
-import price from "../UI/price.svg";
+import "../../UI/rheostat.css";
+import price from "../../UI/price.svg";
 
 const Price = styled.div`
   padding: 4px 16px;

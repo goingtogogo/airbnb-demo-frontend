@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Preview, List, Scroll, SeeAll } from "../Styled";
-import Card from "../../Homes/Card";
+import Card from "../../Homes/All/Card";
 import home1 from "../../Homes/UI/home-1.png";
 import home2 from "../../Homes/UI/home-2.png";
 import home3 from "../../Homes/UI/home-3.png";

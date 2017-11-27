@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import switcher from "../UI/switcher.svg";
-import switched from "../UI/switched.svg";
+import switcher from "../../UI/switcher.svg";
+import switched from "../../UI/switched.svg";
 
 const Instant = styled.div`
   padding: 0px 16px;

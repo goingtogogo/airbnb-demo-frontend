@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { List, Scroll } from "../../../Landing/Styled";
 import { Title } from "../../UI/";
 import Card from "./Card";
-import similar1 from "../../UI/similar-1.png";
-import similar2 from "../../UI/similar-2.png";
-import similar3 from "../../UI/similar-3.png";
+import similar1 from "./similar-1.png";
+import similar2 from "./similar-2.png";
+import similar3 from "./similar-3.png";
 
 const Offers = styled.div`
   padding: 48px 0;

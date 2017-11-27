@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
-import "../UI/react_dates_overrides.css";
+import "../../UI/react_dates_overrides.css";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { DayPickerRangeController } from "react-dates";
 import moment from "moment";
 
-import longarrow from "../UI/long-arrow.svg";
+import longarrow from "../../UI/long-arrow.svg";
 
 const Dates = styled.div`
   width: 100%;
