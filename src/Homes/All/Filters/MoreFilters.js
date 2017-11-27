@@ -145,6 +145,13 @@ const Checkbox = styled.div`
     visibility: ${props => (props.isChecked ? "visible" : "hidden")};
   }
 `;
+const amenities = ["Heating", "Kitchen", "TV", "Wireless Internet"];
+const facilities = [
+  "Elevator",
+  "Free parking on premises",
+  "Pool",
+  "Wheelchair accessible"
+];
 
 export default class extends React.Component {
   decCount = index => {
@@ -225,49 +232,31 @@ export default class extends React.Component {
         </Section>
         <Section>
           <Title>Amenities</Title>
-          <Impovements onClick={() => this.handleAmenities("heating")}>
-            <Checkbox
-              isChecked={
-                this.props.amenities.includes("heating") && this.props.isOpen
-              }
-            />
-            <Option>Heating</Option>
-          </Impovements>
-          <Impovements onClick={() => this.handleAmenities("kitchen")}>
-            <Checkbox
-              isChecked={
-                this.props.amenities.includes("kitchen") && this.props.isOpen
-              }
-            />
-            <Option>Kitchen</Option>
-          </Impovements>
-          <Impovements onClick={() => this.handleAmenities("tv")}>
-            <Checkbox
-              isChecked={
-                this.props.amenities.includes("tv") && this.props.isOpen
-              }
-            />
-            <Option>TV</Option>
-          </Impovements>
-          <Impovements onClick={() => this.handleAmenities("wifi")}>
-            <Checkbox
-              isChecked={
-                this.props.amenities.includes("wifi") && this.props.isOpen
-              }
-            />
-            <Option>Wireless Internet</Option>
-          </Impovements>
-          {/* <Impovements
-            heading="Amenities"
-            options={amenities}
-            selected={values.amenities}
-            onFilterChange={values => onMoreFiltersChange("amenities", values)}
-          /> */}
+          {amenities.map((item, index) => (
+            <Impovements onClick={() => this.handleAmenities(item)}>
+              <Checkbox
+                isChecked={
+                  this.props.amenities.includes(item) && this.props.isOpen
+                }
+              />
+              <Option>{item}</Option>
+            </Impovements>
+          ))}
           <SeeAll>See all amenities</SeeAll>
         </Section>
         <Section>
           <Title>Facilities</Title>
-          <Impovements onClick={() => this.handleFacilities("elevator")}>
+          {facilities.map((item, index) => (
+            <Impovements onClick={() => this.handleFacilities(item)}>
+              <Checkbox
+                isChecked={
+                  this.props.facilities.includes(item) && this.props.isOpen
+                }
+              />
+              <Option>{item}</Option>
+            </Impovements>
+          ))}
+          {/* <Impovements onClick={() => this.handleFacilities("elevator")}>
             <Checkbox
               isChecked={
                 this.props.facilities.includes("elevator") && this.props.isOpen
@@ -300,7 +289,7 @@ export default class extends React.Component {
               }
             />
             <Option>Wheelchair accessible</Option>
-          </Impovements>
+          </Impovements> */}
           <SeeAll>See all facilities</SeeAll>
         </Section>
       </MoreFilters>
