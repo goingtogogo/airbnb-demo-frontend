@@ -48,12 +48,20 @@ export const formatGuestsLabel = guests => {
   if (guests.reduce((common, current) => (common += current)) > 1) {
     return `${guests.reduce((common, current) => (common += current))} guests`;
   }
-  return "Guests ";
+  return "Guests";
 };
+
+export const formatRoomsLabel = rooms => {
+  if (rooms.length > 0) {
+    return `Room type · ${rooms.length}`;
+  }
+  return "Room type";
+};
+
 export default class extends React.Component {
   initialState = {
     rooms: [],
-    guests: [1, 0, 0], // {aud: 0, pizduki: 0}
+    guests: [1, 0, 0],
     prices: { min: 10, max: 1000 },
     instant: false,
     dates: {
@@ -70,7 +78,7 @@ export default class extends React.Component {
     isOpen: true,
     openedFilter: null,
     rooms: this.initialState.rooms,
-    guests: this.initialState.guests, // {aud: 0, pizduki: 0}
+    guests: this.initialState.guests,
     prices: this.initialState.prices,
     instant: this.initialState.instant,
     dates: this.initialState.dates,
@@ -144,7 +152,7 @@ export default class extends React.Component {
           </Filter>
           <MediaQuery minWidth={992}>
             <Filter
-              title="Room Type"
+              title={formatRoomsLabel(this.state.rooms)}
               type="Room Type"
               handleClick={this.handleClick}
               handleCancel={this.handleCancel}

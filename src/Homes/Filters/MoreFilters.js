@@ -257,6 +257,12 @@ export default class extends React.Component {
             />
             <Option>Wireless Internet</Option>
           </Impovements>
+          {/* <Impovements
+            heading="Amenities"
+            options={amenities}
+            selected={values.amenities}
+            onFilterChange={values => onMoreFiltersChange("amenities", values)}
+          /> */}
           <SeeAll>See all amenities</SeeAll>
         </Section>
         <Section>
