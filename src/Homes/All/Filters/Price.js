@@ -4,6 +4,7 @@ import Rheostat from "rheostat";
 import "rheostat/css/slider.css";
 import "rheostat/css/slider-horizontal.css";
 
+import { Footer, Cancel, Apply } from "../../UI";
 import "../../UI/rheostat.css";
 import price from "../../UI/price.svg";
 
@@ -53,26 +54,43 @@ export default class extends React.Component {
       }
     });
   };
+  onCancel = () => {
+    this.props.onPricesChange({
+      prices: { min: 10, max: 1000 }
+    });
+
+    this.onClose();
+  };
+
+  onClose = () => {
+    this.props.onClose("Price");
+  };
 
   render() {
     return (
-      <Price>
-        <Title>
-          ${this.props.prices.min} — ${this.props.prices.max >= 1000
-            ? `${this.props.prices.max}+`
-            : this.props.prices.max}
-        </Title>
-        <Subtitle>The average nightly price is $75.</Subtitle>
-        <Wrapper>
-          <Img src={price} />
-          <Rheostat
-            min={10}
-            max={1000}
-            values={[this.props.prices.min, this.props.prices.max]}
-            onValuesUpdated={this.onValuesUpdated}
-          />
-        </Wrapper>
-      </Price>
+      <div>
+        <Price>
+          <Title>
+            ${this.props.prices.min} — ${this.props.prices.max >= 1000
+              ? `${this.props.prices.max}+`
+              : this.props.prices.max}
+          </Title>
+          <Subtitle>The average nightly price is $75.</Subtitle>
+          <Wrapper>
+            <Img src={price} />
+            <Rheostat
+              min={10}
+              max={1000}
+              values={[this.props.prices.min, this.props.prices.max]}
+              onValuesUpdated={this.onValuesUpdated}
+            />
+          </Wrapper>
+        </Price>
+        <Footer>
+          <Cancel onClick={this.onCancel}>Cancel</Cancel>
+          <Apply onClick={this.onClose}>Apply</Apply>
+        </Footer>
+      </div>
     );
   }
 }

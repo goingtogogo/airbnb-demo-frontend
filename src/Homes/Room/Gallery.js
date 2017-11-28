@@ -15,9 +15,22 @@ const Photo = styled.img`
   width: 100%;
   height: 440px;
 `;
-
+export const Wrapper = styled.div`
+  max-width: 304px;
+  padding: 0 8px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    max-width: 752px;
+    padding: 0;
+  }
+  @media (min-width: 992px) {
+    position: relative;
+    max-width: 962px;
+  }
+`;
 const Share = styled.button`
-  ${"" /* fix */} right: 292px;
+  border: 1px solid red;
+  right: 0;
   top: 14px;
   padding: 9px 17px;
   position: absolute;
@@ -43,7 +56,7 @@ const Share = styled.button`
   }
 `;
 const Save = styled.button`
-  ${"" /* FIX */} right: 192px;
+  right: 189px;
   top: 14px;
   padding: 9px 17px;
   position: absolute;
@@ -89,9 +102,11 @@ export default function() {
   return (
     <Gallery>
       <Photo src={cabana} alt="Cabana" />
-      <Share>Share</Share>
-      <Save>Save</Save>
-      <ViewPhotos>View photos</ViewPhotos>
+      <Wrapper>
+        <Share>Share</Share>
+        <Save>Save</Save>
+        <ViewPhotos>View photos</ViewPhotos>
+      </Wrapper>
     </Gallery>
   );
 }

@@ -38,15 +38,21 @@ const Wrapper = styled.div`
     max-width: 962px;
   }
 `;
+
 export const formatDatesLabel = (start, end) => {
   if (!start) return "Dates";
   const formatDateStart = start.format("MMM DD");
   if (start && end) return `${formatDateStart}  —  ${end.format("MMM DD")}`;
   if (start && !end) return `${formatDateStart}  —   Check out`;
 };
+
 export const formatGuestsLabel = guests => {
-  if (guests.reduce((common, current) => (common += current)) > 1) {
-    return `${guests.reduce((common, current) => (common += current))} guests`;
+  if (
+    Object.values(guests).reduce((common, current) => (common += current)) > 1
+  ) {
+    return `${Object.values(guests).reduce(
+      (common, current) => (common += current)
+    )} guests`;
   }
   return "Guests";
 };
@@ -58,10 +64,17 @@ export const formatRoomsLabel = rooms => {
   return "Room type";
 };
 
+export const formatPriceLabel = (min, max) => {
+  if (min === 10 && max === 1000) {
+    return "Prices";
+  }
+  return `From $${min} to $${max}`;
+};
+
 export default class extends React.Component {
-  initialState = {
+  state = {
     rooms: [],
-    guests: [1, 0, 0],
+    guests: { adults: 1, childrens: 0, infants: 0 },
     prices: { min: 10, max: 1000 },
     instant: false,
     dates: {
@@ -74,47 +87,11 @@ export default class extends React.Component {
     facilities: []
   };
 
-  state = {
-    isOpen: true,
-    openedFilter: null,
-    rooms: this.initialState.rooms,
-    guests: this.initialState.guests,
-    prices: this.initialState.prices,
-    instant: this.initialState.instant,
-    dates: this.initialState.dates,
-    beds: this.initialState.beds,
-    superhost: this.initialState.superhost,
-    amenities: this.initialState.amenities,
-    facilities: this.initialState.facilities
-  };
-
   handleClick = title => {
     if (title === this.state.openedFilter || !this.state.isOpen) {
       this.setState(prevState => ({ isOpen: !prevState.isOpen }));
     }
     this.setState({ openedFilter: title });
-  };
-
-  handleCancel = title => {
-    if (title === "Dates")
-      this.onChange({
-        dates: this.initialState.dates
-      });
-    if (title === "Guests") this.onChange({ guests: this.initialState.guests });
-    if (title === "Room Type")
-      this.onChange({ rooms: this.initialState.rooms });
-    if (title === "Price") this.onChange({ prices: this.initialState.prices });
-    if (title === "Instant book")
-      this.onChange({ instant: this.initialState.instant });
-    if (title === "More filters") {
-      this.onChange({
-        beds: this.initialState.beds,
-        superhost: this.initialState.superhost,
-        amenities: this.initialState.amenities,
-        facilities: this.initialState.facilities
-      });
-    }
-    this.handleClick(title);
   };
 
   onChange = payload => {
@@ -133,12 +110,12 @@ export default class extends React.Component {
             type="Dates"
             isOpen={this.state.isOpen && this.state.openedFilter === "Dates"}
             handleClick={this.handleClick}
-            handleCancel={this.handleCancel}
           >
             <Dates
               dateChanged={this.onChange}
               startDate={this.state.dates.startDate}
               endDate={this.state.dates.endDate}
+              onClose={this.handleClick}
             />
           </Filter>
           <Filter
@@ -146,16 +123,18 @@ export default class extends React.Component {
             type="Guests"
             isOpen={this.state.isOpen && this.state.openedFilter === "Guests"}
             handleClick={this.handleClick}
-            handleCancel={this.handleCancel}
           >
-            <Guests onGuestsChange={this.onChange} guests={this.state.guests} />
+            <Guests
+              onGuestsChange={this.onChange}
+              onClose={this.handleClick}
+              guests={this.state.guests}
+            />
           </Filter>
           <MediaQuery minWidth={992}>
             <Filter
               title={formatRoomsLabel(this.state.rooms)}
               type="Room Type"
               handleClick={this.handleClick}
-              handleCancel={this.handleCancel}
               isOpen={
                 this.state.isOpen && this.state.openedFilter === "Room Type"
               }
@@ -165,14 +144,17 @@ export default class extends React.Component {
                   this.state.isOpen && this.state.openedFilter === "Room Type"
                 }
                 onRoomsChange={this.onChange}
+                onClose={this.handleClick}
                 rooms={this.state.rooms}
               />
             </Filter>
             <Filter
-              title="Price"
+              title={formatPriceLabel(
+                this.state.prices.min,
+                this.state.prices.max
+              )}
               type="Price"
               handleClick={this.handleClick}
-              handleCancel={this.handleCancel}
               isOpen={this.state.isOpen && this.state.openedFilter === "Price"}
             >
               <Price
@@ -181,13 +163,13 @@ export default class extends React.Component {
                 }
                 onPricesChange={this.onChange}
                 prices={this.state.prices}
+                onClose={this.handleClick}
               />
             </Filter>
             <Filter
               title="Instant book"
               type="Instant book"
               handleClick={this.handleClick}
-              handleCancel={this.handleCancel}
               isOpen={
                 this.state.isOpen && this.state.openedFilter === "Instant book"
               }
@@ -198,6 +180,7 @@ export default class extends React.Component {
                   this.state.openedFilter === "Instant book"
                 }
                 onInstantChange={this.onChange}
+                onClose={this.handleClick}
                 instant={this.state.instant}
               />
             </Filter>
@@ -206,7 +189,6 @@ export default class extends React.Component {
             title="More filters"
             type="More filters"
             handleClick={this.handleClick}
-            handleCancel={this.handleCancel}
             isOpen={
               this.state.isOpen && this.state.openedFilter === "More filters"
             }
@@ -216,6 +198,7 @@ export default class extends React.Component {
                 this.state.isOpen && this.state.openedFilter === "More filters"
               }
               onChange={this.onChange}
+              onClose={this.handleClick}
               beds={this.state.beds}
               superhost={this.state.superhost}
               amenities={this.state.amenities}

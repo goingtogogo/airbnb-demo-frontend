@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
+import { Footer, Cancel, Apply } from "../../UI";
 import "../../UI/react_dates_overrides.css";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
@@ -57,6 +58,20 @@ export default class extends React.Component {
       dates: { startDate, endDate }
     });
   };
+  onCancel = () => {
+    this.props.dateChanged({
+      dates: {
+        startDate: null,
+        endDate: null
+      }
+    });
+
+    this.onClose();
+  };
+
+  onClose = () => {
+    this.props.onClose("Dates");
+  };
 
   render() {
     return (
@@ -101,6 +116,10 @@ export default class extends React.Component {
             isDayBlocked={day => day.isBefore(moment(), "day")}
           />
         </MediaQuery>
+        <Footer>
+          <Cancel onClick={this.onCancel}>Cancel</Cancel>
+          <Apply onClick={this.onClose}>Apply</Apply>
+        </Footer>
       </div>
     );
   }

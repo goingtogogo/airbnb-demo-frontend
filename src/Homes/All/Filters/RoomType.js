@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Footer, Cancel, Apply } from "../../UI";
 import entire from "../../UI/entire.svg";
 import separate from "../../UI/separate.svg";
 import shared from "../../UI/shared.svg";
@@ -71,43 +72,65 @@ export default class extends React.Component {
     }
   };
 
+  onCancel = () => {
+    this.props.onRoomsChange({
+      rooms: []
+    });
+
+    this.onClose();
+  };
+
+  onClose = () => {
+    this.props.onClose("Room type");
+  };
+
   render() {
     return (
-      <Room>
-        <Type onClick={() => this.handleCheck("entire")}>
-          <Checkbox
-            isChecked={this.props.rooms.includes("entire") && this.props.isOpen}
-          />
-          <Title>
-            Entire home<Subtitle>Have a place to yourself</Subtitle>
-          </Title>
-          <Icon src={entire} />
-        </Type>
-        <Type onClick={() => this.handleCheck("separate")}>
-          <Checkbox
-            isChecked={
-              this.props.rooms.includes("separate") && this.props.isOpen
-            }
-          />
-          <Title>
-            Private room<Subtitle>
-              Have your own room and share some common spaces
-            </Subtitle>
-          </Title>
-          <Icon src={separate} />
-        </Type>
-        <Type onClick={() => this.handleCheck("shared")}>
-          <Checkbox
-            isChecked={this.props.rooms.includes("shared") && this.props.isOpen}
-          />
-          <Title>
-            Shared room<Subtitle>
-              Stay in a shared space, like a common room
-            </Subtitle>
-          </Title>
-          <Icon src={shared} />
-        </Type>
-      </Room>
+      <div>
+        <Room>
+          <Type onClick={() => this.handleCheck("entire")}>
+            <Checkbox
+              isChecked={
+                this.props.rooms.includes("entire") && this.props.isOpen
+              }
+            />
+            <Title>
+              Entire home<Subtitle>Have a place to yourself</Subtitle>
+            </Title>
+            <Icon src={entire} />
+          </Type>
+          <Type onClick={() => this.handleCheck("separate")}>
+            <Checkbox
+              isChecked={
+                this.props.rooms.includes("separate") && this.props.isOpen
+              }
+            />
+            <Title>
+              Private room<Subtitle>
+                Have your own room and share some common spaces
+              </Subtitle>
+            </Title>
+            <Icon src={separate} />
+          </Type>
+          <Type onClick={() => this.handleCheck("shared")}>
+            <Checkbox
+              isChecked={
+                this.props.rooms.includes("shared") && this.props.isOpen
+              }
+            />
+            <Title>
+              Shared room<Subtitle>
+                Stay in a shared space, like a common room
+              </Subtitle>
+            </Title>
+            <Icon src={shared} />
+          </Type>
+        </Room>
+        <Footer>
+          <Cancel onClick={this.onCancel}>Cancel</Cancel>
+          <Apply onClick={this.onClose}>Apply</Apply>
+        </Footer>
+      </div>
     );
   }
 }

@@ -91,10 +91,20 @@ export default class extends React.Component {
     this.props.handleClick(this.props.type);
   };
 
-  handleCancelClick = () => {
-    this.props.handleCancel(this.props.type);
+  onCancel = () => {
+    this.props.onMoreChange({
+      beds: [0, 0, 0],
+      superhost: false,
+      amenities: [],
+      facilities: []
+    });
+
+    this.onClose();
   };
 
+  onClose = () => {
+    this.props.onClose("More filters");
+  };
   render() {
     return (
       <Wrapper isOpen={this.props.isOpen}>
@@ -108,8 +118,8 @@ export default class extends React.Component {
         >
           <Content>{this.props.children}</Content>
           <Footer>
-            <Cancel onClick={this.handleCancelClick}>Cancel</Cancel>
-            <Apply onClick={this.handleClick}>See homes</Apply>
+            <Cancel onClick={this.onCancel}>Cancel</Cancel>
+            <Apply onClick={this.onClose}>See homes</Apply>
           </Footer>
         </More>
       </Wrapper>

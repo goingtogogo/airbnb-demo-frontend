@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Footer, Cancel, Apply } from "../../UI";
 import switcher from "../../UI/switcher.svg";
 import switched from "../../UI/switched.svg";
 
@@ -27,41 +28,76 @@ const Subtitle = styled.span`
   line-height: 17px;
   font-size: 14px;
 `;
-const Switcher = styled.button`
+
+const Label = styled.label`
+  cursor: pointer;
   align-self: center;
   display: flex;
   justify-content: strecth;
   width: 64px;
   height: 40px;
-  border: none;
-  background-color: transparent;
-  background-image: url(${props => (props.switcher ? switched : switcher)});
-  background-repeat: no-repeat;
-  background-size: 100%;
+`;
+
+const Switcher = styled.input`
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  visibility: hidden;
+`;
+
+const Off = styled.img`
+  display: block;
+  ${Switcher}:checked ~ & {
+    display: none;
+  }
 `;
 const On = styled.img`
-  width: 64px;
-  height: 40px;
-  display: ${props => (props.switcher ? "none" : "visible")};
+  display: none;
+  ${Switcher}:checked ~ & {
+    display: block;
+  }
 `;
+
 export default class extends React.Component {
   onSwitch = switcher => {
     this.props.onInstantChange({ instant: !this.props.instant });
   };
+  onCancel = () => {
+    this.props.onInstantChange({
+      instant: false
+    });
 
+    this.onClose();
+  };
+
+  onClose = () => {
+    this.props.onClose("Instant book");
+  };
   render() {
     return (
-      <Instant>
-        <Title>
-          Instant Book
-          <Subtitle>
-            Listings you can book without waiting for host approval.
-          </Subtitle>
-        </Title>
-        <Switcher onClick={this.onSwitch} switcher={this.props.instant}>
-          {/* <On src={switched} switcher={this.props.instant} /> */}
-        </Switcher>
-      </Instant>
+      <div>
+        <Instant>
+          <Title>
+            Instant Book
+            <Subtitle>
+              Listings you can book without waiting for host approval.
+            </Subtitle>
+          </Title>
+          <Label>
+            <Switcher
+              type="checkbox"
+              onClick={this.onSwitch}
+              checked={this.props.instant}
+            />
+            <Off src={switcher} />
+            <On src={switched} />
+          </Label>
+        </Instant>
+        <Footer>
+          <Cancel onClick={this.onCancel}>Cancel</Cancel>
+          <Apply onClick={this.onClose}>Apply</Apply>
+        </Footer>
+      </div>
     );
   }
 }

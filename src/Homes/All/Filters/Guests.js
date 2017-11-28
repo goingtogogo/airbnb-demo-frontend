@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import MediaQuery from "react-responsive";
 
+import { Footer, Cancel, Apply } from "../../UI";
 import plus from "../../UI/counter-plus.svg";
 import minus from "../../UI/counter-minus.svg";
 
@@ -70,51 +72,71 @@ const Counter = styled.span`
 `;
 
 export default class extends React.Component {
-  decCount = index => {
-    if (this.props.guests[index] > 0)
+  decCount = type => {
+    if (this.props.guests[type] > 0)
       this.props.onGuestsChange({
-        guests: Object.values({
+        guests: {
           ...this.props.guests,
-          [index]: this.props.guests[index] - 1
-        })
+          [type]: this.props.guests[type] - 1
+        }
       });
   };
 
-  incCount = index => {
+  incCount = type => {
     this.props.onGuestsChange({
-      guests: Object.values({
+      guests: {
         ...this.props.guests,
-        [index]: this.props.guests[index] + 1
-      })
+        [type]: this.props.guests[type] + 1
+      }
     });
+  };
+
+  onCancel = () => {
+    this.props.onGuestsChange({
+      guests: [1, 0, 0]
+    });
+
+    this.onClose();
+  };
+
+  onClose = () => {
+    this.props.onClose("Guests");
   };
 
   render() {
     return (
-      <Guests>
-        <Type>
-          <Title>Adults</Title>
-          <Minus onClick={() => this.decCount(0)} />
-          <Counter>{this.props.guests[0]}</Counter>
-          <Plus onClick={() => this.incCount(0)} />
-        </Type>
-        <Type>
-          <Title>
-            Children<Subtitle>Ages 2 — 12</Subtitle>
-          </Title>
-          <Minus onClick={() => this.decCount(1)} />
-          <Counter>{this.props.guests[1]}</Counter>
-          <Plus onClick={() => this.incCount(1)} />
-        </Type>
-        <Type>
-          <Title>
-            Infants<Subtitle>Under 2</Subtitle>
-          </Title>
-          <Minus onClick={() => this.decCount(2)} />
-          <Counter>{this.props.guests[2]}</Counter>
-          <Plus onClick={() => this.incCount(2)} />
-        </Type>
-      </Guests>
+      <div>
+        <Guests>
+          <Type>
+            <Title>Adults</Title>
+            <Minus onClick={() => this.decCount("adults")} />
+            <Counter>{this.props.guests.adults}</Counter>
+            <Plus onClick={() => this.incCount("adults")} />
+          </Type>
+          <Type>
+            <Title>
+              Children<Subtitle>Ages 2 — 12</Subtitle>
+            </Title>
+            <Minus onClick={() => this.decCount("childrens")} />
+            <Counter>{this.props.guests.childrens}</Counter>
+            <Plus onClick={() => this.incCount("childrens")} />
+          </Type>
+          <Type>
+            <Title>
+              Infants<Subtitle>Under 2</Subtitle>
+            </Title>
+            <Minus onClick={() => this.decCount("infants")} />
+            <Counter>{this.props.guests.infants}</Counter>
+            <Plus onClick={() => this.incCount("infants")} />
+          </Type>
+        </Guests>
+        <MediaQuery minWidth={768}>
+          <Footer>
+            <Cancel onClick={this.onCancel}>Cancel</Cancel>
+            <Apply onClick={this.onClose}>Apply</Apply>
+          </Footer>
+        </MediaQuery>
+      </div>
     );
   }
 }
