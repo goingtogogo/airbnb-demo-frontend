@@ -12,7 +12,8 @@ const Room = styled.div`
 `;
 
 const Type = styled.div`
-  margin-bottom: 16px;
+  padding: 6px;
+  margin-bottom: 10px;
   width: 294px;
   display: flex;
   justify-content: flex-start;
@@ -37,7 +38,6 @@ const Checkbox = styled.div`
     height: 26px;
     background-image: url(${check});
     background-repeat: no-repeat;
-    backroung-size: 60%;
     visibility: ${props => (props.isChecked ? "visible" : "hidden")};
   }
 `;
@@ -88,7 +88,11 @@ export default class extends React.Component {
     return (
       <div>
         <Room>
-          <Type onClick={() => this.handleCheck("entire")}>
+          <Type
+            onClick={() => this.handleCheck("entire")}
+            onKeyPress={() => this.handleCheck("entire")}
+            tabIndex="0"
+          >
             <Checkbox
               isChecked={
                 this.props.rooms.includes("entire") && this.props.isOpen
@@ -99,7 +103,11 @@ export default class extends React.Component {
             </Title>
             <Icon src={entire} />
           </Type>
-          <Type onClick={() => this.handleCheck("separate")}>
+          <Type
+            onClick={() => this.handleCheck("separate")}
+            onKeyPress={() => this.handleCheck("separate")}
+            tabIndex="0"
+          >
             <Checkbox
               isChecked={
                 this.props.rooms.includes("separate") && this.props.isOpen
@@ -112,7 +120,11 @@ export default class extends React.Component {
             </Title>
             <Icon src={separate} />
           </Type>
-          <Type onClick={() => this.handleCheck("shared")}>
+          <Type
+            onClick={() => this.handleCheck("shared")}
+            onKeyPress={() => this.handleCheck("shared")}
+            tabIndex="0"
+          >
             <Checkbox
               isChecked={
                 this.props.rooms.includes("shared") && this.props.isOpen

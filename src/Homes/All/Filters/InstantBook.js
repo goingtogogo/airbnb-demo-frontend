@@ -83,7 +83,7 @@ export default class extends React.Component {
               Listings you can book without waiting for host approval.
             </Subtitle>
           </Title>
-          <Label>
+          <Label onKeyPress={this.onSwitch} tabIndex="0">
             <Switcher
               type="checkbox"
               onClick={this.onSwitch}

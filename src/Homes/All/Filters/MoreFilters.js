@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// import RoomType from "./RoomType";
 import check from "../../UI/check.svg";
 import plus from "../../UI/counter-plus.svg";
 import minus from "../../UI/counter-minus.svg";
@@ -27,7 +26,7 @@ const Section = styled.div`
 `;
 const Type = styled.div`
   width: 60%;
-  flex-basis: 50%;
+  flex-basis: 49%;
   display: flex;
   align-items: center;
 `;
@@ -45,7 +44,8 @@ const Option = styled.span`
   font-size: 18px;
 `;
 const Impovements = Type.extend`
-  margin-top: 16px;
+  padding: 2px;
+  margin-top: 14px;
   cursor: pointer;
 `;
 const Subtitle = styled.p`
@@ -90,15 +90,34 @@ const Counter = styled.span`
   line-height: 42px;
   font-size: 18px;
 `;
-const Switcher = styled.button`
-  align-self: center;
+const Label = styled.label`
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 10px;
+  display: flex;
+  justify-content: strecth;
   width: 64px;
   height: 40px;
-  border: none;
-  background-color: transparent;
-  background-image: url(${props => (props.switcher ? switched : switcher)});
-  background-repeat: no-repeat;
-  background-size: 100%;
+`;
+
+const Switcher = styled.input`
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  visibility: hidden;
+`;
+
+const Off = styled.img`
+  display: block;
+  ${Switcher}:checked ~ & {
+    display: none;
+  }
+`;
+const On = styled.img`
+  display: none;
+  ${Switcher}:checked ~ & {
+    display: block;
+  }
 `;
 
 const LearnMore = styled.a`
@@ -228,12 +247,24 @@ export default class extends React.Component {
             <Subtitle>Stay with recognized hosts.</Subtitle>
             <LearnMore>Learn more</LearnMore>
           </Description>
-          <Switcher switcher={this.props.superhost} onClick={this.onSwitch} />
+          <Label onKeyPress={this.onSwitch} tabIndex="0">
+            <Switcher
+              type="checkbox"
+              onClick={this.onSwitch}
+              checked={this.props.superhost}
+            />
+            <Off src={switcher} />
+            <On src={switched} />
+          </Label>
         </Section>
         <Section>
           <Title>Amenities</Title>
           {amenities.map((item, index) => (
-            <Impovements onClick={() => this.handleAmenities(item)}>
+            <Impovements
+              onClick={() => this.handleAmenities(item)}
+              onKeyPress={() => this.handleAmenities(item)}
+              tabIndex="0"
+            >
               <Checkbox
                 isChecked={
                   this.props.amenities.includes(item) && this.props.isOpen
@@ -242,12 +273,16 @@ export default class extends React.Component {
               <Option>{item}</Option>
             </Impovements>
           ))}
-          <SeeAll>See all amenities</SeeAll>
+          <SeeAll tabIndex="0">See all amenities</SeeAll>
         </Section>
         <Section>
           <Title>Facilities</Title>
           {facilities.map((item, index) => (
-            <Impovements onClick={() => this.handleFacilities(item)}>
+            <Impovements
+              onClick={() => this.handleFacilities(item)}
+              onKeyPress={() => this.handleFacilities(item)}
+              tabIndex="0"
+            >
               <Checkbox
                 isChecked={
                   this.props.facilities.includes(item) && this.props.isOpen
@@ -256,41 +291,7 @@ export default class extends React.Component {
               <Option>{item}</Option>
             </Impovements>
           ))}
-          {/* <Impovements onClick={() => this.handleFacilities("elevator")}>
-            <Checkbox
-              isChecked={
-                this.props.facilities.includes("elevator") && this.props.isOpen
-              }
-            />
-            <Option>Elevator</Option>
-          </Impovements>
-          <Impovements onClick={() => this.handleFacilities("freeparking")}>
-            <Checkbox
-              isChecked={
-                this.props.facilities.includes("freeparking") &&
-                this.props.isOpen
-              }
-            />
-            <Option>Free parking on premises</Option>
-          </Impovements>
-          <Impovements onClick={() => this.handleFacilities("pool")}>
-            <Checkbox
-              isChecked={
-                this.props.facilities.includes("pool") && this.props.isOpen
-              }
-            />
-            <Option>Pool</Option>
-          </Impovements>
-          <Impovements onClick={() => this.handleFacilities("wheelchair")}>
-            <Checkbox
-              isChecked={
-                this.props.facilities.includes("wheelchair") &&
-                this.props.isOpen
-              }
-            />
-            <Option>Wheelchair accessible</Option>
-          </Impovements> */}
-          <SeeAll>See all facilities</SeeAll>
+          <SeeAll tabIndex="0">See all facilities</SeeAll>
         </Section>
       </MoreFilters>
     );
