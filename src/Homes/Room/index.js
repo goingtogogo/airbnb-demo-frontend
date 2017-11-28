@@ -45,8 +45,8 @@ export default function() {
           <Nav />
           <Overview />
           <Reviews />
-          <Host />
         </StickyContainer>
+        <Host />
         <Location />
         <Offers />
         <Explore />

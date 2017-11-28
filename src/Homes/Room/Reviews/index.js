@@ -46,6 +46,15 @@ const Option = styled.div`
   line-height: 21px;
 `;
 
+const ratings = [
+  "Accuracy",
+  "Location",
+  "Communication",
+  "Check In",
+  "Cleanliness",
+  "Value"
+];
+
 export default function(props) {
   return (
     <Reviews>
@@ -57,24 +66,12 @@ export default function(props) {
         <Search placeholder="Search reviews" />
       </Header>
       <Ratings>
-        <Option>
-          Accuracy<Ratio />
-        </Option>
-        <Option>
-          Location<Ratio />
-        </Option>
-        <Option>
-          Communication<Ratio />
-        </Option>
-        <Option>
-          Check In<Ratio />
-        </Option>
-        <Option>
-          Cleanliness<Ratio />
-        </Option>
-        <Option>
-          Value<Ratio />
-        </Option>
+        {ratings.map((item, index) => (
+          <Option>
+            {item}
+            <Ratio />
+          </Option>
+        ))}
       </Ratings>
       <Review name="Marlee" date="November 2017" avatar={marlee}>
         This was one of my favourite places we stayed in all on Colombia. A very

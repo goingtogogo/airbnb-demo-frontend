@@ -139,7 +139,42 @@ const Free = styled.p`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   margin-bottom: 0;
 `;
-
+const options = [
+  {
+    title: "2 guests",
+    image: guest
+  },
+  {
+    title: "Studio",
+    image: door
+  },
+  {
+    title: "2 beds",
+    image: bed
+  },
+  {
+    title: "1 bath",
+    image: bathtub
+  }
+];
+const amenities = [
+  {
+    title: "Internet",
+    image: internet
+  },
+  {
+    title: "Family/kid friendly",
+    image: family
+  },
+  {
+    title: "Wireless Internet",
+    image: wifi
+  },
+  {
+    title: "Free parking on premises",
+    image: parking
+  }
+];
 export default function() {
   return (
     <Overview>
@@ -149,18 +184,12 @@ export default function() {
             <Title>Romantic Cabana with view</Title>
             <Subtitle>Entire cabin · Armenia</Subtitle>
             <Options>
-              <Option>
-                <Icon src={guest} />2 guests
-              </Option>
-              <Option>
-                <Icon src={door} />Studio
-              </Option>
-              <Option>
-                <Icon src={bed} />2 beds
-              </Option>
-              <Option>
-                <Icon src={bathtub} />1 bath
-              </Option>
+              {options.map((item, index) => (
+                <Option>
+                  <Icon src={item.image} />
+                  {item.title}
+                </Option>
+              ))}
             </Options>
           </Left>
           <Host>
@@ -180,18 +209,12 @@ export default function() {
       <Amenities>
         <Caption>Amenities</Caption>
         <Properties>
-          <Property>
-            <Icon src={internet} /> Internet
-          </Property>
-          <Property>
-            <Icon src={family} /> Family/kid friendly
-          </Property>
-          <Property>
-            <Icon src={wifi} /> Wireless Internet
-          </Property>
-          <Property>
-            <Icon src={parking} /> Free parking on premises
-          </Property>
+          {amenities.map((item, index) => (
+            <Property>
+              <Icon src={item.image} />
+              {item.title}
+            </Property>
+          ))}
         </Properties>
         <ReadMore>Show all amenities</ReadMore>
       </Amenities>
