@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Wrapper } from "../../UI";
+
 const Nav = styled.nav`
-  z-index: 777;
+  z-index: 2;
   background-color: #fff;
-  width: 66%;
   padding: 14px 0;
   margin-bottom: 24px;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: ${props => (props.hide ? 0 : 1)}px solid #dbdbdb;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   line-height: 16px;
@@ -26,12 +27,14 @@ const Link = styled.a`
 export default function() {
   return (
     <Nav>
-      <Link href="overview" selected>
-        Overview
-      </Link>·
-      <Link href="#reviews">Reviews</Link>·
-      <Link href="#host">The host</Link>·
-      <Link href="#location">Location</Link>
+      <Wrapper>
+        <Link href="overview" selected>
+          Overview
+        </Link>·
+        <Link href="#reviews">Reviews</Link>·
+        <Link href="#host">The host</Link>·
+        <Link href="#location">Location</Link>
+      </Wrapper>
     </Nav>
   );
 }
