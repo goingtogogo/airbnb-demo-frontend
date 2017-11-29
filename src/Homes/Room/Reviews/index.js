@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Title } from "../../UI/";
+import { Title, ReadText } from "../../UI/";
 import Search from "../../../UI/Search";
 import Ratio from "./Ratio";
 import Review from "./Review";
@@ -82,7 +82,8 @@ export default function(props) {
         What an absolutely wonderful place to stay! Yudy and Victoria were so
         kind and lovely, even after we arrived super late due to problems at the
         airport, and Hernando our driver was super friendly and really patient
-        with our little Spanish. Victoria was a lovely host and gave us so.
+        with our little Spanish. Victoria was a lovely host and gave us so...
+        <ReadText>Read more</ReadText>
       </Review>
       <Pagination />
     </Reviews>

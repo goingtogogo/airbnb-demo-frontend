@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Ratio from "../Reviews/Ratio";
 
+import like from "../../UI/like.svg";
+
 const Card = styled.a`
+  position: relative;
+  margin-top: 8px;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 0;
@@ -14,6 +18,20 @@ const Card = styled.a`
   @media (min-width: 768px) {
     margin-right: 0;
   }
+`;
+
+const Like = styled.button`
+  top: 10px;
+  right: 5px;
+  position: absolute;
+  width: 31px;
+  height: 27px;
+  background-color: transparent;
+  background-image: url(${like});
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: none;
+  cursor: pointer;
 `;
 
 const Img = styled.img`
@@ -65,6 +83,7 @@ export default function(props) {
       <Title>{props.title}</Title>
       <Price>${props.price} per night</Price>
       <Ratio />
+      <Like />
     </Card>
   );
 }

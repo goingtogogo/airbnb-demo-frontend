@@ -48,7 +48,9 @@ const Viewed = styled.p`
   width: 80%;
 `;
 
-const Report = styled.div`
+const Report = styled.a`
+  display: block;
+  text-decoration: none;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   line-height: 16px;
@@ -58,6 +60,7 @@ const Report = styled.div`
   background-repeat: no-repeat;
   background-size: 16px;
   background-position: 25%;
+  cursor: pointer;
 `;
 
 const Inputs = styled.div`

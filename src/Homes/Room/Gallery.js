@@ -17,7 +17,8 @@ const Photo = styled.img`
 `;
 
 const Share = styled.button`
-  right: calc(0% + 290px);
+  ${"" /* right: calc(0% + 290px); */};
+  right: calc(0% + 992px - 52%);
   top: 14px;
   padding: 9px 17px;
   position: absolute;
@@ -43,7 +44,8 @@ const Share = styled.button`
   }
 `;
 const Save = styled.button`
-  right: calc(0% + 190px);
+  ${"" /* right: calc(0% + 190px); */};
+  right: calc(0% + 992px - 59.5%);
   top: 14px;
   padding: 9px 17px;
   position: absolute;
@@ -70,8 +72,8 @@ const Save = styled.button`
   }
 `;
 const ViewPhotos = styled.button`
-  ${"" /* tofix */};
-  left: 14%;
+  left: calc(0% + 992px - 59.5%);
+  ${"" /* left: 14%; */};
   top: 84%;
   padding: 9px 17px;
   position: absolute;

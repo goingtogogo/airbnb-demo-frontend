@@ -9,7 +9,7 @@ import similar2 from "./similar-2.png";
 import similar3 from "./similar-3.png";
 
 const Offers = styled.div`
-  padding: 48px 0;
+  padding: 44px 0;
 `;
 export const CardWrap = styled.div`
   flex-basis: 64%;

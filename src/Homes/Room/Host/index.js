@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Title } from "../../UI";
+import { Title, ReadText } from "../../UI";
 
 import yudy from "../../UI/yudy.png";
 import verified from "./verified.svg";
@@ -16,13 +16,14 @@ const Left = styled.div`
 
 const Wrapper = styled.div`
   width: 66%;
-  padding: 58px 0;
+  padding-top: 58px;
+  padding-bottom: 52px;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
 `;
 
 const Subtitle = styled.p`
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
   color: #636363;
   font-size: 16px;
 `;
@@ -89,10 +90,13 @@ const Options = styled.div`
 `;
 const Option = styled.p`
   margin: 0;
-  margin-bottom: 4px;
+  margin-bottom: 18px;
   color: #383838;
   font-size: 18px;
   line-height: 14px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 const Value = styled.span`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
@@ -100,7 +104,6 @@ const Value = styled.span`
 const Photo = styled.img`
   width: 88px;
   height: 88px;
-  margin-bottom: 18px;
 `;
 
 export default function() {
@@ -128,6 +131,7 @@ export default function() {
         would be your hostess on the property. I live in California and am the
         owner of the property. It is my goal to create a "boutique eco-resort"
         on the approximately 5 acre farm we have in the coffee growing reg…
+        <ReadText> Read more</ReadText>
       </Description>
       <Contact>Contact host</Contact>
       <Options>

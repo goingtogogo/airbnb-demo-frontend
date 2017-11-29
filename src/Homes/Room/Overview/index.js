@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Contact, ReadMore } from "../../UI/index.js";
+import { Contact, ReadMore, ReadText } from "../../UI/index.js";
 import yudy from "../../UI/yudy.png";
 import bed from "./bed.svg";
 import bathtub from "./bathtub.svg";
@@ -250,6 +250,7 @@ export default function() {
         <p>
           Cancel up to 24 hours before check in and get a full refund (minus
           service fees). Cancel within 24 hours of your trip and the firs…
+          <ReadText> Read more</ReadText>
         </p>
       </Cancellations>
     </Overview>

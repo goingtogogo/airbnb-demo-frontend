@@ -14,7 +14,7 @@ const MapWrapper = styled.div`
 `;
 
 const Description = styled.p`
-  margin-top: 4px;
+  margin-top: 10px;
   margin-bottom: 16px;
   color: #383838;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
@@ -44,8 +44,8 @@ export default function() {
       <MapWrapper>
         <ReactMap
           apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
-          center={[40.1, 44.31]}
-          zoom={8}
+          center={[4.53388, -75.68111]}
+          zoom={12}
         />
       </MapWrapper>
       <Description>

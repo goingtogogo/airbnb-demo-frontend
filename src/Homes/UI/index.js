@@ -58,3 +58,10 @@ export const ReadMore = Contact.extend`
     background-size: 100%;
   }
 `;
+export const ReadText = styled.a`
+  font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 19px;
+  font-size: 16px;
+  color: #0f7276;
+  cursor: pointer;
+`;

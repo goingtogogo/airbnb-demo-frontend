@@ -73,8 +73,8 @@ export default function(props) {
           <Sticky>{stickyNav}</Sticky>
           <Overview />
           <Reviews />
-          <Host />
         </StickyContainer>
+        <Host />
         <Location />
         <Offers />
         <Explore />
