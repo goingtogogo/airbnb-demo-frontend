@@ -6,6 +6,11 @@ import arrowdown from "../../UI/assets/arrow-down.svg";
 import lamp from "../UI/lamp.svg";
 import flag from "../UI/flag.svg";
 
+import { DateRangePicker } from "react-dates";
+import "../UI/react_dates_overrides.css";
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";
+
 const Form = styled.div`
   padding: 15px 22px 0 22px;
   border: 1px solid #dbdbdb;
@@ -64,33 +69,17 @@ const Report = styled.a`
 `;
 
 const Inputs = styled.div`
+  margin-bottom: 12px;
+`;
+
+const Labels = styled.div`
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 `;
 
 const Label = styled.label`
+  flex-basis: 50%;
   font-size: 12px;
-`;
-
-const Input = styled.input`
-  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-  display: block;
-  width: 100%;
-  margin-top: 8px;
-  padding: 12px;
-  border: 1px solid #dbdbdb;
-  color: #636363;
-  font-size: 14px;
-  background: #ffffff;
-  &::placeholder {
-    color: #636363;
-  }
-`;
-const CheckIn = Input.extend`
-  border-right: none;
-`;
-const CheckOut = Input.extend`
-  width: 80%;
 `;
 
 const Guests = styled.select`
@@ -139,41 +128,67 @@ const Hint = styled.p`
   line-height: 19px;
   text-align: center;
 `;
+export default class extends React.Component {
+  state = {
+    focusedInput: false
+  };
 
-export default function() {
-  return (
-    <div>
-      <Form>
-        <Price>
-          $41 <Caption>per night</Caption>
-        </Price>
-        <Wrapper>
-          <Ratio />
-        </Wrapper>
-        <Inputs>
+  onFocusChange = focusedInput => {
+    this.setState({
+      focusedInput: !focusedInput ? "startDate" : focusedInput
+    });
+  };
+
+  onDatesChange = ({ startDate, endDate }) => {
+    this.props.dateChanged({
+      dates: { startDate, endDate }
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Form>
+          <Price>
+            $41 <Caption>per night</Caption>
+          </Price>
+          <Wrapper>
+            <Ratio />
+          </Wrapper>
+          <Inputs>
+            <Labels>
+              <Label>Check in</Label>
+              <Label>Check out</Label>
+            </Labels>
+            <DateRangePicker
+              startDate={this.state.startDate}
+              endDate={this.state.endDate}
+              onDatesChange={({ startDate, endDate }) =>
+                this.setState({ startDate, endDate })
+              }
+              focusedInput={this.state.focusedInput}
+              onFocusChange={focusedInput => this.setState({ focusedInput })}
+              startDatePlaceholderText="mm/dd/yyyy"
+              endDatePlaceholderText="mm/dd/yyyy"
+              numberOfMonths={1}
+            />
+          </Inputs>
+
           <Label>
-            Check in
-            <CheckIn placeholder="mm/dd/yyyy" />
+            Guests
+            <Guests>
+              <option value="">1 guest</option>
+            </Guests>
           </Label>
-          <Label>
-            Check out
-            <CheckOut placeholder="mm/dd/yyyy" />
-          </Label>
-        </Inputs>
-        <Label>
-          Guests
-          <Guests>
-            <option value="">1 guest</option>
-          </Guests>
-        </Label>
-        <Request>Request a book</Request>
-        <Hint>You won’t be charged yet</Hint>
-        <Bottom>
-          This home is on people’s minds.
-          <Viewed>It’s been viewed 500+ times in the past week.</Viewed>
-        </Bottom>
-      </Form>
-      <Report>Report this listing</Report>
-    </div>
-  );
+          <Request>Request a book</Request>
+          <Hint>You won’t be charged yet</Hint>
+          <Bottom>
+            This home is on people’s minds.
+            <Viewed>It’s been viewed 500+ times in the past week.</Viewed>
+          </Bottom>
+        </Form>
+        <Report>Report this listing</Report>
+      </div>
+    );
+  }
 }
