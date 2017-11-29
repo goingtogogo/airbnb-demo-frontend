@@ -16,10 +16,10 @@ import Explore from "./Explore";
 import Footer from "../../Footer/";
 
 const StickyWrapper = styled.div`
-  top: 24px;
+  top: 22px;
   right: 0;
   position: absolute;
-  width: 31%;
+  width: 32%;
 `;
 const Border = styled.div`
   position: fixed;

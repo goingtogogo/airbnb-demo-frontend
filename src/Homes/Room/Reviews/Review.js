@@ -5,7 +5,8 @@ import flag from "../../UI/flag.svg";
 
 const Wrapper = styled.div`
   padding-top: 16px;
-  margin-bottom: 24px;
+  padding-bottom: 4px;
+  margin-top: 12px;
   border-bottom: 1px solid #dbdbdb;
 `;
 const Avatar = styled.img`

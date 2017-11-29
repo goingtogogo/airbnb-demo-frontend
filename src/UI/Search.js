@@ -4,16 +4,16 @@ import searchicon from "./assets/search.svg";
 
 const Search = styled.input`
   width: 100%;
-  padding: 12px 35px;
+  padding: 12px 24px;
   border: 1px solid rgba(72, 72, 72, 0.2);
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
   font-size: 14px;
   appearance: none;
   @media (min-width: 768px) {
-    padding: 7px 28px;
+    padding: 7px 36px;
     padding-left: 28px;
     font-size: 14px;
   }

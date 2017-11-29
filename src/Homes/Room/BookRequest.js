@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import Reviews from "./Reviews/Ratio";
+import Ratio from "./Reviews/Ratio";
 import arrowdown from "../../UI/assets/arrow-down.svg";
 import lamp from "../UI/lamp.svg";
 import flag from "../UI/flag.svg";
 
 const Form = styled.div`
-  padding: 15px 24px 24px;
+  padding: 15px 22px 0 22px;
   border: 1px solid #dbdbdb;
   background: #ffffff;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
@@ -15,7 +15,7 @@ const Form = styled.div`
 
 const Price = styled.p`
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   color: #383838;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 24px;
@@ -30,7 +30,7 @@ const Caption = styled.span`
 
 const Wrapper = styled.div`
   margin-bottom: 15px;
-  padding-bottom: 25px;
+  padding-bottom: 22px;
   border-bottom: 1px solid #dbdbdb;
 `;
 const Bottom = styled.div`
@@ -40,7 +40,7 @@ const Bottom = styled.div`
   background-image: url(${lamp});
   background-repeat: no-repeat;
   background-size: 48px;
-  background-position: right;
+  background-position: 103%;
 `;
 const Viewed = styled.p`
   margin-top: 4px;
@@ -90,31 +90,35 @@ const CheckOut = Input.extend`
   width: 80%;
 `;
 
-const Button = styled.button`
-  display: block;
+const Guests = styled.select`
   width: 100%;
-  border: none;
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
   cursor: pointer;
-`;
-
-const Guests = Button.extend`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
   margin-top: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   padding: 12px;
   border: 1px solid rgba(118, 118, 118, 0.2);
   color: #636363;
   font-size: 14px;
   text-align: left;
-  background: #ffffff url(${arrowdown}) right 20px center no-repeat;
+  background: #ffffff url(${arrowdown}) right 12px center no-repeat;
+  text-indent: 0.01px;
+  text-overflow: "";
+  appearance: none;
+  ::-ms-expand {
+    display: none;
+  }
 `;
 
-const Request = Button.extend`
+const Request = styled.button`
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   padding: 10px 55px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   border-radius: 4px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
@@ -124,7 +128,7 @@ const Request = Button.extend`
 `;
 
 const Hint = styled.p`
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   padding-bottom: 24px;
   border-bottom: 1px solid #dbdbdb;
   color: #383838;
@@ -141,7 +145,7 @@ export default function() {
           $41 <Caption>per night</Caption>
         </Price>
         <Wrapper>
-          <Reviews />
+          <Ratio />
         </Wrapper>
         <Inputs>
           <Label>
@@ -155,7 +159,9 @@ export default function() {
         </Inputs>
         <Label>
           Guests
-          <Guests>1 guest</Guests>
+          <Guests>
+            <option value="">1 guest</option>
+          </Guests>
         </Label>
         <Request>Request a book</Request>
         <Hint>You won’t be charged yet</Hint>

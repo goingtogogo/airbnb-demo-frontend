@@ -45,7 +45,7 @@ export const Contact = styled.a`
 `;
 export const ReadMore = Contact.extend`
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   &:after {
     margin-left: 8px;
     width: 11px;

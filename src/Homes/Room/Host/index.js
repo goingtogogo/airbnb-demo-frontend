@@ -16,7 +16,7 @@ const Left = styled.div`
 
 const Wrapper = styled.div`
   width: 66%;
-  padding: 48px 0;
+  padding: 58px 0;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
 `;
 
@@ -81,7 +81,6 @@ const Contact = styled.button`
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  user-select: none;
   background: #ffffff;
 `;
 
@@ -99,8 +98,8 @@ const Value = styled.span`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
 `;
 const Photo = styled.img`
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: 88px;
   margin-bottom: 18px;
 `;
 

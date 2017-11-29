@@ -15,7 +15,7 @@ const Nav = styled.nav`
 `;
 
 const Link = styled.a`
-  margin: 0 8px;
+  margin: 0 7px;
   display: inline-block;
   color: ${props => (props.selected ? "#383838" : "#0f7276;")};
   text-decoration: none;

@@ -5,7 +5,7 @@ import arrowright from "../UI/arrow-right.svg";
 
 const Pagination = styled.div`
   margin: 0 auto;
-  margin-top: 48px;
+  margin-top: 20px;
   width: 80%;
   display: flex;
   flex-wrap: wrap;

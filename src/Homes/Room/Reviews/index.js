@@ -11,7 +11,7 @@ import marlee from "./marlee.png";
 import michelle from "./michelle.png";
 
 const Reviews = styled.div`
-  padding-top: 32px;
+  padding-top: 48px;
   border-top: 1px solid #dbdbdb;
   width: 66%;
   color: #383838;
@@ -33,7 +33,7 @@ const Ratings = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 18px;
+  padding-bottom: 14px;
 `;
 const Option = styled.div`
   flex-basis: 48%;

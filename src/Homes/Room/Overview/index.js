@@ -57,7 +57,7 @@ const Left = styled.div`
   flex-basis: 83%;
 `;
 const Side = styled.div`
-  width: 93%;
+  width: 90%;
   display: inline-block;
 `;
 
@@ -68,7 +68,7 @@ const Photo = styled.img`
 `;
 const Options = styled.div`
   margin-top: 50px;
-  width: 76%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
 `;
@@ -82,8 +82,8 @@ const Option = styled.span`
 
 const Description = styled.p`
   margin-top: 32px;
-  margin-bottom: 28px;
-  line-height: 21px;
+  margin-bottom: 24px;
+  line-height: 23px;
   font-size: 18px;
 `;
 
@@ -93,16 +93,17 @@ const Icon = styled.img`
   margin-right: 13px;
 `;
 const Shield = styled.img`
-  width: 40px;
+  width: 45px;
   height: auto;
   margin-right: 0;
 `;
 const Amenities = styled.div`
-  padding-top: 20px;
+  padding-top: 22px;
   border-top: 1px solid #dbdbdb;
 `;
 const Properties = styled.div`
   margin-top: 16px;
+  margin-bottom: 6px;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -116,21 +117,24 @@ const Property = styled.div`
   align-items: center;
 `;
 const Hint = styled.div`
-  padding: 24px 0;
+  padding-top: 24px;
+  padding-bottom: 20px;
   border-top: 1px solid #dbdbdb;
 `;
 const Rules = styled.div`
-  padding-top: 20px;
+  padding-top: 22px;
+  padding-bottom: 8px;
   border-top: 1px solid #dbdbdb;
 `;
 const Cancellations = styled.div`
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 12px;
   border-top: 1px solid #dbdbdb;
 `;
 const Hr = styled.hr`
   max-width: 67px;
   height: 1px;
-  margin: 4px 0px;
+  margin: 0px;
   border: none;
   color: #dbdbdb;
   background-color: #dbdbdb;

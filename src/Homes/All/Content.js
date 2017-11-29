@@ -47,6 +47,9 @@ const CardWrap = styled.div`
   @media (min-width: 992px) {
     flex-basis: 48%;
   }
+  &:last-child {
+    margin-bottom: 64px;
+  }
 `;
 const Pin = styled.a`
   width: 40px;
