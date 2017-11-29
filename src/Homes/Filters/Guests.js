@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
-import { Footer, Cancel, Apply } from "../../UI";
-import plus from "../../UI/counter-plus.svg";
-import minus from "../../UI/counter-minus.svg";
+import { Footer, Cancel, Apply } from "../UI";
+import plus from "../UI/counter-plus.svg";
+import minus from "../UI/counter-minus.svg";
 
 const Guests = styled.div`
   padding: 10px 14px;
@@ -93,7 +93,7 @@ export default class extends React.Component {
 
   onCancel = () => {
     this.props.onGuestsChange({
-      guests: [1, 0, 0]
+      guests: { adults: 1, childrens: 0, infants: 0 }
     });
 
     this.onClose();

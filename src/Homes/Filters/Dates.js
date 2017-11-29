@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
-import { Footer, Cancel, Apply } from "../../UI";
-import "../../UI/react_dates_overrides.css";
+import { Footer, Cancel, Apply } from "../UI";
+import "../UI/react_dates_overrides.css";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { DayPickerRangeController } from "react-dates";
 import moment from "moment";
 
-import longarrow from "../../UI/long-arrow.svg";
+import longarrow from "../UI/long-arrow.svg";
 
 const Dates = styled.div`
   width: 100%;
@@ -58,6 +58,7 @@ export default class extends React.Component {
       dates: { startDate, endDate }
     });
   };
+
   onCancel = () => {
     this.props.dateChanged({
       dates: {

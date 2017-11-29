@@ -81,7 +81,7 @@ export default class extends React.Component {
       startDate: null,
       endDate: null
     },
-    beds: [0, 0, 0],
+    beds: { bedrooms: 0, beds: 0, bathrooms: 0 },
     superhost: false,
     amenities: [],
     facilities: []

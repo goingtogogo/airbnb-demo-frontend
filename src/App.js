@@ -6,7 +6,7 @@ import "normalize.css";
 import Header from "./Header/";
 
 import Landing from "./Landing";
-import Homes from "./Homes/All";
+import Homes from "./Homes/";
 import Room from "./Homes/Room";
 
 class App extends Component {

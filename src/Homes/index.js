@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Wrapper } from "../../UI";
-import Header from "../../Header";
+import { Wrapper } from "../UI";
+import Header from "../Header";
 
 import Filters from "./Filters";
 import Content from "./Content";

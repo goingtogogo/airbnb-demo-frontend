@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import MediaQuery from "react-responsive";
-// import PopUp from "./PopUp";
 
-import close from "../../UI/close.svg";
+import close from "../UI/close.svg";
 
 const Filter = styled.div`
   display: inline-block;

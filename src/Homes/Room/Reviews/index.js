@@ -5,7 +5,7 @@ import { Title, ReadText } from "../../UI/";
 import Search from "../../../UI/Search";
 import Ratio from "./Ratio";
 import Review from "./Review";
-import Pagination from "../../All/Pagination";
+import Pagination from "../../Pagination";
 
 import marlee from "./marlee.png";
 import michelle from "./michelle.png";

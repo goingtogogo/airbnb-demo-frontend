@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Footer, Cancel, Apply } from "../../UI";
-import switcher from "../../UI/switcher.svg";
-import switched from "../../UI/switched.svg";
+import { Footer, Cancel, Apply } from "../UI";
+import switcher from "../UI/switcher.svg";
+import switched from "../UI/switched.svg";
 
 const Instant = styled.div`
   padding: 0px 16px;
@@ -62,6 +62,7 @@ export default class extends React.Component {
   onSwitch = switcher => {
     this.props.onInstantChange({ instant: !this.props.instant });
   };
+
   onCancel = () => {
     this.props.onInstantChange({
       instant: false
@@ -73,6 +74,7 @@ export default class extends React.Component {
   onClose = () => {
     this.props.onClose("Instant book");
   };
+
   render() {
     return (
       <div>

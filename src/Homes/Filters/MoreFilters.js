@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import check from "../../UI/check.svg";
-import plus from "../../UI/counter-plus.svg";
-import minus from "../../UI/counter-minus.svg";
-import switcher from "../../UI/switcher.svg";
-import switched from "../../UI/switched.svg";
+import check from "../UI/check.svg";
+import plus from "../UI/counter-plus.svg";
+import minus from "../UI/counter-minus.svg";
+import switcher from "../UI/switcher.svg";
+import switched from "../UI/switched.svg";
 
-import arrowdown from "../../UI/arrow-down.svg";
+import arrowdown from "../UI/arrow-down.svg";
 
 const MoreFilters = styled.div`
   padding: 4px;
@@ -173,22 +173,21 @@ const facilities = [
 ];
 
 export default class extends React.Component {
-  decCount = index => {
-    if (this.props.beds[index] > 0)
+  decCount = type => {
+    if (this.props.beds[type] > 0)
       this.props.onChange({
-        beds: Object.values({
+        beds: {
           ...this.props.beds,
-          [index]: this.props.beds[index] - 1
-        })
+          [type]: this.props.beds[type] - 1
+        }
       });
   };
-
-  incCount = index => {
+  incCount = type => {
     this.props.onChange({
-      beds: Object.values({
+      beds: {
         ...this.props.beds,
-        [index]: this.props.beds[index] + 1
-      })
+        [type]: this.props.beds[type] + 1
+      }
     });
   };
 
@@ -224,19 +223,19 @@ export default class extends React.Component {
           <Type>
             <Option>Bedrooms</Option>
             <Minus onClick={() => this.decCount(0)} />
-            <Counter>{this.props.beds[0]}</Counter>
+            <Counter>{this.props.beds.bedrooms}</Counter>
             <Plus onClick={() => this.incCount(0)} />
           </Type>
           <Type>
             <Option>Beds</Option>
             <Minus onClick={() => this.decCount(1)} />
-            <Counter>{this.props.beds[1]}</Counter>
+            <Counter>{this.props.beds.beds}</Counter>
             <Plus onClick={() => this.incCount(1)} />
           </Type>
           <Type>
             <Option>Bathrooms</Option>
             <Minus onClick={() => this.decCount(2)} />
-            <Counter>{this.props.beds[2]}</Counter>
+            <Counter>{this.props.beds.bathrooms}</Counter>
             <Plus onClick={() => this.incCount(2)} />
           </Type>
         </Beds>
@@ -259,36 +258,36 @@ export default class extends React.Component {
         </Section>
         <Section>
           <Title>Amenities</Title>
-          {amenities.map((item, index) => (
+          {amenities.map((amenity, index) => (
             <Impovements
-              onClick={() => this.handleAmenities(item)}
-              onKeyPress={() => this.handleAmenities(item)}
+              onClick={() => this.handleAmenities(amenity)}
+              onKeyPress={() => this.handleAmenities(amenity)}
               tabIndex="0"
             >
               <Checkbox
                 isChecked={
-                  this.props.amenities.includes(item) && this.props.isOpen
+                  this.props.amenities.includes(amenity) && this.props.isOpen
                 }
               />
-              <Option>{item}</Option>
+              <Option>{amenity}</Option>
             </Impovements>
           ))}
           <SeeAll tabIndex="0">See all amenities</SeeAll>
         </Section>
         <Section>
           <Title>Facilities</Title>
-          {facilities.map((item, index) => (
+          {facilities.map((facility, index) => (
             <Impovements
-              onClick={() => this.handleFacilities(item)}
-              onKeyPress={() => this.handleFacilities(item)}
+              onClick={() => this.handleFacilities(facility)}
+              onKeyPress={() => this.handleFacilities(facility)}
               tabIndex="0"
             >
               <Checkbox
                 isChecked={
-                  this.props.facilities.includes(item) && this.props.isOpen
+                  this.props.facilities.includes(facility) && this.props.isOpen
                 }
               />
-              <Option>{item}</Option>
+              <Option>{facility}</Option>
             </Impovements>
           ))}
           <SeeAll tabIndex="0">See all facilities</SeeAll>

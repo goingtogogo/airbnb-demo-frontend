@@ -4,9 +4,9 @@ import Rheostat from "rheostat";
 import "rheostat/css/slider.css";
 import "rheostat/css/slider-horizontal.css";
 
-import { Footer, Cancel, Apply } from "../../UI";
-import "../../UI/rheostat.css";
-import price from "../../UI/price.svg";
+import { Footer, Cancel, Apply } from "../UI";
+import "../UI/rheostat.css";
+import price from "../UI/price.svg";
 
 const Price = styled.div`
   padding: 4px 16px;
@@ -54,6 +54,7 @@ export default class extends React.Component {
       }
     });
   };
+
   onCancel = () => {
     this.props.onPricesChange({
       prices: { min: 10, max: 1000 }
