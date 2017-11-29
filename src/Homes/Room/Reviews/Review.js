@@ -23,7 +23,7 @@ const Name = styled.p`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
 `;
 
-const Date = styled.time`
+const When = styled.time`
   margin-top: 0;
   margin-bottom: 2px;
   font-size: 16px;
@@ -60,7 +60,7 @@ export default function(props) {
         <Avatar src={props.avatar} alt="" width="48" height="48" />
         <div>
           <Name>{props.name}</Name>
-          <Date>{props.date}</Date>
+          <When>{props.when}</When>
         </div>
         <Flag />
       </Header>

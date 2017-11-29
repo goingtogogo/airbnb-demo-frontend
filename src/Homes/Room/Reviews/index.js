@@ -73,12 +73,12 @@ export default function(props) {
           </Option>
         ))}
       </Ratings>
-      <Review name="Marlee" date="November 2017" avatar={marlee}>
+      <Review name="Marlee" when="November 2017" avatar={marlee}>
         This was one of my favourite places we stayed in all on Colombia. A very
         peaceful setting and a great spot to unwind.
       </Review>
 
-      <Review name="Michelle" date="November 2017" avatar={michelle}>
+      <Review name="Michelle" when="November 2017" avatar={michelle}>
         What an absolutely wonderful place to stay! Yudy and Victoria were so
         kind and lovely, even after we arrived super late due to problems at the
         airport, and Hernando our driver was super friendly and really patient
