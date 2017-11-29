@@ -126,17 +126,17 @@ const cards = [
 export default function() {
   return (
     <Content>
-      {cards.map((item, index) => (
+      {cards.map((card, index) => (
         <CardWrap>
           <Card
             key={index}
-            title={item.title}
-            image={item.image}
-            price={item.price}
-            type={item.type}
-            beds={item.beds}
-            reviews={item.reviews}
-            owner={item.owner}
+            title={card.title}
+            image={card.image}
+            price={card.price}
+            type={card.type}
+            beds={card.beds}
+            reviews={card.reviews}
+            owner={card.owner}
           />
         </CardWrap>
       ))}

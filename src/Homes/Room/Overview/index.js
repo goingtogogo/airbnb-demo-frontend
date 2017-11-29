@@ -188,10 +188,10 @@ export default function() {
             <Title>Romantic Cabana with view</Title>
             <Subtitle>Entire cabin · Armenia</Subtitle>
             <Options>
-              {options.map((item, index) => (
+              {options.map((option, index) => (
                 <Option>
-                  <Icon src={item.image} />
-                  {item.title}
+                  <Icon src={option.image} />
+                  {option.title}
                 </Option>
               ))}
             </Options>

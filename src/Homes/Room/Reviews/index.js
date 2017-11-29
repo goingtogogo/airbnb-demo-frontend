@@ -66,9 +66,9 @@ export default function(props) {
         <Search placeholder="Search reviews" />
       </Header>
       <Ratings>
-        {ratings.map((item, index) => (
+        {ratings.map((rating, index) => (
           <Option>
-            {item}
+            {rating}
             <Ratio />
           </Option>
         ))}
