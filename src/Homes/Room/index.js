@@ -26,15 +26,33 @@ const Border = styled.div`
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 1;
+  z-index: 5;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbdb;
 `;
-
-function stickBookRequest({ isSticky, style }) {
+const stickyNav = ({ distanceFromTop }) => {
+  if (distanceFromTop <= 0) {
+    return (
+      <Border>
+        <Wrapper>
+          <Nav hide={true} />
+        </Wrapper>
+      </Border>
+    );
+  } else {
+    return (
+      <div>
+        <Nav />
+      </div>
+    );
+  }
+};
+const stickyAside = ({ isSticky, style }) => {
   return (
     <div
       style={{
         ...style,
-        distanceFromTop: isSticky ? 200 : 0
+        top: isSticky ? 44 : 0
       }}
     >
       <StickyWrapper>
@@ -42,42 +60,26 @@ function stickBookRequest({ isSticky, style }) {
       </StickyWrapper>
     </div>
   );
-}
+};
 
-export default function() {
+export default function(props) {
   return (
     <div>
       <Gallery />
-      <StickyContainer>
-        <Sticky>{stickBookRequest}</Sticky>
-        <Sticky>
-          {({ distanceFromTop }) => {
-            if (distanceFromTop <= 0) {
-              return (
-                <Border>
-                  <Nav hide={true} />
-                </Border>
-              );
-            } else {
-              return (
-                <div>
-                  <Nav hide={false} />
-                </div>
-              );
-            }
-          }}
-        </Sticky>
-      </StickyContainer>
-      <Wrapper>
-        {/* <Nav /> */}
-        <Overview />
-        <Reviews />
 
-        <Host />
+      <Wrapper>
+        <StickyContainer>
+          <Sticky>{stickyAside}</Sticky>
+          <Sticky>{stickyNav}</Sticky>
+          <Overview />
+          <Reviews />
+          <Host />
+        </StickyContainer>
         <Location />
         <Offers />
         <Explore />
       </Wrapper>
+
       <Footer />
     </div>
   );

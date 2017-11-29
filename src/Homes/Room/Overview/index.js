@@ -21,7 +21,7 @@ const Overview = styled.div`
   font-size: 16px;
 `;
 const Preview = styled.div`
-  padding-bottom: 24px;
+  padding: 24px 0;
 `;
 const Title = styled.h3`
   margin: 4px 0;

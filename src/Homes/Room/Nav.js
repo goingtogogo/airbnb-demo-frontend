@@ -4,10 +4,10 @@ import styled from "styled-components";
 import { Wrapper } from "../../UI";
 
 const Nav = styled.nav`
+  width: 66%;
   z-index: 2;
   background-color: #fff;
   padding: 14px 0;
-  margin-bottom: 24px;
   border-bottom: ${props => (props.hide ? 0 : 1)}px solid #dbdbdb;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
@@ -24,9 +24,9 @@ const Link = styled.a`
   }
 `;
 
-export default function() {
+export default function(props) {
   return (
-    <Nav>
+    <Nav hide={props.hide}>
       <Wrapper>
         <Link href="overview" selected>
           Overview
