@@ -22,8 +22,9 @@
   border: 1px solid #008489;
   border-radius: 50%;
 }
-
-.rheostat-handle::before,
-.rheostat-handle::after {
-  display: none;
+.rheostat-handle:focus {
+  /* cause outline in rheostat doesnt work even on airbnb.com */
+  outline: 2px solid #a5c7fe;
+  -moz-outline: 1px dashed #000;
+  -webkit-outline: 2px solid #a5c7fe;
 }
