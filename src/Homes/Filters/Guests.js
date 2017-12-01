@@ -122,7 +122,7 @@ export default class extends React.Component {
             </Title>
             <Minus
               onClick={() => this.decCount("childrens")}
-              disabled={this.props.guests.adults <= 0}
+              disabled={this.props.guests.childrens <= 0}
             />
             <Counter>{this.props.guests.childrens}</Counter>
             <Plus onClick={() => this.incCount("childrens")} />
@@ -133,7 +133,7 @@ export default class extends React.Component {
             </Title>
             <Minus
               onClick={() => this.decCount("infants")}
-              disabled={this.props.guests.adults <= 0}
+              disabled={this.props.guests.infants <= 0}
             />
             <Counter>{this.props.guests.infants}</Counter>
             <Plus onClick={() => this.incCount("infants")} />
