@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MediaQuery from "react-responsive";
 
 import Ratio from "./Reviews/Ratio";
 import arrowdown from "../../UI/assets/arrow-down.svg";
@@ -128,6 +129,7 @@ const Hint = styled.p`
   line-height: 19px;
   text-align: center;
 `;
+
 export default class extends React.Component {
   state = {
     focusedInput: false

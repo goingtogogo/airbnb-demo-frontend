@@ -18,12 +18,11 @@ const Type = styled.div`
   display: flex;
   justify-content: flex-start;
   cursor: pointer;
-
   &:last-child {
     margin-bottom: 0;
   }
 `;
-const Checkbox = styled.div`
+const Checkbox = styled.button`
   position: relative;
   width: 24px;
   height: 24px;
@@ -32,12 +31,15 @@ const Checkbox = styled.div`
   background-color: #fff;
   cursor: pointer;
   &:after {
+    top: 0;
+    left: 0;
     position: absolute;
     content: " ";
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     background-image: url(${check});
     background-repeat: no-repeat;
+    background-size: 20px;
     visibility: ${props => (props.isChecked ? "visible" : "hidden")};
   }
 `;
@@ -88,11 +90,7 @@ export default class extends React.Component {
     return (
       <div>
         <Room>
-          <Type
-            onClick={() => this.handleCheck("entire")}
-            onKeyPress={() => this.handleCheck("entire")}
-            tabIndex="0"
-          >
+          <Type onClick={() => this.handleCheck("entire")}>
             <Checkbox
               isChecked={
                 this.props.rooms.includes("entire") && this.props.isOpen
@@ -103,11 +101,7 @@ export default class extends React.Component {
             </Title>
             <Icon src={entire} />
           </Type>
-          <Type
-            onClick={() => this.handleCheck("separate")}
-            onKeyPress={() => this.handleCheck("separate")}
-            tabIndex="0"
-          >
+          <Type onClick={() => this.handleCheck("separate")}>
             <Checkbox
               isChecked={
                 this.props.rooms.includes("separate") && this.props.isOpen
@@ -120,11 +114,7 @@ export default class extends React.Component {
             </Title>
             <Icon src={separate} />
           </Type>
-          <Type
-            onClick={() => this.handleCheck("shared")}
-            onKeyPress={() => this.handleCheck("shared")}
-            tabIndex="0"
-          >
+          <Type onClick={() => this.handleCheck("shared")}>
             <Checkbox
               isChecked={
                 this.props.rooms.includes("shared") && this.props.isOpen

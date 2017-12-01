@@ -101,10 +101,13 @@ const Label = styled.label`
 `;
 
 const Switcher = styled.input`
+  z-index: -1;
   position: absolute;
-  height: 1px;
-  width: 1px;
-  visibility: hidden;
+  height: 40px;
+  width: 64px;
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
 `;
 
 const Off = styled.img`
@@ -143,7 +146,7 @@ const SeeAll = LearnMore.extend`
   }
 `;
 
-const Checkbox = styled.div`
+const Checkbox = styled.button`
   margin-right: 12px;
   border: 1px solid red;
   position: relative;
@@ -155,12 +158,14 @@ const Checkbox = styled.div`
   cursor: pointer;
   &:after {
     position: absolute;
+    top: 0;
+    left: 0;
     content: " ";
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     background-image: url(${check});
     background-repeat: no-repeat;
-    backroung-size: 60%;
+    background-size: 20px;
     visibility: ${props => (props.isChecked ? "visible" : "hidden")};
   }
 `;
@@ -246,7 +251,7 @@ export default class extends React.Component {
             <Subtitle>Stay with recognized hosts.</Subtitle>
             <LearnMore>Learn more</LearnMore>
           </Description>
-          <Label onKeyPress={this.onSwitch} tabIndex="0">
+          <Label>
             <Switcher
               type="checkbox"
               onClick={this.onSwitch}
@@ -259,11 +264,7 @@ export default class extends React.Component {
         <Section>
           <Title>Amenities</Title>
           {amenities.map((amenity, index) => (
-            <Impovements
-              onClick={() => this.handleAmenities(amenity)}
-              onKeyPress={() => this.handleAmenities(amenity)}
-              tabIndex="0"
-            >
+            <Impovements onClick={() => this.handleAmenities(amenity)}>
               <Checkbox
                 isChecked={
                   this.props.amenities.includes(amenity) && this.props.isOpen
@@ -272,16 +273,12 @@ export default class extends React.Component {
               <Option>{amenity}</Option>
             </Impovements>
           ))}
-          <SeeAll tabIndex="0">See all amenities</SeeAll>
+          <SeeAll>See all amenities</SeeAll>
         </Section>
         <Section>
           <Title>Facilities</Title>
           {facilities.map((facility, index) => (
-            <Impovements
-              onClick={() => this.handleFacilities(facility)}
-              onKeyPress={() => this.handleFacilities(facility)}
-              tabIndex="0"
-            >
+            <Impovements onClick={() => this.handleFacilities(facility)}>
               <Checkbox
                 isChecked={
                   this.props.facilities.includes(facility) && this.props.isOpen
@@ -290,7 +287,7 @@ export default class extends React.Component {
               <Option>{facility}</Option>
             </Impovements>
           ))}
-          <SeeAll tabIndex="0">See all facilities</SeeAll>
+          <SeeAll>See all facilities</SeeAll>
         </Section>
       </MoreFilters>
     );

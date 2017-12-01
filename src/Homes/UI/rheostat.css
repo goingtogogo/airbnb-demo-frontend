@@ -24,7 +24,6 @@
 }
 .rheostat-handle:focus {
   /* cause outline in rheostat doesnt work even on airbnb.com */
-  outline: 2px solid #a5c7fe;
+  outline: -webkit-focus-ring-color auto 5px;
   -moz-outline: 1px dashed #000;
-  -webkit-outline: 2px solid #a5c7fe;
 }

@@ -39,10 +39,13 @@ const Label = styled.label`
 `;
 
 const Switcher = styled.input`
+  z-index: -1;
   position: absolute;
-  height: 1px;
-  width: 1px;
-  visibility: hidden;
+  width: 64px;
+  height: 40px;
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
 `;
 
 const Off = styled.img`
@@ -85,7 +88,7 @@ export default class extends React.Component {
               Listings you can book without waiting for host approval.
             </Subtitle>
           </Title>
-          <Label onKeyPress={this.onSwitch} tabIndex="0">
+          <Label>
             <Switcher
               type="checkbox"
               onClick={this.onSwitch}
