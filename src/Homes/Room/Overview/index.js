@@ -14,20 +14,30 @@ import internet from "./internet.svg";
 import shield from "./shield.svg";
 
 const Overview = styled.div`
-  width: 66%;
+  width: 100%;
   color: #383838;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 19px;
   font-size: 16px;
+  @media (min-width: 992px) {
+    width: 66%;
+  }
 `;
 const Preview = styled.div`
-  padding: 24px 0;
+  padding: 16px 0;
+  @media (min-width: 768px) {
+    padding: 24px 0;
+  }
 `;
 const Title = styled.h3`
   margin: 4px 0;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 42px;
   font-size: 36px;
+  @media (min-width: 768px) {
+    line-height: 28px;
+    font-size: 24px;
+  }
 `;
 const Caption = styled.h4`
   margin: 0;
@@ -37,17 +47,24 @@ const Caption = styled.h4`
 `;
 const Subtitle = styled.span`
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
-  line-height: 19px;
-  font-size: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  @media (min-width: 768px) {
+    line-height: 19px;
+    font-size: 16px;
+  }
 `;
 const Host = styled.div`
-  margin-top: 8px;
+  margin-top: 28px;
   display: flex;
   flex-direction: column;
   flex-basis: 10%;
   text-align: center;
   align-items: center;
   align-self: center;
+  @media (min-width: 768px) {
+    margin-top: 8px;
+  }
 `;
 const Main = styled.div`
   width: 100%;
@@ -55,36 +72,71 @@ const Main = styled.div`
 `;
 const Left = styled.div`
   flex-basis: 83%;
+  @media (min-width: 768px) {
+    flex-basis: 88%;
+  }
 `;
 const Side = styled.div`
-  width: 90%;
+  width: 82%;
   display: inline-block;
+  @media (min-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const Photo = styled.img`
-  width: 64px;
-  height: 64px;
-  margin-bottom: 18px;
+  width: 40px;
+  height: 40px;
+  @media (min-width: 768px) {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 18px;
+  }
+`;
+const Name = styled.span`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 const Options = styled.div`
-  margin-top: 50px;
+  margin-top: 32px;
   width: 70%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  @media (min-width: 768px) {
+    margin-top: 50px;
+    width: 60%;
+  }
 `;
 const Option = styled.span`
+  margin-bottom: 16px;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 16px;
   font-size: 14px;
   display: flex;
   align-items: center;
+  @media (min-width: 768px) {
+    margin-bottom: 0px;
+  }
 `;
 
 const Description = styled.p`
   margin-top: 32px;
   margin-bottom: 24px;
-  line-height: 23px;
-  font-size: 18px;
+  line-height: 19px;
+  font-size: 16px;
+  @media (min-width: 768px) {
+    width: 83%;
+    line-height: 23px;
+    font-size: 18px;
+  }
+  @media (min-width: 768px) {
+    width: 100%;
+    line-height: 23px;
+    font-size: 18px;
+  }
 `;
 
 const Icon = styled.img`
@@ -93,9 +145,15 @@ const Icon = styled.img`
   margin-right: 13px;
 `;
 const Shield = styled.img`
-  width: 45px;
+  vertical-align: top;
+  display: inline-block;
+  width: 36px;
   height: auto;
   margin-right: 0;
+  @media (min-width: 768px) {
+    display: block;
+    width: 45px;
+  }
 `;
 const Amenities = styled.div`
   padding-top: 22px;
@@ -109,12 +167,16 @@ const Properties = styled.div`
 `;
 const Property = styled.div`
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
-  line-height: 19px;
-  font-size: 16px;
+  line-height: 16px;
+  font-size: 14px;
   flex-basis: 50%;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  @media (min-width: 768px) {
+    line-height: 19px;
+    font-size: 16px;
+  }
 `;
 const Hint = styled.div`
   padding-top: 24px;
@@ -197,7 +259,8 @@ export default function() {
             </Options>
           </Left>
           <Host>
-            <Photo src={yudy} />Yudi & Victoria
+            <Photo src={yudy} />
+            <Name>Yudi & Victoria</Name>
           </Host>
         </Main>
         <Description>

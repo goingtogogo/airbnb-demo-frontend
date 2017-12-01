@@ -7,9 +7,13 @@ export const Title = styled.h2`
   display: inline-block;
   margin-bottom: 16px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 28px;
-  line-height: 33px;
+  font-size: 24px;
+  line-height: 28px;
   color: #383838;
+  @media (min-width: 768px) {
+    font-size: 28px;
+    line-height: 33px;
+  }
 `;
 export const Cancel = styled.button`
   padding: 16px;

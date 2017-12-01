@@ -6,11 +6,20 @@ import { Title, ReadMore } from "../UI/";
 
 const Wrapper = styled.div`
   margin-bottom: 16px;
-  width: 66%;
+  width: 100%;
+  @media (min-width: 992px) {
+    width: 66%;
+  }
 `;
 const MapWrapper = styled.div`
   width: 100%;
-  height: 612px;
+  height: 192px;
+  @media (min-width: 768px) {
+    height: 474px;
+  }
+  @media (min-width: 992px) {
+    height: 612px;
+  }
 `;
 
 const Description = styled.p`

@@ -12,6 +12,12 @@ const Wrapper = styled.div`
   margin-bottom: 48px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 14px;
+    flex-wrap: nowrap;
+  }
 `;
 
 const Places = styled.div`
@@ -21,20 +27,26 @@ const Places = styled.div`
   color: #383838;
 `;
 const Place = styled.a`
-  margin-left: 6px;
+  margin-left: 0px;
   display: inline-block;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
   line-height: 28px;
   color: #636363;
   cursor: pointer;
+  @media (min-width: 768px) {
+    margin-left: 6px;
+  }
 `;
 
 const MorePlaces = styled.div`
-  flex-basis: 33%;
+  flex-basis: 100%;
   margin-right: 28px;
   &:last-shild {
     margin-right: 0;
+  }
+  @media (min-width: 768px) {
+    flex-basis: 33%;
   }
 `;
 
@@ -61,7 +73,6 @@ export default function() {
         <MorePlaces>
           <Link>Cartagena Vacation Rentals</Link>
           <Link>Bucaramanga</Link>
-          <br />
           <Link>Manuel Antonio</Link>
           <Link>Cartagena De Indias (Distrito Turistico Y Cultural)</Link>
           <Link>Quito</Link>

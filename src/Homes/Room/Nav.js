@@ -4,14 +4,22 @@ import styled from "styled-components";
 import { Wrapper } from "../../UI";
 
 const Nav = styled.nav`
-  width: 66%;
+  width: 100%;
   z-index: 2;
   background-color: #fff;
   padding: 14px 0;
   border-bottom: ${props => (props.hide ? 0 : 1)}px solid #dbdbdb;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 14px;
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 16px;
+    width: 82%;
+  }
+  @media (min-width: 992px) {
+    width: 66%;
+  }
 `;
 
 const Link = styled.a`

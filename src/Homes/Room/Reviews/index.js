@@ -13,20 +13,32 @@ import michelle from "./michelle.png";
 const Reviews = styled.div`
   padding-top: 48px;
   border-top: 1px solid #dbdbdb;
-  width: 66%;
+  width: 100%;
   color: #383838;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 21px;
   font-size: 18px;
+  @media (min-width: 992px) {
+    width: 66%;
+  }
 `;
 
 const Header = styled.div`
+  margin-bottom: 24px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 const Left = styled.div`
   display: flex;
+  flex-basis: 100%;
+  @media (min-width: 768px) {
+    flex-basis: auto;
+  }
 `;
 const Ratings = styled.div`
   display: flex;
@@ -36,7 +48,7 @@ const Ratings = styled.div`
   padding-bottom: 14px;
 `;
 const Option = styled.div`
-  flex-basis: 48%;
+  flex-basis: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -44,6 +56,9 @@ const Option = styled.div`
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 21px;
+  @media (min-width: 768px) {
+    flex-basis: 48%;
+  }
 `;
 
 const ratings = [

@@ -9,16 +9,26 @@ import verified from "./verified.svg";
 const Main = styled.div`
   width: 100%;
   display: flex;
+  margin-bottom: 30px;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 const Left = styled.div`
   flex-basis: 83%;
+  @media (min-width: 768px) {
+    flex-basis: 88%;
+  }
 `;
 
 const Wrapper = styled.div`
-  width: 66%;
+  width: 100%;
   padding-top: 58px;
   padding-bottom: 52px;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
+  @media (min-width: 992px) {
+    width: 66%;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -30,9 +40,11 @@ const Subtitle = styled.p`
 
 const Characters = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const Character = styled.div`
+  flex-basis: 100%;
   display: flex;
   align-items: center;
   margin-right: 33px;
@@ -40,6 +52,9 @@ const Character = styled.div`
   color: #636363;
   font-size: 18px;
   line-height: 21px;
+  @media (min-width: 768px) {
+    flex-basis: auto;
+  }
 `;
 
 const Counter = styled.div`
@@ -102,8 +117,12 @@ const Value = styled.span`
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
 `;
 const Photo = styled.img`
-  width: 88px;
-  height: 88px;
+  width: 60px;
+  height: 60px;
+  @media (min-width: 768px) {
+    width: 88px;
+    height: 88px;
+  }
 `;
 
 export default function() {

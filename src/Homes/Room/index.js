@@ -16,10 +16,14 @@ import Explore from "./Explore";
 import Footer from "../../Footer/";
 
 const StickyWrapper = styled.div`
+  display: none;
   top: 22px;
   right: 0;
   position: absolute;
   width: 32%;
+  @media (min-width: 992px) {
+    display: block;
+  }
 `;
 const Border = styled.div`
   position: fixed;
