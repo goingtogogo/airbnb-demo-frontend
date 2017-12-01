@@ -32,11 +32,11 @@ const Preview = styled.div`
 const Title = styled.h3`
   margin: 4px 0;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
-  line-height: 42px;
-  font-size: 36px;
+  line-height: 28px;
+  font-size: 24px;
   @media (min-width: 768px) {
-    line-height: 28px;
-    font-size: 24px;
+    line-height: 42px;
+    font-size: 36px;
   }
 `;
 const Caption = styled.h4`
@@ -75,11 +75,17 @@ const Left = styled.div`
   @media (min-width: 768px) {
     flex-basis: 88%;
   }
+  @media (min-width: 992px) {
+    flex-basis: 83%;
+  }
 `;
 const Side = styled.div`
   width: 82%;
   display: inline-block;
   @media (min-width: 768px) {
+    width: 90%;
+  }
+  @media (min-width: 992px) {
     width: 90%;
   }
 `;
@@ -101,13 +107,15 @@ const Name = styled.span`
 `;
 const Options = styled.div`
   margin-top: 32px;
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   @media (min-width: 768px) {
     margin-top: 50px;
-    width: 60%;
+  }
+  @media (min-width: 992px) {
+    width: 70%;
   }
 `;
 const Option = styled.span`
@@ -145,13 +153,10 @@ const Icon = styled.img`
   margin-right: 13px;
 `;
 const Shield = styled.img`
-  vertical-align: top;
-  display: inline-block;
   width: 36px;
   height: auto;
   margin-right: 0;
   @media (min-width: 768px) {
-    display: block;
     width: 45px;
   }
 `;

@@ -6,16 +6,16 @@ import { Title } from "../UI/";
 const Wrapper = styled.div`
   width: 100%;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 14px;
   padding-top: 16px;
   margin-bottom: 48px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   @media (min-width: 768px) {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 16px;
     flex-wrap: nowrap;
   }
 `;
@@ -42,11 +42,11 @@ const Place = styled.a`
 const MorePlaces = styled.div`
   flex-basis: 100%;
   margin-right: 28px;
-  &:last-shild {
-    margin-right: 0;
-  }
   @media (min-width: 768px) {
     flex-basis: 33%;
+  }
+  &:last-child {
+    margin-right: 0;
   }
 `;
 
