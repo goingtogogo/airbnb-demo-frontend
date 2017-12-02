@@ -1,11 +1,20 @@
 # Airbnb demo frontend
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=daily-cron)](https://travis-ci.org/travis-ci/travis-web)
 
-### How to run
+### Getting Started
+To run the app locally:
+
+```sh
+git clone git@github.com:mlshv/fake-burberry-frontend.git
+cd airbnb-demo-frontend
+yarn install
+yarn start
+```
+Now open [http://localhost:3000](http://localhost:3000)
 
 ### Screenshots
 
-### Used technologies
+### Built with
 - [React](https://github.com/facebook/react)
 - [Styled Components](https://github.com/styled-components/styled-components) 💅
 - [React router](https://github.com/ReactTraining/react-router)
