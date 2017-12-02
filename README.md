@@ -4,7 +4,7 @@
 ### Getting Started
 To run the app locally:
 ```sh
-git clone git@github.com:mlshv/fake-burberry-frontend.git
+git clone git@github.com:goingtogogo/airbnb-demo-frontend.git
 cd airbnb-demo-frontend
 yarn install
 yarn start
