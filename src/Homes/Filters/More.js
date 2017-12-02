@@ -35,7 +35,7 @@ const More = styled.div`
     padding-top: 18px;
     padding-left: 0;
     height: 590px;
-    max-height: 900px;
+    max-height: 950px;
     width: 658px;
     left: 12%;
     top: 54px;

@@ -7,7 +7,7 @@ import plus from "../UI/counter-plus.svg";
 import minus from "../UI/counter-minus.svg";
 
 const Guests = styled.div`
-  padding: 10px 14px;
+  padding: 8px 15px;
 `;
 
 const Type = styled.div`
@@ -15,9 +15,10 @@ const Type = styled.div`
   width: 294px;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   &:last-child {
     margin-bottom: 0;
+    padding-top: 8px;
   }
 `;
 const Title = styled.h3`
@@ -34,11 +35,10 @@ const Subtitle = styled.span`
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 19px;
   font-size: 16px;
-  margin-top: 8px;
+  margin-top: 10px;
 `;
 const Plus = styled.button`
   padding: 5px;
-  align-self: center;
   width: 48px;
   height: 32px;
   border: none;
@@ -50,7 +50,6 @@ const Plus = styled.button`
 `;
 const Minus = styled.button`
   padding: 5px;
-  align-self: center;
   width: 48px;
   height: 32px;
   border: none;
@@ -62,8 +61,7 @@ const Minus = styled.button`
 `;
 
 const Counter = styled.span`
-  padding: 0 10px;
-  align-self: center;
+  padding: 0 13px;
   width: 40px;
   text-align: center;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;

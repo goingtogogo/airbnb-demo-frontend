@@ -123,7 +123,12 @@ const On = styled.img`
   }
 `;
 
-const LearnMore = styled.a`
+const LearnMore = styled.button`
+  align-self: flex-start;
+  padding: 0;
+  padding-bottom: 8px;
+  background: #fff;
+  border: none;
   font-family: CircularLight, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 19px;
   font-size: 16px;
@@ -227,19 +232,28 @@ export default class extends React.Component {
           <Title>Rooms and beds</Title>
           <Type>
             <Option>Bedrooms</Option>
-            <Minus onClick={() => this.decCount(0)} />
+            <Minus
+              onClick={() => this.decCount(0)}
+              disabled={this.props.beds.bedrooms <= 0}
+            />
             <Counter>{this.props.beds.bedrooms}</Counter>
             <Plus onClick={() => this.incCount(0)} />
           </Type>
           <Type>
             <Option>Beds</Option>
-            <Minus onClick={() => this.decCount(1)} />
+            <Minus
+              onClick={() => this.decCount(1)}
+              disabled={this.props.beds.beds <= 0}
+            />
             <Counter>{this.props.beds.beds}</Counter>
             <Plus onClick={() => this.incCount(1)} />
           </Type>
           <Type>
             <Option>Bathrooms</Option>
-            <Minus onClick={() => this.decCount(2)} />
+            <Minus
+              onClick={() => this.decCount(2)}
+              disabled={this.props.beds.bathrooms <= 0}
+            />
             <Counter>{this.props.beds.bathrooms}</Counter>
             <Plus onClick={() => this.incCount(2)} />
           </Type>
