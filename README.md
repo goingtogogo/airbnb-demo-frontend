@@ -3,7 +3,6 @@
 
 ### Getting Started
 To run the app locally:
-
 ```sh
 git clone git@github.com:mlshv/fake-burberry-frontend.git
 cd airbnb-demo-frontend
