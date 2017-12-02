@@ -47,6 +47,9 @@ const CardWrap = styled.div`
   @media (min-width: 992px) {
     flex-basis: 48%;
   }
+  &:last-child {
+    margin-bottom: 64px;
+  }
 `;
 const Pin = styled.a`
   width: 40px;
@@ -63,75 +66,80 @@ const Pin = styled.a`
   }
 `;
 
-export default function(props) {
+const cards = [
+  {
+    title: "La Salentina, see, nature & relax",
+    image: home1,
+    price: 82,
+    type: "Entire house",
+    reviews: 91,
+    amount: 9,
+    owner: "Superhost"
+  },
+  {
+    title: "Your private 3 bedr. riad and exclusi…",
+    image: home2,
+    price: 82,
+    type: "Entire house",
+    reviews: 5,
+    amount: 161,
+    owner: "Superhost"
+  },
+  {
+    title: "Dreamy Tropical Tree House",
+    image: home3,
+    price: 200,
+    type: "Entire house",
+    reviews: 364,
+    amount: 1,
+    owner: "Superhost"
+  },
+  {
+    title: "Best location old town luxury loft",
+    image: home4,
+    price: 110,
+    type: "Entire apartmant",
+    reviews: 369,
+    amount: 1,
+    owner: "Superhost"
+  },
+  {
+    title: "Lussuoso. Vista incantevole.",
+    image: home5,
+    price: 83,
+    type: "Entire apartment",
+    reviews: 105,
+    amount: 6,
+    owner: "Superhost"
+  },
+  {
+    title: "In the historical center of Lecce",
+    image: home6,
+    price: 72,
+    type: "Entire apartment",
+    reviews: 221,
+    amount: 3,
+    owner: "Superhost"
+  }
+];
+
+export default function() {
   return (
     <Content>
-      <CardWrap>
-        <Card
-          title="La Salentina, see, nature, relax"
-          image={home1}
-          price={82}
-          type="Entire house"
-          amount={9}
-          reviews={91}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Your private 3 bedr. riad and exclusi…"
-          image={home2}
-          price={82}
-          type="Entire house"
-          amount={5}
-          reviews={161}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Dreamy Tropical Tree House"
-          image={home3}
-          price={200}
-          type="Entire house"
-          amount={1}
-          reviews={364}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Best location old town luxury loft"
-          image={home4}
-          price={110}
-          type="Entire apartment"
-          amount={1}
-          reviews={369}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Lussuoso. Vista incantevole."
-          image={home5}
-          price={83}
-          type="Entire apartment"
-          amount={6}
-          reviews={105}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="In the historical center of Lecce"
-          image={home6}
-          price={72}
-          type="Entire apartment"
-          amount={3}
-          reviews={221}
-          owner="Superhost"
-        />
-      </CardWrap>
+      {cards.map((card, index) => (
+        <CardWrap>
+          <Card
+            key={index}
+            title={card.title}
+            image={card.image}
+            price={card.price}
+            type={card.type}
+            beds={card.beds}
+            reviews={card.reviews}
+            owner={card.owner}
+          />
+        </CardWrap>
+      ))}
       <Pagination />
       <Pin />
       <Hint>
