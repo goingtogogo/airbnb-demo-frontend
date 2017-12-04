@@ -1,19 +1,16 @@
 language: node_js
 node_js:
   - '6'
-
+script:
+  - yarn run test
 cache:
   yarn: true
   directories:
     - node_modules
+before_install:
+  - npm install -g now
 
-before_deploy:
+script:
   - yarn run build
-
-deploy:
-
-  - provider: script
-    script: now alias $(now build -t=$GITHUB_TOKEN --public) $URL_PROD -t=$GITHUB_TOKEN
-    skip_cleanup: true
-    on:
-      branch: room+home-filters
+  - rm build/static/js/main.*.js.map
+  - now alias $(now --public --static ./build --token=$NOW_TOKEN) $URL_PROD --token=$NOW_TOKEN
