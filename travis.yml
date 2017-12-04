@@ -19,4 +19,4 @@ deploy:
     script: now alias $(now build -t=$GITHUB_TOKEN --public) $URL_PROD -t=$GITHUB_TOKEN
     skip_cleanup: true
     on:
-      branch: master
+      branch: room+home-filters
