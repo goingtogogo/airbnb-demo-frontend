@@ -14,3 +14,7 @@ script:
   - yarn run build
   - rm build/static/js/main.*.js.map
   - now alias $(now --public --static ./build --token=$NOW_TOKEN) $URL_PROD --token=$NOW_TOKEN
+
+deploy:
+  on:
+    branch: master
