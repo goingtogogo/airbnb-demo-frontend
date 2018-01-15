@@ -16,6 +16,31 @@ export const Title = styled.h2`
   }
 `;
 
+export const Cancel = styled.button`
+  padding: 16px;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  color: #636363;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`;
+export const Apply = styled.button`
+  padding: 16px;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
+  color: #0f7276;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`;
+export const Footer = styled.footer`
+  padding: 0 10px;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 19px;
+`;
+
 export const Contact = styled.a`
   display: block;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;

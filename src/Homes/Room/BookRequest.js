@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+
 import MediaQuery from "react-responsive";
+
 
 import Ratio from "./Reviews/Ratio";
 import arrowdown from "../../UI/assets/arrow-down.svg";

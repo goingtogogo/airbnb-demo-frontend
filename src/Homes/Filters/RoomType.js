@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Footer, Cancel, Apply } from "../UI";
 import entire from "../UI/entire.svg";
-import privat from "../UI/privat.svg";
+import separate from "../UI/separate.svg";
 import shared from "../UI/shared.svg";
 import check from "../UI/check.svg";
 
@@ -11,16 +12,17 @@ const Room = styled.div`
 `;
 
 const Type = styled.div`
-  margin-bottom: 16px;
+  padding: 6px;
+  margin-bottom: 10px;
   width: 294px;
   display: flex;
   justify-content: flex-start;
-
+  cursor: pointer;
   &:last-child {
     margin-bottom: 0;
   }
 `;
-const Checkbox = styled.div`
+const Checkbox = styled.button`
   position: relative;
   width: 24px;
   height: 24px;
@@ -29,13 +31,15 @@ const Checkbox = styled.div`
   background-color: #fff;
   cursor: pointer;
   &:after {
+    top: 0;
+    left: 0;
     position: absolute;
     content: " ";
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     background-image: url(${check});
     background-repeat: no-repeat;
-    backroung-size: 60%;
+    background-size: 20px;
     visibility: ${props => (props.isChecked ? "visible" : "hidden")};
   }
 `;
@@ -60,54 +64,75 @@ const Icon = styled.img`
 `;
 
 export default class extends React.Component {
-  state = {
-    rooms: []
-  };
   handleCheck = check => {
-    if ([...this.state.rooms].filter(x => x === check).length > 0) {
-      this.setState({ rooms: [...this.state.rooms].filter(x => x !== check) });
+    if (this.props.rooms.filter(x => x === check).length > 0) {
+      this.props.onRoomsChange({
+        rooms: this.props.rooms.filter(x => x !== check)
+      });
     } else {
-      this.setState({ rooms: [...this.state.rooms, check] });
+      this.props.onRoomsChange({ rooms: [...this.props.rooms, check] });
     }
   };
+
+  onCancel = () => {
+    this.props.onRoomsChange({
+      rooms: []
+    });
+
+    this.onClose();
+  };
+
+  onClose = () => {
+    this.props.onClose("Room type");
+  };
+
   render() {
     return (
-      <Room>
-        <Type>
-          <Checkbox
-            isChecked={this.state.rooms.includes("entire") && this.props.isOpen}
-            onClick={() => this.handleCheck("entire")}
-          />
-          <Title>
-            Entire home<Subtitle>Have a place to yourself</Subtitle>
-          </Title>
-          <Icon src={entire} />
-        </Type>
-        <Type>
-          <Checkbox
-            isChecked={this.state.rooms.includes("privat") && this.props.isOpen}
-            onClick={() => this.handleCheck("privat")}
-          />
-          <Title>
-            Private room<Subtitle>
-              Have your own room and share some common spaces
-            </Subtitle>
-          </Title>
-          <Icon src={privat} />
-        </Type>
-        <Type>
-          <Checkbox
-            isChecked={this.state.rooms.includes("shared") && this.props.isOpen}
-            onClick={() => this.handleCheck("shared")}
-          />
-          <Title>
-            Shared room<Subtitle>
-              Stay in a shared space, like a common room
-            </Subtitle>
-          </Title>
-          <Icon src={shared} />
-        </Type>
-      </Room>
+      <div>
+        <Room>
+          <Type onClick={() => this.handleCheck("entire")}>
+            <Checkbox
+              isChecked={
+                this.props.rooms.includes("entire") && this.props.isOpen
+              }
+            />
+            <Title>
+              Entire home<Subtitle>Have a place to yourself</Subtitle>
+            </Title>
+            <Icon src={entire} />
+          </Type>
+          <Type onClick={() => this.handleCheck("separate")}>
+            <Checkbox
+              isChecked={
+                this.props.rooms.includes("separate") && this.props.isOpen
+              }
+            />
+            <Title>
+              Private room<Subtitle>
+                Have your own room and share some common spaces
+              </Subtitle>
+            </Title>
+            <Icon src={separate} />
+          </Type>
+          <Type onClick={() => this.handleCheck("shared")}>
+            <Checkbox
+              isChecked={
+                this.props.rooms.includes("shared") && this.props.isOpen
+              }
+            />
+            <Title>
+              Shared room<Subtitle>
+                Stay in a shared space, like a common room
+              </Subtitle>
+            </Title>
+            <Icon src={shared} />
+          </Type>
+        </Room>
+        <Footer>
+          <Cancel onClick={this.onCancel}>Cancel</Cancel>
+          <Apply onClick={this.onClose}>Apply</Apply>
+        </Footer>
+      </div>
     );
   }
 }

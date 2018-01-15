@@ -1,5 +1,6 @@
 import React from "react";
 import { Wrapper } from "../UI";
+
 import Explore from "./Explore/";
 import Experiences from "./Experiences/";
 import Homes from "./Homes/";

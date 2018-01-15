@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
-import scroll from "./scroll.png";
-import arrowright from "./arrow-right.png";
+import scroll from "../UI/assets/scroll.png";
+import arrowright from "../UI/assets/arrow-right.png";
 
 export const Preview = styled.div`
   max-width: 100%;

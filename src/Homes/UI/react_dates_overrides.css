@@ -12,6 +12,12 @@
   display: none;
 }
 
+
+.CalendarMonth_table {
+  margin-top: 10px;
+}
+
+=======
 .CalendarMonth_table {
   margin-top: 10px;
 }
@@ -61,9 +67,11 @@
   display: none !important;
 }
 
+
 .DateRangePickerInput_arrow_1 {
   display: none !important;
 }
+
 
 .DateRangePickerInput {
   width: 100% !important;

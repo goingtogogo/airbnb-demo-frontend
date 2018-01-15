@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import arrowdown from "./arrow-down.png";
+import arrowdown from "../UI/assets/arrow-down.svg";
 
 export const Footer = styled.footer`
   width: 100%;

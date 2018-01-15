@@ -5,7 +5,7 @@ import arrowright from "./UI/arrow-right.svg";
 
 const Pagination = styled.div`
   margin: 0 auto;
-  margin-top: 48px;
+  margin-top: 20px;
   width: 80%;
   display: flex;
   flex-wrap: wrap;
@@ -44,15 +44,6 @@ const Next = styled.a`
   background-size: cover;
   cursor: pointer;
 `;
-const Total = styled.a`
-  margin-top: 21px;
-  flex-basis: 100%;
-  text-align: center;
-  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 19px;
-  color: #383838;
-`;
 
 export default function() {
   return (
@@ -63,7 +54,6 @@ export default function() {
       <Page>...</Page>
       <Page>17</Page>
       <Next />
-      <Total>1 – 18 of 300+ Rentals</Total>
     </Pagination>
   );
 }
