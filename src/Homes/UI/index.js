@@ -15,6 +15,7 @@ export const Title = styled.h2`
     line-height: 33px;
   }
 `;
+
 export const Cancel = styled.button`
   padding: 16px;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;
@@ -39,6 +40,7 @@ export const Footer = styled.footer`
   font-size: 16px;
   line-height: 19px;
 `;
+
 export const Contact = styled.a`
   display: block;
   font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif;

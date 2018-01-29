@@ -2,6 +2,7 @@
   box-shadow: none !important;
   margin: 0;
 }
+
 .DayPicker__vertical {
   padding: 0;
 }
@@ -10,30 +11,42 @@
 .DayPickerKeyboardShortcuts_show__topRight {
   display: none;
 }
+
+
 .CalendarMonth_table {
   margin-top: 10px;
 }
+
+=======
+.CalendarMonth_table {
+  margin-top: 10px;
+}
+
 .CalendarDay_container {
   border: 1px solid #d5d5d5 !important;
   color: #383838;
   font-size: 14px;
   line-height: 16px;
 }
+
 .DayPicker_weekHeader_li {
   font-size: 14px;
   line-height: 16px;
   color: #636363;
 }
+
 .CalendarDay__blocked_calendar .CalendarDay_button {
   color: #cbcbcb;
   background-color: #fff;
 }
+
 .Calendarmonth_caption .Calendarmonth_caption_1 {
   font-size: 18px;
   line-height: 21px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
 }
+
 #startDate,
 #endDate {
   display: inline-block !important;
@@ -45,6 +58,7 @@
   border: 1px solid #dbdbdb;
   color: #636363;
 }
+
 #endDate {
   border-left: none !important;
 }
@@ -52,9 +66,13 @@
 .DateRangePickerInput_arrow_svg_1 {
   display: none !important;
 }
+
+
 .DateRangePickerInput_arrow_1 {
   display: none !important;
 }
+
+
 .DateRangePickerInput {
   width: 100% !important;
   display: flex !important;
