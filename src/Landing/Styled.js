@@ -31,9 +31,6 @@ export const List = styled.div`
   justify-content: space-between;
   overflow-x: scroll;
   overflow-y: hidden;
-  @media (min-width: 992px) {
-    overflow: visible;
-  }
 `;
 
 export const Scroll = styled.a`

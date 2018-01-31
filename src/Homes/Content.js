@@ -4,12 +4,6 @@ import "whatwg-fetch";
 import Card from "./Card";
 import Pagination from "./Pagination";
 
-import home1 from "./home-1.png";
-import home2 from "./home-2.png";
-import home3 from "./home-3.png";
-import home4 from "./home-4.png";
-import home5 from "./home-5.png";
-import home6 from "./home-6.png";
 import pin from "./UI/pin.svg";
 
 const Content = styled.div`
@@ -95,7 +89,7 @@ export default class Cards extends React.Component {
               type={`${home.kind[0].toUpperCase()}${home.kind
                 .slice(1)
                 .replace(/_/, " ")}`}
-              beds={home.guestsCount}
+              beds={home.bedsCount}
               reviews={home.reviewsCount}
               owner={home.isSuperhost}
             />

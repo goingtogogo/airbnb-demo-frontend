@@ -14,9 +14,6 @@ const Card = styled(Link)`
   justify-content: space-between;
   cursor: pointer;
   color: #383838;
-  @media (min-width: 768px) {
-    margin-right: 0;
-  }
 `;
 
 const Img = styled.img`
@@ -95,7 +92,7 @@ export default function(props) {
       </PriceInfo>
       <Description>
         <Type>{props.type}</Type>
-        <Amount>{props.amount} beds</Amount>
+        <Amount>{props.beds} beds</Amount>
       </Description>
       <Ratio>
         <Star />
