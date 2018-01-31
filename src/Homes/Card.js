@@ -5,6 +5,7 @@ import { Price } from "../UI";
 import Star from "../UI/Star";
 
 const Card = styled(Link)`
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 0;
@@ -20,7 +21,6 @@ const Card = styled(Link)`
 
 const Img = styled.img`
   width: 100%;
-  height: auto;
 `;
 const PriceInfo = styled.div`
   flex-basis: 100%;
@@ -104,7 +104,7 @@ export default function(props) {
         <Star />
         <Star />
         <Reviews>{props.reviews}</Reviews>
-        <Owner>&#183; {props.owner}</Owner>
+        <Owner>{props.owner && "  ·  Superhost"}</Owner>
       </Ratio>
     </Card>
   );

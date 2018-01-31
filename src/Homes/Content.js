@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import "whatwg-fetch";
 import Card from "./Card";
 import Pagination from "./Pagination";
 
@@ -51,6 +52,7 @@ const CardWrap = styled.div`
     margin-bottom: 64px;
   }
 `;
+
 const Pin = styled.a`
   width: 40px;
   height: 40px;
@@ -66,86 +68,46 @@ const Pin = styled.a`
   }
 `;
 
-const cards = [
-  {
-    title: "La Salentina, see, nature & relax",
-    image: home1,
-    price: 82,
-    type: "Entire house",
-    reviews: 91,
-    amount: 9,
-    owner: "Superhost"
-  },
-  {
-    title: "Your private 3 bedr. riad and exclusi…",
-    image: home2,
-    price: 82,
-    type: "Entire house",
-    reviews: 5,
-    amount: 161,
-    owner: "Superhost"
-  },
-  {
-    title: "Dreamy Tropical Tree House",
-    image: home3,
-    price: 200,
-    type: "Entire house",
-    reviews: 364,
-    amount: 1,
-    owner: "Superhost"
-  },
-  {
-    title: "Best location old town luxury loft",
-    image: home4,
-    price: 110,
-    type: "Entire apartmant",
-    reviews: 369,
-    amount: 1,
-    owner: "Superhost"
-  },
-  {
-    title: "Lussuoso. Vista incantevole.",
-    image: home5,
-    price: 83,
-    type: "Entire apartment",
-    reviews: 105,
-    amount: 6,
-    owner: "Superhost"
-  },
-  {
-    title: "In the historical center of Lecce",
-    image: home6,
-    price: 72,
-    type: "Entire apartment",
-    reviews: 221,
-    amount: 3,
-    owner: "Superhost"
-  }
-];
+export default class Cards extends React.Component {
+  state = { homes: [] };
 
-export default function() {
-  return (
-    <Content>
-      {cards.map((card, index) => (
-        <CardWrap>
-          <Card
-            key={index}
-            title={card.title}
-            image={card.image}
-            price={card.price}
-            type={card.type}
-            beds={card.beds}
-            reviews={card.reviews}
-            owner={card.owner}
-          />
-        </CardWrap>
-      ))}
-      <Pagination />
-      <Pin />
-      <Hint>
-        Enter dates to see full pricing. Additional fees apply. Taxes may be
-        added.
-      </Hint>
-    </Content>
-  );
+  componentWillMount() {
+    fetch("https://airbnb-demo-api.now.sh/v1/homes")
+      .then(response => response.json())
+      .then(homes => {
+        console.log("Данные получены");
+        this.setState({ homes: homes.items });
+      })
+      .catch(() => {
+        console.log("Произошла ошибка!");
+      });
+  }
+
+  render() {
+    return (
+      <Content>
+        {this.state.homes.map(home => (
+          <CardWrap key={home.id}>
+            <Card
+              title={home.name}
+              image={home.images[0].picture}
+              price={home.price}
+              type={`${home.kind[0].toUpperCase()}${home.kind
+                .slice(1)
+                .replace(/_/, " ")}`}
+              beds={home.guestsCount}
+              reviews={home.reviewsCount}
+              owner={home.isSuperhost}
+            />
+          </CardWrap>
+        ))}
+        <Pagination />
+        <Pin />
+        <Hint>
+          Enter dates to see full pricing. Additional fees apply. Taxes may be
+          added.
+        </Hint>
+      </Content>
+    );
+  }
 }
