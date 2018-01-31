@@ -38,7 +38,7 @@ export default class Homes extends React.Component {
     fetch("https://airbnb-demo-api.now.sh/v1/homes")
       .then(response => response.json())
       .then(homes => {
-        console.log("Данные получены", homes);
+        console.log("Данные получены");
         this.setState({ homes: homes.items });
       })
       .catch(() => {

@@ -22,14 +22,12 @@ const Img = styled.img`
 const PriceInfo = styled.div`
   flex-basis: 100%;
   display: flex;
-  align-items: center;
 `;
 const Title = styled.h3`
   margin: 8px 0px 0px 8px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
   line-height: 15px;
-
   @media (min-width: 768px) {
     font-size: 15px;
     line-height: 18px;

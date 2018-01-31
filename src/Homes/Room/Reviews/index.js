@@ -62,12 +62,30 @@ const Option = styled.div`
 `;
 
 const ratings = [
-  "Accuracy",
-  "Location",
-  "Communication",
-  "Check In",
-  "Cleanliness",
-  "Value"
+  {
+    id: 123,
+    value: "Accuracy"
+  },
+  {
+    id: 124,
+    value: "Location"
+  },
+  {
+    id: 125,
+    value: "Communication"
+  },
+  {
+    id: 126,
+    value: "Check In"
+  },
+  {
+    id: 127,
+    value: "Cleanliness"
+  },
+  {
+    id: 128,
+    value: "Value"
+  }
 ];
 
 export default function(props) {
@@ -81,9 +99,9 @@ export default function(props) {
         <Search placeholder="Search reviews" />
       </Header>
       <Ratings>
-        {ratings.map((rating, index) => (
-          <Option>
-            {rating}
+        {ratings.map(rating => (
+          <Option key={rating.id}>
+            {rating.value}
             <Ratio />
           </Option>
         ))}

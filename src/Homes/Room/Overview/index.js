@@ -212,36 +212,44 @@ const Free = styled.p`
 `;
 const options = [
   {
+    id: 118,
     title: "2 guests",
     image: guest
   },
   {
+    id: 119,
     title: "Studio",
     image: door
   },
   {
+    id: 220,
     title: "2 beds",
     image: bed
   },
   {
+    id: 221,
     title: "1 bath",
     image: bathtub
   }
 ];
 const amenities = [
   {
+    id: 1,
     title: "Internet",
     image: internet
   },
   {
+    id: 2,
     title: "Family/kid friendly",
     image: family
   },
   {
+    id: 3,
     title: "Wireless Internet",
     image: wifi
   },
   {
+    id: 4,
     title: "Free parking on premises",
     image: parking
   }
@@ -255,8 +263,8 @@ export default function() {
             <Title>Romantic Cabana with view</Title>
             <Subtitle>Entire cabin · Armenia</Subtitle>
             <Options>
-              {options.map((option, index) => (
-                <Option>
+              {options.map(option => (
+                <Option key={option.id}>
                   <Icon src={option.image} />
                   {option.title}
                 </Option>
@@ -281,10 +289,10 @@ export default function() {
       <Amenities>
         <Caption>Amenities</Caption>
         <Properties>
-          {amenities.map((item, index) => (
-            <Property>
-              <Icon src={item.image} />
-              {item.title}
+          {amenities.map(amenity => (
+            <Property key={amenity.id}>
+              <Icon src={amenity.image} />
+              {amenity.title}
             </Property>
           ))}
         </Properties>

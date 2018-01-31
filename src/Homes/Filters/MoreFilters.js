@@ -174,12 +174,42 @@ const Checkbox = styled.button`
     visibility: ${props => (props.isChecked ? "visible" : "hidden")};
   }
 `;
-const amenities = ["Heating", "Kitchen", "TV", "Wireless Internet"];
+const amenities = [
+  {
+    id: 200,
+    value: "Heating"
+  },
+  {
+    id: 201,
+    value: "Kitchen"
+  },
+  {
+    id: 202,
+    value: "TV"
+  },
+  {
+    id: 203,
+    value: "Wireless Internet"
+  }
+];
+
 const facilities = [
-  "Elevator",
-  "Free parking on premises",
-  "Pool",
-  "Wheelchair accessible"
+  {
+    id: 204,
+    value: "Elevator"
+  },
+  {
+    id: 205,
+    value: "Free parking on premises"
+  },
+  {
+    id: 206,
+    value: "Pool"
+  },
+  {
+    id: 207,
+    value: "Wheelchair accessible"
+  }
 ];
 
 export default class extends React.Component {
@@ -277,28 +307,36 @@ export default class extends React.Component {
         </Section>
         <Section>
           <Title>Amenities</Title>
-          {amenities.map((amenity, index) => (
-            <Impovements onClick={() => this.handleAmenities(amenity)}>
+          {amenities.map(amenity => (
+            <Impovements
+              key={amenity.value}
+              onClick={() => this.handleAmenities(amenity.value)}
+            >
               <Checkbox
                 isChecked={
-                  this.props.amenities.includes(amenity) && this.props.isOpen
+                  this.props.amenities.includes(amenity.value) &&
+                  this.props.isOpen
                 }
               />
-              <Option>{amenity}</Option>
+              <Option>{amenity.value}</Option>
             </Impovements>
           ))}
           <SeeAll>See all amenities</SeeAll>
         </Section>
         <Section>
           <Title>Facilities</Title>
-          {facilities.map((facility, index) => (
-            <Impovements onClick={() => this.handleFacilities(facility)}>
+          {facilities.map(facility => (
+            <Impovements
+              key={facility.id}
+              onClick={() => this.handleFacilities(facility.value)}
+            >
               <Checkbox
                 isChecked={
-                  this.props.facilities.includes(facility) && this.props.isOpen
+                  this.props.facilities.includes(facility.value) &&
+                  this.props.isOpen
                 }
               />
-              <Option>{facility}</Option>
+              <Option>{facility.value}</Option>
             </Impovements>
           ))}
           <SeeAll>See all facilities</SeeAll>
