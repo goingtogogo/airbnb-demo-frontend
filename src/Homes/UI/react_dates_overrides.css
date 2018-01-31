@@ -34,3 +34,30 @@
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   color: #383838;
 }
+#startDate,
+#endDate {
+  display: inline-block !important;
+  width: 80%;
+  font-family: CircularBook, "Helvetica Neue", Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  padding: 12px !important;
+  border: 1px solid #dbdbdb;
+  color: #636363;
+}
+#endDate {
+  border-left: none !important;
+}
+
+.DateRangePickerInput_arrow_svg_1 {
+  display: none !important;
+}
+.DateRangePickerInput_arrow_1 {
+  display: none !important;
+}
+.DateRangePickerInput {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  border: none !important;
+}
