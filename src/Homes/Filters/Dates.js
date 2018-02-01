@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
 
-import "./react_dates_overrides.css";
+import { Footer, Cancel, Apply } from "../UI";
+import "../UI/react_dates_overrides.css";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { DayPickerRangeController } from "react-dates";
@@ -43,10 +44,7 @@ const Title = styled.div`
 
 export default class extends React.Component {
   state = {
-    startDate: null,
-    endDate: null,
-    focusedInput: "startDate",
-    isOpen: false
+    focusedInput: "startDate"
   };
 
   onFocusChange = focusedInput => {
@@ -56,8 +54,24 @@ export default class extends React.Component {
   };
 
   onDatesChange = ({ startDate, endDate }) => {
-    this.setState({ startDate, endDate });
-    this.props.dateChanged(startDate, endDate);
+    this.props.dateChanged({
+      dates: { startDate, endDate }
+    });
+  };
+
+  onCancel = () => {
+    this.props.dateChanged({
+      dates: {
+        startDate: null,
+        endDate: null
+      }
+    });
+
+    this.onClose();
+  };
+
+  onClose = () => {
+    this.props.onClose("Dates");
   };
 
   render() {
@@ -65,8 +79,8 @@ export default class extends React.Component {
       <div>
         <MediaQuery minWidth={992}>
           <DayPickerRangeController
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
+            startDate={this.props.startDate}
+            endDate={this.props.endDate}
             onDatesChange={this.onDatesChange}
             onFocusChange={this.onFocusChange}
             focusedInput={this.state.focusedInput}
@@ -76,8 +90,8 @@ export default class extends React.Component {
         </MediaQuery>
         <MediaQuery minWidth={768} maxWidth={992}>
           <DayPickerRangeController
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
+            startDate={this.props.startDate}
+            endDate={this.props.endDate}
             onDatesChange={this.onDatesChange}
             onFocusChange={this.onFocusChange}
             focusedInput={this.state.focusedInput}
@@ -93,8 +107,8 @@ export default class extends React.Component {
             <Check>Check-out</Check>
           </Dates>
           <DayPickerRangeController
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
+            startDate={this.props.startDate}
+            endDate={this.props.endDate}
             onDatesChange={this.onDatesChange}
             onFocusChange={this.onFocusChange}
             focusedInput={this.state.focusedInput}
@@ -103,6 +117,10 @@ export default class extends React.Component {
             isDayBlocked={day => day.isBefore(moment(), "day")}
           />
         </MediaQuery>
+        <Footer>
+          <Cancel onClick={this.onCancel}>Cancel</Cancel>
+          <Apply onClick={this.onClose}>Apply</Apply>
+        </Footer>
       </div>
     );
   }

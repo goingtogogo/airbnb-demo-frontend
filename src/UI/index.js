@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     padding: 0;
   }
   @media (min-width: 992px) {
+    position: relative;
     max-width: 962px;
   }
 `;
