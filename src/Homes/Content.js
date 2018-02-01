@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import "whatwg-fetch";
 import Card from "./Card";
 import Pagination from "./Pagination";
 
@@ -86,9 +85,7 @@ export default class Cards extends React.Component {
               title={home.name}
               image={home.images[0].picture}
               price={home.price}
-              type={`${home.kind[0].toUpperCase()}${home.kind
-                .slice(1)
-                .replace(/_/, " ")}`}
+              type={home.kind}
               beds={home.bedsCount}
               reviews={home.reviewsCount}
               owner={home.isSuperhost}

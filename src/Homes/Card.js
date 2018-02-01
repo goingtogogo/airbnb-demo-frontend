@@ -89,7 +89,12 @@ export default function(props) {
         <Title>{props.title}</Title>
       </PriceInfo>
       <Description>
-        <Type>{props.type}</Type>
+        {/* <Type>{props.type}</Type> */}
+        <Type>
+          {`${props.type[0].toUpperCase()}${props.type
+            .slice(1)
+            .replace(/_/, " ")}`}
+        </Type>
         <Amount>{props.beds} beds</Amount>
       </Description>
       <Ratio>
