@@ -60,6 +60,7 @@ export default class Homes extends React.Component {
                 image={home.images[0].picture}
                 price={home.price}
                 type={home.kind}
+                rating={home.rating}
                 beds={home.bedsCount}
                 reviews={home.reviewsCount}
                 owner={home.isSuperhost}
