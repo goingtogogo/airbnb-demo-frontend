@@ -68,11 +68,10 @@ export default class Cards extends React.Component {
     fetch("https://airbnb-demo-api.now.sh/v1/homes")
       .then(response => response.json())
       .then(homes => {
-        console.log("Данные получены");
         this.setState({ homes: homes.items });
       })
-      .catch(() => {
-        console.log("Произошла ошибка!");
+      .catch(error => {
+        console.log("Произошла ошибка!", error);
       });
   }
 
@@ -86,6 +85,7 @@ export default class Cards extends React.Component {
               image={home.images[0].picture}
               price={home.price}
               type={home.kind}
+              rating={home.rating}
               beds={home.bedsCount}
               reviews={home.reviewsCount}
               owner={home.isSuperhost}

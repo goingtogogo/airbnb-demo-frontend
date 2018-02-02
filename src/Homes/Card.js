@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import times from "lodash/times";
 import { Link } from "react-router-dom";
 import { Price } from "../UI";
 import Star from "../UI/Star";
@@ -89,7 +90,6 @@ export default function(props) {
         <Title>{props.title}</Title>
       </PriceInfo>
       <Description>
-        {/* <Type>{props.type}</Type> */}
         <Type>
           {`${props.type[0].toUpperCase()}${props.type
             .slice(1)
@@ -98,11 +98,7 @@ export default function(props) {
         <Amount>{props.beds} beds</Amount>
       </Description>
       <Ratio>
-        <Star />
-        <Star />
-        <Star />
-        <Star />
-        <Star />
+        {times(Number(props.rating), () => <Star />)}
         <Reviews>{props.reviews}</Reviews>
         <Owner>{props.owner && "  ·  Superhost"}</Owner>
       </Ratio>

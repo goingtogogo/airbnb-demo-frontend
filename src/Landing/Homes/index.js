@@ -38,11 +38,10 @@ export default class Homes extends React.Component {
     fetch("https://airbnb-demo-api.now.sh/v1/homes?limit=6")
       .then(response => response.json())
       .then(homes => {
-        console.log("Данные получены");
         this.setState({ homes: homes.items });
       })
-      .catch(() => {
-        console.log("Произошла ошибка!");
+      .catch(error => {
+        console.log("Произошла ошибка!", error);
       });
   }
 
@@ -60,9 +59,6 @@ export default class Homes extends React.Component {
                 title={home.name}
                 image={home.images[0].picture}
                 price={home.price}
-                // type={`${home.kind[0].toUpperCase()}${home.kind
-                //   .slice(1)
-                //   .replace(/_/, " ")}`}
                 type={home.kind}
                 beds={home.bedsCount}
                 reviews={home.reviewsCount}
