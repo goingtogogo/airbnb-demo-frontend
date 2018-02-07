@@ -1,5 +1,5 @@
 # Airbnb demo frontend
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=daily-cron)](https://travis-ci.org/travis-ci/travis-web)
+
 
 Airbnb frontend React implementation. Created as a part of [Evgeny Rodionov's](https://github.com/evgenyrodionov) [frontend course](https://erodionov.ru/). Heavely based on original layouts from Airbnb.
 

@@ -16,8 +16,12 @@
     "react-scripts": "1.0.17",
     "react-sticky": "^6.0.1",
     "rheostat": "^2.1.1",
+<<<<<<< HEAD
     "styled-components": "^2.2.3",
     "whatwg-fetch": "^2.0.3"
+=======
+    "styled-components": "^2.2.3"
+>>>>>>> 1444e4c773c58bd9ca09c442c96c6d9dc353d44b
   },
   "scripts": {
     "start": "react-scripts start",
