@@ -15,7 +15,7 @@ Now open [http://localhost:3000](http://localhost:3000)
 
 ### Screenshots
 ![Product page top desktop](readme/1.jpg)
-![Product page top](readme-screenshots/2.jpg)
+![Product page top](readme/2.jpg)
 
 
 ### Built with
