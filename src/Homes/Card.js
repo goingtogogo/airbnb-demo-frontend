@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import times from "lodash/times";
+import { Link } from "react-router-dom";
 import { Price } from "../UI";
 import Star from "../UI/Star";
 
-const Card = styled.a`
+const Card = styled(Link)`
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 0;
@@ -12,26 +15,20 @@ const Card = styled.a`
   justify-content: space-between;
   cursor: pointer;
   color: #383838;
-  @media (min-width: 768px) {
-    margin-right: 0;
-  }
 `;
 
 const Img = styled.img`
   width: 100%;
-  height: auto;
 `;
 const PriceInfo = styled.div`
   flex-basis: 100%;
   display: flex;
-  align-items: center;
 `;
 const Title = styled.h3`
   margin: 8px 0px 0px 8px;
   font-family: CircularBold, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
   line-height: 15px;
-
   @media (min-width: 768px) {
     font-size: 15px;
     line-height: 18px;
@@ -86,24 +83,24 @@ const Owner = styled.span`
 
 export default function(props) {
   return (
-    <Card href="">
+    <Card to="/homes/cabana">
       <Img src={props.image} alt="Home" />
       <PriceInfo>
         <Price>${props.price}</Price>
         <Title>{props.title}</Title>
       </PriceInfo>
       <Description>
-        <Type>{props.type}</Type>
-        <Amount>{props.amount} beds</Amount>
+        <Type>
+          {`${props.type[0].toUpperCase()}${props.type
+            .slice(1)
+            .replace(/_/, " ")}`}
+        </Type>
+        <Amount>{props.beds} beds</Amount>
       </Description>
       <Ratio>
-        <Star />
-        <Star />
-        <Star />
-        <Star />
-        <Star />
+        {times(Number(props.rating), () => <Star />)}
         <Reviews>{props.reviews}</Reviews>
-        <Owner>&#183; {props.owner}</Owner>
+        <Owner>{props.owner && "  ·  Superhost"}</Owner>
       </Ratio>
     </Card>
   );

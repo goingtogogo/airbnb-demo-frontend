@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Preview, List, Scroll, SeeAll } from "../Styled";
+import { Preview, List, SeeAll } from "../Styled";
 import Card from "../../Homes/Card";
-import home1 from "../../Homes/UI/home-1.png";
-import home2 from "../../Homes/UI/home-2.png";
-import home3 from "../../Homes/UI/home-3.png";
 
 export const SectionTitle = styled.h2`
   margin-top: 68px;
@@ -31,53 +28,47 @@ export const CardWrap = styled.div`
 
   @media (min-width: 992px) {
     flex-basis: 32%;
-    margin-right: 0;
   }
 `;
 
-export default function() {
-  return (
-    <section>
-      <Preview>
-        <SectionTitle>Homes</SectionTitle>
-        <SeeAll to="/homes">See all</SeeAll>
-      </Preview>
-      <List>
-        <CardWrap>
-          <Card
-            title="La Salentina, see, nature, relax"
-            image={home1}
-            price={82}
-            type="Entire house"
-            amount={9}
-            reviews={91}
-            owner="Superhost"
-          />
-        </CardWrap>
-        <CardWrap>
-          <Card
-            title="Your private 3 bedr. riad exclusiv.."
-            image={home2}
-            price={82}
-            type="Entire house"
-            amount={5}
-            reviews={161}
-            owner="Superhost"
-          />
-        </CardWrap>
-        <CardWrap>
-          <Card
-            title="Dreamy Tropical Tree House"
-            image={home3}
-            price={200}
-            type="Entire treehouse"
-            amount={1}
-            reviews={364}
-            owner="Superhost"
-          />
-        </CardWrap>
-        <Scroll />
-      </List>
-    </section>
-  );
+export default class Homes extends React.Component {
+  state = { homes: [] };
+
+  componentWillMount() {
+    fetch("https://airbnb-demo-api.now.sh/v1/homes?limit=6")
+      .then(response => response.json())
+      .then(homes => {
+        this.setState({ homes: homes.items });
+      })
+      .catch(error => {
+        console.log("Произошла ошибка!", error);
+      });
+  }
+
+  render() {
+    return (
+      <section>
+        <Preview>
+          <SectionTitle>Homes</SectionTitle>
+          <SeeAll to="/homes">See all</SeeAll>
+        </Preview>
+        <List>
+          {this.state.homes.map(home => (
+            <CardWrap key={home.id}>
+              <Card
+                title={home.name}
+                image={home.images[0].picture}
+                price={home.price}
+                type={home.kind}
+                rating={home.rating}
+                beds={home.bedsCount}
+                reviews={home.reviewsCount}
+                owner={home.isSuperhost}
+              />
+            </CardWrap>
+          ))}
+        </List>
+      </section>
+    );
+  }
 }

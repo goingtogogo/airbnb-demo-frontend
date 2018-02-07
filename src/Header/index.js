@@ -11,7 +11,7 @@ import {
   Link,
   Img
 } from "./Styled";
-import logo from "./logo.svg";
+import logo from "../UI/assets/logo.svg";
 
 export default function(props) {
   return (

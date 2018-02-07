@@ -22,6 +22,7 @@ export const Img = styled.img`
   height: auto;
 `;
 export const PriceInfo = styled.div`
+  display: flex;
   margin-top: 8px;
   flex-basis: 100%;
 `;

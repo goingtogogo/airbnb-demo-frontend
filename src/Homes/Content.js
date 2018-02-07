@@ -3,12 +3,6 @@ import styled from "styled-components";
 import Card from "./Card";
 import Pagination from "./Pagination";
 
-import home1 from "./UI/home-1.png";
-import home2 from "./UI/home-2.png";
-import home3 from "./UI/home-3.png";
-import home4 from "./UI/home-4.png";
-import home5 from "./UI/home-5.png";
-import home6 from "./UI/home-6.png";
 import pin from "./UI/pin.svg";
 
 const Content = styled.div`
@@ -47,7 +41,11 @@ const CardWrap = styled.div`
   @media (min-width: 992px) {
     flex-basis: 48%;
   }
+  &:last-child {
+    margin-bottom: 64px;
+  }
 `;
+
 const Pin = styled.a`
   width: 40px;
   height: 40px;
@@ -63,81 +61,44 @@ const Pin = styled.a`
   }
 `;
 
-export default function(props) {
-  return (
-    <Content>
-      <CardWrap>
-        <Card
-          title="La Salentina, see, nature, relax"
-          image={home1}
-          price={82}
-          type="Entire house"
-          amount={9}
-          reviews={91}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Your private 3 bedr. riad and exclusi…"
-          image={home2}
-          price={82}
-          type="Entire house"
-          amount={5}
-          reviews={161}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Dreamy Tropical Tree House"
-          image={home3}
-          price={200}
-          type="Entire house"
-          amount={1}
-          reviews={364}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Best location old town luxury loft"
-          image={home4}
-          price={110}
-          type="Entire apartment"
-          amount={1}
-          reviews={369}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="Lussuoso. Vista incantevole."
-          image={home5}
-          price={83}
-          type="Entire apartment"
-          amount={6}
-          reviews={105}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <CardWrap>
-        <Card
-          title="In the historical center of Lecce"
-          image={home6}
-          price={72}
-          type="Entire apartment"
-          amount={3}
-          reviews={221}
-          owner="Superhost"
-        />
-      </CardWrap>
-      <Pagination />
-      <Pin />
-      <Hint>
-        Enter dates to see full pricing. Additional fees apply. Taxes may be
-        added.
-      </Hint>
-    </Content>
-  );
+export default class Cards extends React.Component {
+  state = { homes: [] };
+
+  componentWillMount() {
+    fetch("https://airbnb-demo-api.now.sh/v1/homes")
+      .then(response => response.json())
+      .then(homes => {
+        this.setState({ homes: homes.items });
+      })
+      .catch(error => {
+        console.log("Произошла ошибка!", error);
+      });
+  }
+
+  render() {
+    return (
+      <Content>
+        {this.state.homes.map(home => (
+          <CardWrap key={home.id}>
+            <Card
+              title={home.name}
+              image={home.images[0].picture}
+              price={home.price}
+              type={home.kind}
+              rating={home.rating}
+              beds={home.bedsCount}
+              reviews={home.reviewsCount}
+              owner={home.isSuperhost}
+            />
+          </CardWrap>
+        ))}
+        <Pagination />
+        <Pin />
+        <Hint>
+          Enter dates to see full pricing. Additional fees apply. Taxes may be
+          added.
+        </Hint>
+      </Content>
+    );
+  }
 }
